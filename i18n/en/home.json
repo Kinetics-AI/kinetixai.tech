@@ -1,0 +1,13 @@
+{
+    "Layout": {
+        "careers": "Careers",
+        "contact": "Contact",
+        "about": "About",
+        "email": "Email",
+        "subscribe": "Subscribe",
+        "subscribed": "Subscribed"
+    },
+    "Home": {
+        "title": "Kinetix AI"
+    }
+}
