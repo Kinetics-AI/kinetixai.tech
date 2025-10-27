@@ -1,12 +1,18 @@
 import type { NextConfig } from "next";
 
+// i18n
+import createNextIntlPlugin from 'next-intl/plugin';
+const withNextIntl = createNextIntlPlugin(
+    './i18n/request.ts'
+);
+
 const nextConfig: NextConfig = {
     /* config options here */
     images: {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'mmlabassets.github.io',
+                hostname: 'assets.kinetixai.tech',
                 pathname: '/**',
             },
             {
@@ -14,15 +20,9 @@ const nextConfig: NextConfig = {
                 hostname: 'img.shields.io',
                 pathname: '/**',
             },
-            {
-                protocol: 'https',
-                hostname: 'ik.imagekit.io',
-                pathname: '/mmlab/**',
-            },
         ],
-        domains: ["ik.imagekit.io"], 
         dangerouslyAllowSVG: true,
     },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
