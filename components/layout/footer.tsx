@@ -1,19 +1,23 @@
+'use client';
 import {useTranslations} from "next-intl";
+import { useParams } from 'next/navigation';
 
-import Link from "next/link"
 
-import { Github, Mail, Twitter, Linkedin, Youtube, DiscIcon } from "lucide-react"; 
+import Link from "next/link";
+import Image from 'next/image'
+import ScrollToTopButton from '@/components/layout/footertotop';
+
+
 const media: {
-    icon: React.ElementType;
+    tit: string;
     url: string;
 }[] = [
-    { icon: Github, url: "https://github.com/" },
-    { icon: Twitter, url: "https://twitter.com/" },
-    { icon: Linkedin, url: "https://www.linkedin.com/" },
-    { icon: Youtube, url: "https://www.youtube.com/" },
+    { tit: "Github", url: "https://github.com/" },
+    { tit: "Twitter", url: "https://twitter.com/" },
+    { tit: "Linkedin", url: "https://www.linkedin.com/" },
+    { tit: "Youtube", url: "https://www.youtube.com/" },
 ];
 
-import { Separator } from "@/components/ui/separator"
 import { EmailSubscribe } from "@/components/layout/mailing"
 
 
@@ -23,6 +27,8 @@ export function Footer() {
 
 
     const t = useTranslations("Layout");
+    const params = useParams();
+    const locale = params.locale as string;
 
 
 
@@ -31,49 +37,55 @@ export function Footer() {
         url: string;
     }[] = [
         { link: t("about"), url: "/about" },
-        { link: t("contact"), url: "/contact" },
         { link: t("careers"), url: "/careers" },
     ];
 
 
 
     return (
-        <footer className="w-full px-6 my-6 md:my-12 gap-6 flex flex-col items-center select-none">
 
-
-            <div className="w-full max-w-7xl flex gap-6 flex-wrap">
-                {links.map(({link, url}, idx) => (
-                    <Link href={url} key={idx} className="link link-animated">
-                        {link}
-                    </Link>
-                ))}
-            </div>
-
-
-            <div className="w-full max-w-7xl">
-                <Separator />
-            </div>
-
-
-
-            <div className="w-full max-w-7xl gap-6 flex flex-row justify-between items-center">
-                <div className=" flex gap-6 flex-wrap">
-                    {media.map(({icon: Icon, url}, idx) => (
-                        <Link href={url} target="_blank" key={idx} className="group">
-                            <Icon className="size-4 text-foreground group-hover:text-foreground/60 duration-300"/>
+        <footer className="footer">
+            <div className="wrap-s">
+                <div className="top-block">
+                    <div className="left-box">
+                        <img 
+                            src="https://assets.kinetixai.tech/kinetixai/logo-white.png" 
+                            alt=""
+                        />
+                    </div>
+                    <div className="right-box">
+                        <div className="links">
+                            {links.map(({link, url}, idx) => (
+                                <Link href={`/${locale}${url}`} key={idx}>
+                                    {link}
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="info">
+                            <div className="txtbox">
+                                <div className="tit">{t('footerRightTit')}</div>
+                                <p>{t('footerRightP')}</p>
+                            </div>
+                            <EmailSubscribe/>
+                        </div>
+                    </div>
+                </div>
+                <div className="bot-block">
+                    <div className="copyright">{t('footerCopyright')}</div>
+                    <div className="share">
+                    {media.map(({tit, url}, idx) => (
+                        <Link href={url} target="_blank" key={idx} title={tit}>
+                            <img 
+                                src={`https://assets.kinetixai.tech/kinetixai/share-${idx + 1}.svg`} 
+                                alt=""
+                            />
                         </Link>
                     ))}
-                </div>
-                <div>
-                    <EmailSubscribe/>
+                    </div>
                 </div>
             </div>
-
-
-            <div className="w-full max-w-7xl text-xs">
-                Kinetix AI 超维动力 © 2025
-            </div>
+            <ScrollToTopButton />
 
         </footer>
-    )
+    );
 }

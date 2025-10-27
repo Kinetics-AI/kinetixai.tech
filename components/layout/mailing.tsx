@@ -18,7 +18,7 @@ export function EmailSubscribe() {
     const [email, setEmail] = useState('')
     const [valid, setValid] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [placeholder, setPlaceholder] = useState(t("email"));
+    const [placeholder, setPlaceholder] = useState(t("footerInputTxt"));
     useEffect(() => {
         const isValid = emailRegex.test(email.trim())
         setValid(isValid && email.trim() !== '')
@@ -49,21 +49,20 @@ export function EmailSubscribe() {
 
     const handleFocus = () => {
         if (placeholder === t("subscribed")) {
-            setPlaceholder(t("email"));
+            setPlaceholder(t("footerInputTxt"));
         }
     };
 
     return (
-        <div className="w-full flex flex-row gap-3 items-center">
+        <div className="formbox">
             <Input
                 type="email"
                 placeholder={placeholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onFocus={handleFocus}
-                className='rounded-full text-xs md:text-xs h-5 max-w-xs focus-visible:ring-0'
             />
-            <CustomButtonV1 onClick={handleSubmit} disabled={!valid || loading} className='text-xs h-5 p-2 font-light bg-foreground'>
+            <CustomButtonV1 onClick={handleSubmit} disabled={!valid || loading}>
                 {loading ? '...' : t("subscribe")}
             </CustomButtonV1>
         </div>

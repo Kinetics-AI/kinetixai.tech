@@ -1,17 +1,13 @@
 "use client"
+import {useTranslations} from "next-intl";
+import { useParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 import Link from "next/link"
-import Image from 'next/image'
 
-import { CustomButtonV1 } from "@/components/ui/custom/button";
-import {
-    Drawer,
-    DrawerTrigger,
-} from "@/components/ui/drawer"
-import { MenuDrawer } from "./menu";
+
 import { LanguageDrawer } from "./international"
 
-import { Languages, Menu, ChevronUp } from "lucide-react"
 
 import { FadeIn } from "@/components/animation/fade-in"
 
@@ -21,84 +17,84 @@ export function Header() {
 
 
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    }
+    const t = useTranslations("Layout");
+    const params = useParams();
+    const locale = params.locale as string;
 
+    const links: {
+        link: string;
+        url: string;
+    }[] = [
+        { link: t("home"), url: "" },
+        { link: t("about"), url: "/about" },
+        { link: t("careers"), url: "/careers" },
+    ];
+
+
+
+    const [isOpen, setIsOpen] = useState(false);
+  
+    // 点击外部区域关闭菜单
+    useEffect(() => {
+    const handleClickOutside = (e) => {
+        if (isOpen && e.target.classList.contains('fixed-menu')) {
+            setIsOpen(false);
+        }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+    }, [isOpen]);
+  
+    // 阻止背景滚动当菜单打开时
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'inherit';
+        }        
+        return () => {
+            document.body.style.overflow = 'inherit';
+        };
+    }, [isOpen]);
 
 
     return (
-        <header className="fixed mt-3 flex justify-between w-svw md:pr-2 z-10 select-none">
-
-
-
-            {/* LOGO */}
+        <header className="header">
             <FadeIn>
-                <CustomButtonV1 className="ml-3">
-                    <Link href="/" className="select-none">
-                        <Image
-                            src="/favicon.ico"
-                            alt="Kinetix AI"
-                            width={6}
-                            height={6}
-                        />
-                    </Link>
-                </CustomButtonV1>
+                <div className="innerblock">
+                    <div></div>
+                    <div className="ope">
+                        <div className="global">
+                            <div className="show"></div>
+                            <div className="hide">
+                                <LanguageDrawer/>
+                            </div>
+                        </div>
+                        <div className="line"></div>
+                        <div
+                            className="menubtn"
+                            onClick={() => setIsOpen(true)}
+                        >
+                        </div>
+                    </div>
+                </div>
             </FadeIn>
-
-
-
-            <div className="flex mr-3 md:gap-3">
-
-
-
-                {/* Top */}
-                <FadeIn>
-                    <CustomButtonV1 onClick={scrollToTop}>
-                        <ChevronUp/>
-                    </CustomButtonV1>
-                </FadeIn>
-
-
-
-                {/* Language */}
-                <Drawer direction="right">
-
-                    <DrawerTrigger asChild>
-                        <FadeIn>
-                            <CustomButtonV1>
-                                <Languages/>
-                            </CustomButtonV1>
-                        </FadeIn>
-                    </DrawerTrigger>
-
-                    <LanguageDrawer/>
-                
-                </Drawer>
-
-
-
-                {/* Menu */}
-                <Drawer direction="right">
-
-                    <DrawerTrigger asChild>
-                        <FadeIn>
-                            <CustomButtonV1>
-                                <Menu/>
-                            </CustomButtonV1>
-                        </FadeIn>
-                    </DrawerTrigger>
-
-                    <MenuDrawer/>
-                
-                </Drawer>
-
-
-
+            <div className={`fixed-menu ${isOpen ? 'active' : ''}`}>
+                <div className="slidebar">
+                    <div
+                        className="close"
+                        onClick={() => setIsOpen(false)}
+                    >
+                    </div>
+                    <div className="items">                        
+                        {links.map(({link, url}, idx) => (
+                            <Link href={`/${locale}${url}`} key={idx} onClick={() => setIsOpen(false)}>
+                                {link}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             </div>
-
-
-
         </header>
     )
 }

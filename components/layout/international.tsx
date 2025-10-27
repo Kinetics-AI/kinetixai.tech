@@ -5,17 +5,6 @@ import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/navigation';
 
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer"
-
 
 
 export function LanguageDrawer() {
@@ -38,17 +27,14 @@ export function LanguageDrawer() {
     }
 
     return (
-        <DrawerContent className="p-6 rounded-l-3xl">
-            <DrawerTitle></DrawerTitle>
-            <div className="w-full h-full flex flex-col justify-center">
-                <button onClick={() => onSelectChange('zh')}>
-                    中文
-                </button>
-                <button onClick={() => onSelectChange('en')}>
-                    English
-                </button>
-            </div>
-        </DrawerContent>
+        <div className="links-box">
+            <button onClick={() => onSelectChange('zh')}>
+                中文
+            </button>
+            <button onClick={() => onSelectChange('en')}>
+                English
+            </button>
+        </div>
     )
 
 }

@@ -1,13 +1,36 @@
 {
     "Layout": {
+        "home": "Home",
         "careers": "Careers",
-        "contact": "Contact",
         "about": "About",
         "email": "Email",
         "subscribe": "Subscribe",
-        "subscribed": "Subscribed"
+        "subscribed": "Subscribed",
+        "footerRightTit": "Subscribe Kinetix AI",
+        "footerRightP": "第一时间获取超维动力的最新资讯",
+        "footerInputTxt": "your email address",
+        "footerCopyright": "Kinetix AI 超维动力 © 2025"
+
     },
     "Home": {
-        "title": "Kinetix AI"
+        "title": "Kinetix AI",
+        "indexBannerTit": "Join hands with <span>Kinetix AI</span> <p>to create a better future</p>",
+        "indexCompanyTit": "<span>Company</span> Profile",
+        "indexCompanyPara": "<p>Kinetix AI was founded in July 2025, focusing on the research, application, and implementation of embodied intelligence basic models and highly humanoid robots. Chaowei Power will define the best products with the best technology, create the next generation of universal technology platform, and ultimately develop silicon-based life, empowering humanoid robots to enter thousands of industries and households.。</p><p>Kinetix AI adheres to the research and development concept of collaboration between cutting-edge algorithms and robot bodies. Based on the principle of product first, it insists on a technology iteration path of integration and innovation. Starting from the core application requirements of the scene and the cutting-edge technology, it redefines and designs the high humanoid robot body, achieving full chain independent research and development from the high humanoid robot body, basic VLA model, data training, and scene solutions.</p>​",
+        "indexTechTit": "Core <span>technology</span>",
+        "indexNewsTit": "<span>News</span> center",
+        "indexNewsBtn": "Learn More"
+    },
+    "Careers": {
+        "allpositions": "All positions",
+        "filterCriteria": "Filter criteria",
+        "emptyTxt": "No suitable positions found !",
+        "departmentsTit": "Department",
+        "locationsTit": "Location",
+        "workTypesTit": "Work type",
+        "allDepartments": "All Department",
+        "allLocations": "All Location",
+        "allWorkTypes": "All Work type",
+        "loading": "Loading"
     }
 }
