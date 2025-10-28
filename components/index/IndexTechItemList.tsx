@@ -115,8 +115,12 @@ export const IndexTechItemList = () => {
                     duration: 1,
                 }, 0)
 
-            // 保存ScrollTrigger实例
-            scrollTriggerRef.current = ScrollTrigger.getById(tl.scrollTrigger.id);
+            // 保存ScrollTrigger实例            
+            if (tl.scrollTrigger) {
+                scrollTriggerRef.current = tl.scrollTrigger as gsap.plugins.ScrollTriggerInstance;
+            } else {
+                scrollTriggerRef.current = null;
+            }
 
             // 手动触发一次刷新，确保初始状态正确
             ScrollTrigger.refresh();
@@ -162,7 +166,7 @@ export const IndexTechItemList = () => {
                             <div 
                                 key={index}
                                 className={`dot ${activeIndex === index ? 'active' : ''}`}
-                                ref={el => dotsRef.current[index] = el}
+                                ref={el => { dotsRef.current[index] = el; }}
                                 onClick={() => handleDotClick(index)}
                             />
                             ))}
@@ -173,7 +177,7 @@ export const IndexTechItemList = () => {
                                 <div
                                     key={idx}
                                     className='item'
-                                    ref={el => itemsRef.current[idx] = el}
+                                    ref={el => { itemsRef.current[idx] = el; }}
                                 >
                                     <div className="img-box">
                                         <Image

@@ -11,7 +11,15 @@ import { FadeIn } from "@/components/animation/fade-in"
 import { FadeInInitial } from "@/components/animation/fade-in-up-initial"
 
 // import Select from 'react-select'
-const Select = dynamic(() => import('react-select'), { ssr: false });
+// const Select = dynamic(() => import('react-select'), { ssr: false });
+const Select = dynamic<{
+    value?: SelectOption;
+    onChange?: (option: SelectOption | null) => void;
+    options: SelectOption[];
+    placeholder: string;
+    className: string;
+    classNamePrefix: string;
+}>(() => import('react-select'), { ssr: false });
 
 
 import { jobData, JobList } from "@/data/careersList";
@@ -22,6 +30,11 @@ interface Filters {
     department: string;
     location: string;
     jobType: string;
+}
+
+interface SelectOption {
+  value: string;
+  label: string;
 }
 
 export default function JobsPage() {
@@ -101,17 +114,17 @@ export default function JobsPage() {
     };
     
     // 创建包含"所有"选项的数组
-    const departmentOptions = useMemo(() => [
+    const departmentOptions = useMemo<SelectOption[]>(() => [
         { value: '', label: t("allDepartments") },
         ...departments.map(dept => ({ value: dept, label: dept }))
     ], [departments, t("allDepartments")]);
 
-    const locationOptions = useMemo(() => [
+    const locationOptions = useMemo<SelectOption[]>(() => [
         { value: '', label: t("allLocations") },
         ...locations.map(location => ({ value: location, label: location }))
     ], [locations, t("allLocations")]);
 
-    const jobTypeOptions = useMemo(() => [
+    const jobTypeOptions = useMemo<SelectOption[]>(() => [
         { value: '', label: t("allWorkTypes") },
         ...jobTypes.map(type => ({ value: type, label: type }))
     ], [jobTypes, t("allWorkTypes")]);
@@ -130,8 +143,10 @@ export default function JobsPage() {
                         <div className="bot-box">
                             <div className="box">
                                 <Select
-                                    value={departmentOptions.find(option => option.value === filters.department)}
-                                    onChange={(selectedOption) => handleFilterChange('department', selectedOption.value)}
+                                    value={departmentOptions.find(option => option.value === filters.department)}                               
+                                    onChange={(selectedOption: SelectOption | null) => {
+                                        handleFilterChange('department', selectedOption?.value ?? '');
+                                    }}
                                     options={departmentOptions}
                                     placeholder={t('departmentsTit')}
                                     className="selectbox"
@@ -140,8 +155,10 @@ export default function JobsPage() {
                             </div>
                             <div className="box">
                                 <Select
-                                    value={locationOptions.find(option => option.value === filters.location)}
-                                    onChange={(selectedOption) => handleFilterChange('location', selectedOption.value)}
+                                    value={locationOptions.find(option => option.value === filters.location)}                                
+                                    onChange={(selectedOption: SelectOption | null) => {
+                                        handleFilterChange('location', selectedOption?.value ?? '');
+                                    }}
                                     options={locationOptions}
                                     placeholder={t('locationsTit')}
                                     className="selectbox"
@@ -150,8 +167,10 @@ export default function JobsPage() {
                             </div>
                             <div className="box">
                                 <Select
-                                    value={jobTypeOptions.find(option => option.value === filters.jobType)}
-                                    onChange={(selectedOption) => handleFilterChange('jobType', selectedOption.value)}
+                                    value={jobTypeOptions.find(option => option.value === filters.jobType)}                                
+                                    onChange={(selectedOption: SelectOption | null) => {
+                                        handleFilterChange('jobType', selectedOption?.value ?? '');
+                                    }}
                                     options={jobTypeOptions}
                                     placeholder={t('workTypesTit')}
                                     className="selectbox"

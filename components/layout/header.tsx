@@ -36,9 +36,10 @@ export function Header() {
   
     // 点击外部区域关闭菜单
     useEffect(() => {
-    const handleClickOutside = (e) => {
-        if (isOpen && e.target.classList.contains('fixed-menu')) {
-            setIsOpen(false);
+    // 显式指定 e 为 MouseEvent 类型
+    const handleClickOutside = (e: MouseEvent) => {
+        if (isOpen && e.target instanceof Element && e.target.classList.contains('fixed-menu')) {
+        setIsOpen(false);
         }
     };
     document.addEventListener('click', handleClickOutside);
