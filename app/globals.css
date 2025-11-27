@@ -4,10 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --color-mblue: var(--mblue);
+    --color-morange: var(--morange);
+    --color-mred: var(--mred);
+    --color-mgray: var(--mgray);
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,9 +46,13 @@
 }
 
 :root {
+    --mblue: #4ec6df;
+    --morange: #f9a61a;
+    --mred: #ee2e69;
+    --mgray: #76777B;
     --radius: 0.625rem;
     --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
+    --foreground: #0d0d0d;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
@@ -79,7 +85,11 @@
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
+    --mblue: #4ec6df;
+    --morange: #f9a61a;
+    --mred: #ee2e69;
+    --mgray: #76777B;
+    --background: #0d0d0d;
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
     --card-foreground: oklch(0.985 0 0);
@@ -112,53 +122,101 @@
     --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-}
-
-
-
-@plugin "flyonui" {
-    themes: false;
-}
-
 
 @theme {
-    --breakpoint-3xl: 112rem;
+    --breakpoint-3xl: 120rem;
 }
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
     html {
         @apply scroll-smooth;
     }
     body {
         @apply bg-background text-foreground;
     }
+    a, span, Button, Link {
+        @apply transition delay-100 duration-200;
+    }
+}
+
+
+
+/* background color */
+.bg-gradient-landing {
+    @apply bg-gradient-to-br from-morange via-mred to-mblue;
+}
+.bg-gradient-loading {
+    @apply bg-gradient-to-br from-mblue via-morange to-mred;
 }
 
 
 
 /* font */
 .text-t0 {
-    @apply text-5xl xl:text-6xl 3xl:text-7xl;
+    @apply text-6xl sm:text-7xl md:text-8xl lg:text-9xl;
 }
 .text-t1 {
-    @apply text-3xl xl:text-4xl 3xl:text-5xl;
+    @apply text-5xl md:text-6xl;
+}
+.color-text-1 {
+    width: fit-content;
+    background-image: linear-gradient(to right, #4ec6df, #ee2e69, #f9a61a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.color-text-2 {
+    width: fit-content;
+    background-image: linear-gradient(to right, #ee2e69, #ee2e69, #ee2e69);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 
 
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+/* fade in / out */
+.fade-in {
+    transition: opacity 1.5s ease;
 }
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+
+
+/* link underline */
+.animated-underline {
+    border-bottom: 1px solid transparent;
+    @apply transition delay-100 duration-200;
+}
+.animated-underline:hover {
+    @apply border-b-inherit;
+}
+.member_bio {
+    & a{
+        border-bottom: 1px solid transparent;
+        @apply text-mred transition delay-100 duration-200;
+    }
+    & a:hover {
+        @apply border-b-inherit;
+    }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-320px * 6 - 1.5rem * 6)); /* 假设有6张图片 */
+  }
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }

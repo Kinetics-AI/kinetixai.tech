@@ -2,6 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
+import { useParams } from 'next/navigation';
 
 import Link from "next/link"
 import Image from 'next/image'
@@ -9,9 +10,10 @@ import { FadeIn } from "@/components/animation/fade-in"
 import { FadeInUp } from "@/components/animation/fade-in-up"
 
 
+import { IndexSceneItemList } from '@/components/index/IndexSceneItemList';
 import { IndexTechItemList } from '@/components/index/IndexTechItemList';
+import { IndexSceneItemListMobile } from '@/components/index/IndexSceneItemListMobile'; 
 import { IndexNewsItemList } from '@/components/index/IndexNewsItemList'; 
-import { IndexTechItemListMobile } from '@/components/index/IndexTechItemListMobile'; 
 
 
 
@@ -19,6 +21,8 @@ import { IndexTechItemListMobile } from '@/components/index/IndexTechItemListMob
 export default function Page(){
     
     const t = useTranslations('Home');
+    const params = useParams();
+    const locale = params.locale as string;
 
 
     // banner
@@ -105,11 +109,18 @@ export default function Page(){
                                 span: (chunks) => <span>{chunks}</span>,
                             })}
                         </FadeInUp>
-                        <FadeInUp className="para" delay={0.2}>
-                            {t.rich('indexCompanyPara', {
-                                p: (chunks) => <p>{chunks}</p>
-                            })}
-                        </FadeInUp>
+                        <div className="para-box">
+                            <FadeInUp className="para" delay={0.1}>
+                                {t.rich('indexCompanyPara', {
+                                    p: (chunks) => <p>{chunks}</p>
+                                })}
+                            </FadeInUp>
+                            <FadeInUp className="btns" delay={0.2}>
+                                <Link href={`/${locale}/about`}>
+                                    <span>{t("indexCompanyBtn")}</span>
+                                </Link>
+                            </FadeInUp>
+                        </div>
                     </div>
                     <div className="img-box" ref={sectionRef}>
                         <Image
@@ -122,10 +133,11 @@ export default function Page(){
                     </div>
                 </div>
             </div>
+            <IndexTechItemList />
             {isDesktop ? (
-                <IndexTechItemList />
+                <IndexSceneItemList />
                 ) : (
-                <IndexTechItemListMobile />
+                <IndexSceneItemListMobile />
             )}
             <div className="index-s4">
                 <div className="wrap-s">

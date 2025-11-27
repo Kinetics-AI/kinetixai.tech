@@ -49,7 +49,7 @@ export function Footer() {
                 <div className="top-block">
                     <div className="left-box">
                         <img 
-                            src="https://assets.kinetixai.tech/kinetixai/logo-white.png" 
+                            src="/kinetixai/logo-white.png" 
                             alt=""
                         />
                     </div>
@@ -76,7 +76,7 @@ export function Footer() {
                     {media.map(({tit, url}, idx) => (
                         <Link href={url} target="_blank" key={idx} title={tit}>
                             <img 
-                                src={`https://assets.kinetixai.tech/kinetixai/share-${idx + 1}.svg`} 
+                                src={`/kinetixai/share-${idx + 1}.svg`} 
                                 alt=""
                             />
                         </Link>
