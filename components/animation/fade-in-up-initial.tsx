@@ -5,14 +5,17 @@ import { motion } from "framer-motion"
 function FadeInInitial({
     children,
     delay = 0,
+    className,
     ...props
 }: {
     children: React.ReactNode
     delay?: number
+    className?: string
 }) {
     return (
         <motion.div 
             {...props}
+            className={className}
             initial={{ opacity: 0, y: '1rem' }}
             animate={{ opacity: 1, y: '0' }} 
             transition={{

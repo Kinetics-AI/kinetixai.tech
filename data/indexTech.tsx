@@ -2,12 +2,6 @@
 export interface indexTech {
     title: string;
     pic: string;
-    stats: {
-        num: string;
-        unit: string;
-        desc: string;
-        icon: string;
-    }[];
 }
 
 type LanguageData = {
@@ -18,102 +12,46 @@ type LanguageData = {
 export const indexTechData: LanguageData = {
     zh: [
         {
-            title: "世界Kinetix AI大模型",
-            pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-1.jpg",
-            stats: [
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "框架坚持走Kinetix AI框架\n相比目前行业主流的开环框架效率提升10+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-1.png"
-                },
-                {
-                    "num": "5",
-                    "unit": "+",
-                    "desc": "内嵌Kinetix AI模型\n相比主流的视频生成路线，效率提升5+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-2.png"
-                },
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "使用全球唯一的Kinetix AI\n数据使用效相比过往技术提升10+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-3.png"
-                }
-            ]
+            title: "多模态理解能力",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-1.jpg"
         },
         {
-            title: "世界Kinetix AI大模型2",
-            pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-2.jpg",
-            stats: [
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "框架坚持走Kinetix AI框架\n相比目前行业主流的开环框架效率提升10+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-1.png"
-                },
-                {
-                    "num": "5",
-                    "unit": "+",
-                    "desc": "内嵌Kinetix AI模型\n相比主流的视频生成路线，效率提升5+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-2.png"
-                },
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "使用全球唯一的Kinetix AI\n数据使用效相比过往技术提升10+倍",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-3.png"
-                }
-            ]
+            title: "空间智能",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-2.jpg"
+        },
+        {
+            title: "AI智能体",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-3.jpg"
+        },
+        {
+            title: "视觉语言动作模型",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-4.jpg"
+        },
+        {
+            title: "全身运控技术",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-5.jpg"
         }
     ],
     en: [
         {
-            title: "World Kinetix AI Large Model",
-            pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-1.jpg",
-            stats: [
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "Adhere to the Kinetix AI framework",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-1.png"
-                },
-                {
-                    "num": "5",
-                    "unit": "+",
-                    "desc": "Embedded Kinetix AI model",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-2.png"
-                },
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "Using the world's only Kinetix AI",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-3.png"
-                }
-            ]
+            title: "Multimodal understanding ability",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-1.jpg"
         },
         {
-            title: "World Kinetix AI Large Model2",
-            pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-2.jpg",
-            stats: [
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "Adhere to the Kinetix AI framework",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-1.png"
-                },
-                {
-                    "num": "5",
-                    "unit": "+",
-                    "desc": "Embedded Kinetix AI model",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-2.png"
-                },
-                {
-                    "num": "10",
-                    "unit": "+",
-                    "desc": "Using the world's only Kinetix AI",
-                    "icon": "https://assets.kinetixai.tech/kinetixai/index/icon-1-3.png"
-                }
-            ]
+            title: "Space Intelligence",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-2.jpg"
+        },
+        {
+            title: "AI agent",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-3.jpg"
+        },
+        {
+            title: "Visual Language Action Model",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-4.jpg"
+        },
+        {
+            title: "Whole body operation control technology",
+            pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-5.jpg"
         }
     ]
 };

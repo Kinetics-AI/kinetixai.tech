@@ -1,6 +1,6 @@
 "use client"
 import {useTranslations} from "next-intl";
-import { useParams } from 'next/navigation';
+import { useParams, usePathname  } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 import Link from "next/link"
@@ -19,6 +19,7 @@ export function Header() {
 
     const t = useTranslations("Layout");
     const params = useParams();
+    const pathname = usePathname();
     const locale = params.locale as string;
 
     const links: {
@@ -31,18 +32,18 @@ export function Header() {
     ];
 
 
-
+    const isAboutPage = pathname?.includes('/about');
     const [isOpen, setIsOpen] = useState(false);
   
     // 点击外部区域关闭菜单
     useEffect(() => {
-    const handleClickOutside = (e) => {
-        if (isOpen && e.target.classList.contains('fixed-menu')) {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (isOpen && e.target instanceof Element && e.target.classList.contains('fixed-menu')) {
             setIsOpen(false);
-        }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
     }, [isOpen]);
   
     // 阻止背景滚动当菜单打开时
@@ -61,7 +62,7 @@ export function Header() {
     return (
         <header className="header">
             <FadeIn>
-                <div className="innerblock">
+                <div className={`innerblock ${isAboutPage ? 'black' : ''}`}>
                     <div></div>
                     <div className="ope">
                         <div className="global">

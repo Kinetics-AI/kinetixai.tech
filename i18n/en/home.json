@@ -7,9 +7,9 @@
         "subscribe": "Subscribe",
         "subscribed": "Subscribed",
         "footerRightTit": "Subscribe Kinetix AI",
-        "footerRightP": "第一时间获取超维动力的最新资讯",
+        "footerRightP": "Get the latest information on Kinetix AI in real-time",
         "footerInputTxt": "your email address",
-        "footerCopyright": "Kinetix AI 超维动力 © 2025"
+        "footerCopyright": "Kinetix AI Kinetix AI © 2025"
 
     },
     "Home": {
@@ -17,7 +17,10 @@
         "indexBannerTit": "Join hands with <span>Kinetix AI</span> <p>to create a better future</p>",
         "indexCompanyTit": "<span>Company</span> Profile",
         "indexCompanyPara": "<p>Kinetix AI was founded in July 2025, focusing on the research, application, and implementation of embodied intelligence basic models and highly humanoid robots. Chaowei Power will define the best products with the best technology, create the next generation of universal technology platform, and ultimately develop silicon-based life, empowering humanoid robots to enter thousands of industries and households.。</p><p>Kinetix AI adheres to the research and development concept of collaboration between cutting-edge algorithms and robot bodies. Based on the principle of product first, it insists on a technology iteration path of integration and innovation. Starting from the core application requirements of the scene and the cutting-edge technology, it redefines and designs the high humanoid robot body, achieving full chain independent research and development from the high humanoid robot body, basic VLA model, data training, and scene solutions.</p>​",
+        "indexCompanyBtn": "Learn more",
         "indexTechTit": "Core <span>technology</span>",
+        "indexTechSTit": "From the 'Five Core Technologies' to' Silicon based Life '",
+        "indexSceneTit": "Core <span>scenario</span>",
         "indexNewsTit": "<span>News</span> center",
         "indexNewsBtn": "Learn More"
     },
@@ -32,5 +35,10 @@
         "allLocations": "All Location",
         "allWorkTypes": "All Work type",
         "loading": "Loading"
+    },
+    "Company": {
+        "bannerTit": "About Us",
+        "introTit": "Company Profile",
+        "introPara": "<p>Kinetix AI was founded in July 2025, focusing on the research, application, and implementation of embodied intelligence basic models and highly humanoid robots. Chaowei Power will define the best products with the best technology, create the next generation of universal technology platform, and ultimately develop silicon-based life, empowering humanoid robots to enter thousands of industries and households.。</p><p>Kinetix AI adheres to the research and development concept of collaboration between cutting-edge algorithms and robot bodies. Based on the principle of product first, it insists on a technology iteration path of integration and innovation. Starting from the core application requirements of the scene and the cutting-edge technology, it redefines and designs the high humanoid robot body, achieving full chain independent research and development from the high humanoid robot body, basic VLA model, data training, and scene solutions.</p>​"
     }
 }
