@@ -40,7 +40,7 @@ export default function AboutPage(){
             <div className="inner-s2">
                 <div className="img-box">
                     <Image
-                        src="https://assets.kinetixai.tech/kinetixai/company/banner.jpg"
+                        src="/kinetixai/company/banner.jpg"
                         alt=""
                         width={1920}
                         height={1080}
@@ -72,7 +72,7 @@ export default function AboutPage(){
                 <div className="left-box">
                     <div className="video-box">
                         <video autoPlay muted loop playsInline>
-                            <source src="https://assets.kinetixai.tech/kinetixai/company/video.mp4" type="video/mp4" />
+                            <source src="/kinetixai/company/video.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>
