@@ -151,7 +151,7 @@ img {
             height: 40px;
             border-radius: 50%;
             @include backimg;
-            background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/global-1.svg');
+            background-image: url('https://assets.kinetixai.tech/kinetixai/global-1.svg');
             background-size: auto 20px;
             cursor: pointer;
             transition: all .3s ease;
@@ -202,7 +202,7 @@ img {
         height: 40px;
         border-radius: 50%;
         @include backimg;
-        background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/menu-1.svg');
+        background-image: url('https://assets.kinetixai.tech/kinetixai/menu-1.svg');
         background-size: auto 14px;
         cursor: pointer;
         transition: all .3s ease;
@@ -251,7 +251,7 @@ img {
         height: max(30px, 0.4rem);
         background-color: #0426a0;
         @include backimg;
-        background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/close-1.svg');
+        background-image: url('https://assets.kinetixai.tech/kinetixai/close-1.svg');
         background-size: auto 10px;
         border-radius: 50%;
         cursor: pointer;
@@ -355,7 +355,7 @@ img {
                 width: max(16px, 0.2rem);
                 height: max(16px, 0.2rem);
                 @include backcontain;
-                background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/icon-2.svg');
+                background-image: url('https://assets.kinetixai.tech/kinetixai/icon-2.svg');
                 position: absolute;
                 left: 30px;
                 top: 50%;
@@ -394,7 +394,7 @@ img {
                 border-radius: 50%;
                 background-color: #0426a0;
                 @include backimg;
-                background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/icon-1.svg');
+                background-image: url('https://assets.kinetixai.tech/kinetixai/icon-1.svg');
                 background-size: auto max(10px, 0.12rem);
                 top: 0.1rem;
                 right: 0.1rem;
@@ -444,7 +444,7 @@ img {
         position: fixed;
         right: 0.2rem;
         bottom: 0.2rem;
-        background: #0426a0 url('../publichttps://assets.kinetixai.tech/kinetixai/totop.svg') center center no-repeat;
+        background: #0426a0 url('https://assets.kinetixai.tech/kinetixai/totop.svg') center center no-repeat;
         background-size: auto 12px;
         border-radius: 50%;
         z-index: 6;
@@ -851,7 +851,7 @@ img {
             border-radius: 50%;
             @include backimg;
             background-color: #0426a0;
-            background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/icon-3.svg');
+            background-image: url('https://assets.kinetixai.tech/kinetixai/icon-3.svg');
             background-size: auto max(16px, 0.22rem);
             position: absolute;
             top: 0.6rem;
@@ -1154,7 +1154,7 @@ img {
                 width: max(16px, 0.2rem);
                 height: max(16px, 0.2rem);
                 @include backcontain;
-                background-image: url('../publichttps://assets.kinetixai.tech/kinetixai/icon-3.svg');
+                background-image: url('https://assets.kinetixai.tech/kinetixai/icon-3.svg');
                 position: absolute;
                 top: 0.35rem;
                 right: 0.6rem;
