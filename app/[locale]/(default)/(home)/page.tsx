@@ -76,13 +76,13 @@ export default function Page(){
                 {isDesktop ? (
                     <div className="video-box">
                         <video autoPlay muted loop playsInline>
-                            <source src="/kinetixai/index/banner.mp4" type="video/mp4" />
+                            <source src="https://assets.kinetixai.tech/kinetixai/index/banner.mp4" type="video/mp4" />
                         </video>
                     </div>
                 ) : (
                     <div className="img-box">
                         <Image
-                            src="/kinetixai/index/banner.jpg"
+                            src="https://assets.kinetixai.tech/kinetixai/index/banner.jpg"
                             alt=""
                             width={800}
                             height={800}
@@ -125,7 +125,7 @@ export default function Page(){
                     <div className="img-box" ref={sectionRef}>
                         <Image
                             ref={boxRef} 
-                            src="/kinetixai/index/img-1.png"
+                            src="https://assets.kinetixai.tech/kinetixai/index/img-1.png"
                             alt=""
                             width={800}
                             height={800}
