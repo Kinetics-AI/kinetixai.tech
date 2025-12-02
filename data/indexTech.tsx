@@ -34,11 +34,11 @@ export const indexTechData: LanguageData = {
     ],
     en: [
         {
-            title: "Multimodal understanding ability",
+            title: "Multimodal Understanding",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-1.jpg"
         },
         {
-            title: "Space Intelligence",
+            title: "Spatial Intelligence",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-2.jpg"
         },
         {
@@ -50,7 +50,7 @@ export const indexTechData: LanguageData = {
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-4.jpg"
         },
         {
-            title: "Whole body operation control technology",
+            title: "Whole-body control",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-3-5.jpg"
         }
     ]

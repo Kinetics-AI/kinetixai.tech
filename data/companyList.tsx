@@ -12,7 +12,7 @@ type LanguageData = {
 export const companyListData: LanguageData = {
     zh: [
         {
-            title: "自主设计兼量产双侧上肢外骨骼",
+            title: "自主设计双侧上肢外骨骼并实现量产落地",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-1.png"
         },
         {
@@ -42,31 +42,31 @@ export const companyListData: LanguageData = {
     ],
     en: [
         {
-            title: "Independently designed and mass-produced bilateral upper limb exoskeletons",
+            title: "Proprietary bilateral upper limb exoskeleton with mass production capabilities",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-1.png"
         },
         {
-            title: "Over a hundred L4 autonomous driving mining trucks have been commercialized and put into operation",
+            title: "Commercial deployment of 100+ L4 autonomous mining trucks",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-2.png"
         },
         {
-            title: "The first domestically produced multimodal model for unified language and visual generation reported in the journal Nature",
+            title: "First Chinese unified language-vision generative multimodal foundation model to receive Nature coverage",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-3.png"
         },
         {
-            title: "The world's first end-to-end autonomous driving model, the first best paper on autonomous driving in CVPR history",
+            title: "World's first end-to-end autonomous driving foundation model and the first-ever best paper on autonomous driving at the CVPR",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-4.png"
         },
         {
-            title: "Highly humanoid robot product selected for Morgan Stanley's Humanoid 100",
+            title: "Highly humanoid robotics platform selected for Morgan Stanley's ‘Humanoid 100’ list",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-5.png"
         },
         {
-            title: "The world's first hierarchical AI agent framework, ranked first in GAIA open source models",
+            title: "World's first hierarchical AI agent framework, achieving top ranking among open-source models on GAIA benchmark",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-6.png"
         },
         {
-            title: "Unified VLA Large Model with Performance Exceeding PI0.5",
+            title: "Unified Vision-Language-Action (VLA) foundation model outperforming Pi0.5",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-7.png"
         }
     ]
