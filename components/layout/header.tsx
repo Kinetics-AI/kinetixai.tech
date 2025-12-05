@@ -28,7 +28,7 @@ export function Header() {
     }[] = [
         { link: t("home"), url: "" },
         { link: t("about"), url: "/about" },
-        { link: t("careers"), url: "/careers" },
+        { link: t("careers"), url: "https://careers.kinetixai.cn/careers" },
     ];
 
 

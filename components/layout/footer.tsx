@@ -37,7 +37,7 @@ export function Footer() {
         url: string;
     }[] = [
         { link: t("about"), url: "/about" },
-        { link: t("careers"), url: "/careers" },
+        { link: t("careers"), url: "https://careers.kinetixai.cn/careers" },
     ];
 
 
