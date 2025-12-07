@@ -13,15 +13,15 @@ export const companyListData: LanguageData = {
     zh: [
         {
             title: "自主设计双侧上肢外骨骼并实现量产落地",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-1.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
         },
         {
             title: "超百台L4自动驾驶矿卡商业化落地",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-2.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/Commercial%20deployment%20of%20100+%20L4%20autonomous%20mining%20trucks.mp4?updatedAt=1765104134431"
         },
         {
             title: "首个被自然杂志《Nature》报道的国产统一语言与视觉生成多模态大模型",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-3.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
         },
         {
             title: "全球首个端到端自动驾驶大模型，CVPR史上第一篇自动驾驶最佳论文",
@@ -33,25 +33,25 @@ export const companyListData: LanguageData = {
         },
         {
             title: "全球首个分层AI Agent框架，排名居GAIA开源模型第一",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-6.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/World's%20first%20hierarchical%20AI%20agent%20framework,%20achieving%20top%20ranking%20among%20open-source%20models%20on%20GAIA%20benchmark.jpg?updatedAt=1765103953481"
         },
         {
             title: "性能超过PI0.5 的统一VLA大模型",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-7.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
         }
     ],
     en: [
         {
             title: "Proprietary bilateral upper limb exoskeleton with mass production capabilities",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-1.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
         },
         {
             title: "Commercial deployment of 100+ L4 autonomous mining trucks",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-2.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/Commercial%20deployment%20of%20100+%20L4%20autonomous%20mining%20trucks.mp4?updatedAt=1765104134431"
         },
         {
             title: "First Chinese unified language-vision generative multimodal foundation model to receive Nature coverage",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-3.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
         },
         {
             title: "World's first end-to-end autonomous driving foundation model and the first-ever best paper on autonomous driving at the CVPR",
@@ -63,11 +63,11 @@ export const companyListData: LanguageData = {
         },
         {
             title: "World's first hierarchical AI agent framework, achieving top ranking among open-source models on GAIA benchmark",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-6.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/World's%20first%20hierarchical%20AI%20agent%20framework,%20achieving%20top%20ranking%20among%20open-source%20models%20on%20GAIA%20benchmark.jpg?updatedAt=1765103953481"
         },
         {
             title: "Unified Vision-Language-Action (VLA) foundation model outperforming Pi0.5",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-7.png"
+            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
         }
     ]
 };
