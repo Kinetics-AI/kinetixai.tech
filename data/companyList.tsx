@@ -12,12 +12,12 @@ type LanguageData = {
 export const companyListData: LanguageData = {
     zh: [
         {
-            title: "自主设计双侧上肢外骨骼并实现量产落地",
+            title: "自主设计兼量产医用上肢外骨骼",
             pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
         },
         {
             title: "超百台L4自动驾驶矿卡商业化落地",
-            pic: "https://ik.imagekit.io/uabcioduh/History/Commercial%20deployment%20of%20100+%20L4%20autonomous%20mining%20trucks.mp4?updatedAt=1765104134431"
+            pic: "https://ik.imagekit.io/uabcioduh/History/L4%E7%9F%BF%E5%8D%A1.gif"
         },
         {
             title: "首个被自然杂志《Nature》报道的国产统一语言与视觉生成多模态大模型",
@@ -42,12 +42,12 @@ export const companyListData: LanguageData = {
     ],
     en: [
         {
-            title: "Proprietary bilateral upper limb exoskeleton with mass production capabilities",
+            title: "Self-Designed and Mass-Produced Medical Upper-Limb Exoskeleton",
             pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
         },
         {
             title: "Commercial deployment of 100+ L4 autonomous mining trucks",
-            pic: "https://ik.imagekit.io/uabcioduh/History/Commercial%20deployment%20of%20100+%20L4%20autonomous%20mining%20trucks.mp4?updatedAt=1765104134431"
+            pic: "https://ik.imagekit.io/uabcioduh/History/L4%E7%9F%BF%E5%8D%A1.gif"
         },
         {
             title: "First Chinese unified language-vision generative multimodal foundation model to receive Nature coverage",

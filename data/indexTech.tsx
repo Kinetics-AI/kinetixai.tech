@@ -12,46 +12,46 @@ type LanguageData = {
 export const indexTechData: LanguageData = {
     zh: [
         {
-            title: "空间智能与世界模型",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/Spatial%20Intelligence.m4v/ik-video.mp4?updatedAt=1765024038935"
+            title: "空间智能",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E7%A9%BA%E9%97%B4%E6%84%9F%E7%9F%A5.gif"
         },
         {
             title: "高拟人全身运动控制",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%B5%B0%E7%8C%AB%E6%AD%A5.m4v/ik-video.mp4?updatedAt=1765110702206"
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%8C%AB%E6%AD%A5.gif"
         },
         {
-            title: "视觉语言触觉动作基础模型",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/VLA.mp4"
+            title: "全身视觉-语言-触觉-动作大模型",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/VLA.gif"
         },
         {
-            title: "虚实贯通数据生成",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%99%9A%E5%AE%9E%E8%B4%AF%E9%80%9A%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90.mp4?updatedAt=1765104378992"
+            title: "全身数采工厂",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E8%81%94%E9%80%9A.gif"
         },
         {
             title: "具身智能基础设施",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/High-quality%20and%20Low-cost%20Data%20Acquisition.mp4?updatedAt=1765011347798"
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0.gif"
         }
     ],
     en: [
         {
-            title: "World Model with Spatial Intelligence",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/Spatial%20Intelligence.m4v/ik-video.mp4?updatedAt=1765024038935"
+            title: "Spatial Intelligence",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E7%A9%BA%E9%97%B4%E6%84%9F%E7%9F%A5.gif"
         },
         {
-            title: "Whole Body Control",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%B5%B0%E7%8C%AB%E6%AD%A5.m4v/ik-video.mp4?updatedAt=1765110702206"
+            title: "Highly Human-Like Whole-Body Control",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%8C%AB%E6%AD%A5.gif"
         },
         {
-            title: "Multimodal Understanding and Generation",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/VLA.mp4"
+            title: "Whole-Body Foundation Model for Vision, Language, Touch, Action, and Emotion",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/VLA.gif"
         },
         {
-            title: "High-quality and Low-cost Data Acquisition",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%99%9A%E5%AE%9E%E8%B4%AF%E9%80%9A%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90.mp4?updatedAt=1765104378992"
+            title: "Whole-Body Data Acquisition Factory",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E8%81%94%E9%80%9A.gif"
         },
         {
-            title: "Closed-loop Infrastructure",
-            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/High-quality%20and%20Low-cost%20Data%20Acquisition.mp4?updatedAt=1765011347798"
+            title: "Advanced Embodied AI Infrastructure",
+            pic: "https://ik.imagekit.io/uabcioduh/Web%20Set/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0.gif"
         }
     ]
 };
