@@ -3,20 +3,22 @@
         "home": "Home",
         "careers": "Careers",
         "about": "About",
+        "product": "Product",
+        "research": "Research",
         "email": "Email",
         "subscribe": "Subscribe",
         "subscribed": "Subscribed",
         "footerRightTit": "Subscribe Kinetix AI",
         "footerRightP": "Get the latest information on Kinetix AI in real-time",
         "footerInputTxt": "your email address",
-        "footerCopyright": "Kinetix AI Kinetix AI © 2025"
+        "footerCopyright": "Copyright © 2025. Kinetix All rights reserved."
 
     },
     "Home": {
         "title": "Kinetix AI",
-        "indexBannerTit": "Join hands with <span>Kinetix AI</span> <p>to build a world where humanoid robots empower people in every scenario.</p>",
+        "indexBannerTit": "Building Ultra-Human-Like Robots<p>Emergent Intelligence, Movement, and Emotion</p>",
         "indexCompanyTit": "<span>Company</span> Profile",
-        "indexCompanyPara": "<p>KinetixAI is an AI Robotics company building World-leading VLA models and humanoid robots. We are based in Shenzhen , Kai's mission is to deploy humanoid robots on a large scale across all scenarios and ultimately help them evolve into silicon-based intelligence.</p>​",
+        "indexCompanyPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough “Latent World Model + Whole-Body” control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p>​",
         "indexCompanyBtn": "Learn more",
         "indexTechTit": "Core <span>Value</span>",
         "indexTechSTit": "From the 'Five Core Technologies' to' Silicon based Life '",
@@ -39,6 +41,12 @@
     "Company": {
         "bannerTit": "About Us",
         "introTit": "Company Profile",
-        "introPara": "<p>KinetixAI is an AI Robotics company on a mission to build a world where humanoid robots empower humanity across every scenario.</p><p>Based in Shenzhen, we're developing world-leading Vision-Language-Action (VLA) models and general-purpose humanoid robots. We believe that to truly reshape the future of work and life, humanoid robots must seamlessly integrate into real-world environments and continuously evolve alongside us—ultimately advancing into silicon-based intelligence that enhances human capabilities at scale.</p>​"
-    }
+        "introPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough “Latent World Model + Whole-Body” control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p><p>Our core team is laser-focused on robotics, autonomous driving, and AI. With top-notch engineering skills, we turn groundbreaking ideas into real-world products, shaping the future of physical AI agents. We've brought together a dozen world-class AI scientists whose work has been cited more than a few hundred thousand times on Google Scholar—proof of our global leadership in algorithm innovation. </p>​",
+        "teamTit": "Our Stories"
+    },
+    "Research": {
+        "label": "Research",
+        "para": "<p>Exploring the technological breakthroughs and practical engineering behind the DYNA basic model</p><p>Built specifically for large-scale autonomous operation</p>"
+    },
+    "ResearchDetail1": {}
 }

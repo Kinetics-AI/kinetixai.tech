@@ -4,6 +4,7 @@ import { useParams, usePathname  } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 import Link from "next/link"
+import Image from 'next/image'
 
 
 import { LanguageDrawer } from "./international"
@@ -25,77 +26,58 @@ export function Header() {
     const links: {
         link: string;
         url: string;
+        isExternal?: boolean;
     }[] = [
         { link: t("home"), url: "" },
         { link: t("about"), url: "/about" },
-        { link: t("careers"), url: "https://careers.kinetixai.cn/careers" },
+        { link: t("product"), url: "/product" },
+        { link: t("research"), url: "/research" },
+        { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
     ];
 
 
-    const isAboutPage = pathname?.includes('/about');
-    const [isOpen, setIsOpen] = useState(false);
-  
-    // 点击外部区域关闭菜单
-    useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (isOpen && e.target instanceof Element && e.target.classList.contains('fixed-menu')) {
-            setIsOpen(false);
-            }
-        };
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, [isOpen]);
-  
-    // 阻止背景滚动当菜单打开时
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'inherit';
-        }        
-        return () => {
-            document.body.style.overflow = 'inherit';
-        };
-    }, [isOpen]);
 
 
     return (
-        <header className="header">
-            <FadeIn>
-                <div className={`innerblock ${isAboutPage ? 'black' : ''}`}>
-                    <div></div>
-                    <div className="ope">
-                        <div className="global">
-                            <div className="show"></div>
-                            <div className="hide">
-                                <LanguageDrawer/>
+        <FadeIn className="header">
+            <div className="innerblock">
+                <Link href={`/${locale}`} className="logo">
+                    <Image
+                        src="https://assets.kinetixai.tech/kinetixai/logo-1.svg"
+                        alt=""
+                        width={160}
+                        height={61}
+                        priority
+                    />
+                </Link>
+                <div className="ope">
+                    <div className="global">
+                        <div className="show"></div>
+                        <div className="hide">
+                            <LanguageDrawer/>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="menubtn">
+                        <div className="btn"></div>
+                        <div className="menu-box">
+                            <div className="items">                        
+                                {links.map(({link, url, isExternal}, idx) => (
+                                    isExternal ? (
+                                        <Link href={url} key={idx} target="_blank">
+                                            {link}
+                                        </Link>
+                                    ) : (
+                                        <Link href={`/${locale}${url}`} key={idx}>
+                                            {link}
+                                        </Link>
+                                    )
+                                ))}
                             </div>
                         </div>
-                        <div className="line"></div>
-                        <div
-                            className="menubtn"
-                            onClick={() => setIsOpen(true)}
-                        >
-                        </div>
-                    </div>
-                </div>
-            </FadeIn>
-            <div className={`fixed-menu ${isOpen ? 'active' : ''}`}>
-                <div className="slidebar">
-                    <div
-                        className="close"
-                        onClick={() => setIsOpen(false)}
-                    >
-                    </div>
-                    <div className="items">                        
-                        {links.map(({link, url}, idx) => (
-                            <Link href={`/${locale}${url}`} key={idx} onClick={() => setIsOpen(false)}>
-                                {link}
-                            </Link>
-                        ))}
                     </div>
                 </div>
             </div>
-        </header>
+        </FadeIn>
     )
 }

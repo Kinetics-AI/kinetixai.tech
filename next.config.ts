@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
                 hostname: 'img.shields.io',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'ik.imagekit.io',
+                pathname: '/**',
+            },
         ],
         dangerouslyAllowSVG: true,
     },

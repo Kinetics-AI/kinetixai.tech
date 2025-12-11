@@ -26,15 +26,15 @@ export const indexSceneData: LanguageData = {
     ],
     en: [
         {
-            title: "Home: Your all-encompassing home assistant, from the living room and guest rooms to the kitchen",
+            title: "Family: Living room, Guest Room or Kitchen, Kai-bot help you anywhere",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-1.jpg"
         },
         {
-            title: "Industrial applications: From sorting and handling to tightening screws, all-around workers are now online",
+            title: "Factory:  Sorting , transporting or screwing, Kai-bot do all",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-2.jpg"
         },
         {
-            title: "Commercial use: From restaurant kitchens and guest room cleaning to store restocking, it can be done anywhere",
+            title: "Business: Restaurants,  hotels and shops, Kai-bot appear in every scenario",
             pic: "https://assets.kinetixai.tech/kinetixai/index/img-2-3.jpg"
         }
     ]

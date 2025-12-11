@@ -35,9 +35,12 @@ export function Footer() {
     const links: {
         link: string;
         url: string;
+        isExternal?: boolean;
     }[] = [
         { link: t("about"), url: "/about" },
-        { link: t("careers"), url: "https://careers.kinetixai.cn/careers" },
+        { link: t("product"), url: "/product" },
+        { link: t("research"), url: "/research" },
+        { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
     ];
 
 
@@ -49,17 +52,23 @@ export function Footer() {
                 <div className="top-block">
                     <div className="left-box">
                         <img 
-                            src="https://assets.kinetixai.tech/kinetixai/logo-white.png" 
+                            src="https://assets.kinetixai.tech/kinetixai/logo-1.svg"
                             alt=""
                         />
                     </div>
                     <div className="right-box">
-                        <div className="links">
-                            {links.map(({link, url}, idx) => (
-                                <Link href={`/${locale}${url}`} key={idx}>
-                                    {link}
-                                </Link>
-                            ))}
+                        <div className="links">                      
+                                {links.map(({link, url, isExternal}, idx) => (
+                                    isExternal ? (
+                                        <Link href={url} key={idx} target="_blank">
+                                            {link}
+                                        </Link>
+                                    ) : (
+                                        <Link href={`/${locale}${url}`} key={idx}>
+                                            {link}
+                                        </Link>
+                                    )
+                                ))}
                         </div>
                         <div className="info">
                             <div className="txtbox">

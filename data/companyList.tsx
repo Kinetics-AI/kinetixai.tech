@@ -1,5 +1,6 @@
 
 export interface companyList {
+    year: string;
     title: string;
     pic: string;
 }
@@ -12,62 +13,76 @@ type LanguageData = {
 export const companyListData: LanguageData = {
     zh: [
         {
+            year: "2023",
             title: "自主设计兼量产医用上肢外骨骼",
-            pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-1.png"
         },
         {
+            year: "2023",
+            title: "全球首个端到端自动驾驶大模型</br>联合创始人HY说：“这是CVPR 30年史上第一篇自动驾驶最佳论文。”",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-2.png"
+        },
+        {
+            year: "2024",
             title: "超百台L4自动驾驶矿卡商业化落地",
-            pic: "https://ik.imagekit.io/uabcioduh/History/L4%E7%9F%BF%E5%8D%A1.gif"
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-3.gif"
         },
         {
-            title: "首个被自然杂志《Nature》报道的国产统一语言与视觉生成多模态大模型",
-            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
+            year: "2024",
+            title: "入选Morgan Stanley《Humanoid 100》的高拟人人形机器人",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-4.gif"
         },
         {
-            title: "全球首个端到端自动驾驶大模型，CVPR史上第一篇自动驾驶最佳论文",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-4.png"
+            year: "2025",
+            title: "国产统一语言与视觉生成多模态大模型</br>联合创始人P笑称：“自然杂志《Nature》报道这是震撼全球的中国AI之一。”",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-5.png"
         },
         {
-            title: "入选Morgan Stanley《Humanoid 100》的高拟人人形机器人产品",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-5.png"
+            year: "2025",
+            title: "全球首个开源分层AI Agent框架",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-6.png"
         },
         {
-            title: "全球首个分层AI Agent框架，排名居GAIA开源模型第一",
-            pic: "https://ik.imagekit.io/uabcioduh/History/World's%20first%20hierarchical%20AI%20agent%20framework,%20achieving%20top%20ranking%20among%20open-source%20models%20on%20GAIA%20benchmark.jpg?updatedAt=1765103953481"
-        },
-        {
-            title: "性能超过PI0.5 的统一VLA大模型",
-            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
+            year: "2025",
+            title: "性能超过PI0.5的跨本体VLA大模型",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-7.png"
         }
     ],
     en: [
         {
+            year: "2023",
             title: "Self-Designed and Mass-Produced Medical Upper-Limb Exoskeleton",
-            pic: "https://ik.imagekit.io/uabcioduh/History/HSR.jpg?updatedAt=1765103586307"
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-1.png"
         },
         {
-            title: "Commercial deployment of 100+ L4 autonomous mining trucks",
-            pic: "https://ik.imagekit.io/uabcioduh/History/L4%E7%9F%BF%E5%8D%A1.gif"
+            year: "2023",
+            title: "World’s First End-to-End Autonomous Driving Foundation Model</br>Co-founder HY stated, “This is the first Best Paper on Autonomous Driving in the 30-year history of CVPR.”",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-2.png"
         },
         {
-            title: "First Chinese unified language-vision generative multimodal foundation model to receive Nature coverage",
-            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
+            year: "2024",
+            title: "Commercialized over 100 L4 autonomous mining trucks—ushering in a new era of intelligent automation in heavy industry.",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-3.gif"
         },
         {
-            title: "World's first end-to-end autonomous driving foundation model and the first-ever best paper on autonomous driving at the CVPR",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-4.png"
+            year: "2024",
+            title: "Highly humanlike humanoid robot selected for Morgan Stanley's \"Humanoid 100\" list",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-4.gif"
         },
         {
-            title: "Highly humanoid robotics platform selected for Morgan Stanley's ‘Humanoid 100’ list",
-            pic: "https://assets.kinetixai.tech/kinetixai/company/img-1-5.png"
+            year: "2025",
+            title: "The Unified Language-Vision Understanding and Generation Foundation Model received more than 18k stars on GitHub.</br>Co-founder P remarked, \"Nature magazine reported that this is one of China's AIs that shocked the world.\"",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-5.png"
         },
         {
-            title: "World's first hierarchical AI agent framework, achieving top ranking among open-source models on GAIA benchmark",
-            pic: "https://ik.imagekit.io/uabcioduh/History/World's%20first%20hierarchical%20AI%20agent%20framework,%20achieving%20top%20ranking%20among%20open-source%20models%20on%20GAIA%20benchmark.jpg?updatedAt=1765103953481"
+            year: "2025",
+            title: "The world's first hierarchical AI agent ranked first among open-source models on the GAIA benchmark and received more than 18k GitHub stars.",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-6.png"
         },
         {
-            title: "Unified Vision-Language-Action (VLA) foundation model outperforming Pi0.5",
-            pic: "https://ik.imagekit.io/uabcioduh/History/First%20Chinese%20unified%20language-vision%20generative%20multimodal%20foundation%20model%20to%20receive%20Nature%20coverage.jpg?updatedAt=1765104071520"
+            year: "2025",
+            title: "Unified Vision-Language-Action (VLA) foundation model outperforming PI0.5",
+            pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-7.png"
         }
     ]
 };
