@@ -37,44 +37,58 @@ export function Header() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     const menuRef = useRef<HTMLDivElement>(null);
 
-    // 处理鼠标进入menubtn
+    // 监听窗口大小变化
+    useEffect(() => {
+        // 初始化检测
+        const checkIsMobile = () => {
+            setIsMobile(window.innerWidth < 1025);
+        };
+        checkIsMobile();
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', checkIsMobile);
+
+        // 清理函数
+        return () => window.removeEventListener('resize', checkIsMobile);
+    }, []);
+
+    // 鼠标进入menubtn
     const handleMouseEnter = () => {
+        if (isMobile) return;
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
         }
         setIsHovered(true);
     };
 
-    // 处理鼠标离开menubtn
+    // 鼠标离开menubtn
     const handleMouseLeave = () => {
+        if (isMobile) return;
         timeoutRef.current = setTimeout(() => {
             setIsHovered(false);
-        }, 200); // 200ms延迟，避免鼠标移动到菜单时意外关闭
+        }, 200);
     };
 
-    // 点击菜单按钮
-    const handleMenuButtonClick = () => {
-        setIsOpen(!isOpen);
-        setIsHovered(false); // 点击时关闭hover状态
-    };
-
-    // 点击菜单项
-    const handleMenuItemClick = () => {
+    // 点击菜单链接关闭菜单
+    const handleLinkClick = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
         setIsOpen(false);
         setIsHovered(false);
     };
 
-    // 清理定时器
-    useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, []);
+    // 点击菜单按钮切换展开/收起
+    const handleMenuBtnClick = () => {
+        if (!isMobile) return;
+        setIsOpen(prev => !prev);
+        setIsHovered(false);
+    };
+
   
 
 
@@ -104,18 +118,18 @@ export function Header() {
                         className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        onClick={handleMenuButtonClick}
+                        
                     >
-                        <div className="btn"></div>
+                        <div className="btn" onClick={handleMenuBtnClick}></div>
                         <div className="menu-box">
                             <div className="items">                        
                                 {links.map(({link, url, isExternal}, idx) => (
                                     isExternal ? (
-                                        <Link href={url} key={idx} target="_blank">
+                                        <Link href={url} key={idx} target="_blank" onClick={handleLinkClick}>
                                             {link}
                                         </Link>
                                     ) : (
-                                        <Link href={`/${locale}${url}`} key={idx} onClick={handleMenuItemClick}>
+                                        <Link href={`/${locale}${url}`} key={idx} onClick={handleLinkClick}>
                                             {link}
                                         </Link>
                                     )
