@@ -76,7 +76,7 @@ export default function Page(){
                 {isDesktop ? (
                     <div className="video-box">
                         <video autoPlay muted loop playsInline>
-                            <source src="https://assets.kinetixai.cn/AMS/TC251212.mp4" type="video/mp4" />
+                            <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
                         </video>
                     </div>
                 ) : (

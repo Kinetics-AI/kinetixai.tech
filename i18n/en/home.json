@@ -40,7 +40,7 @@
     },
     "Company": {
         "bannerTit": "About",
-        "introTit": "Company Profile",
+        "introTit": "Company",
         "introPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough \"Latent World Model + Whole-Body\" control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p><p>Our core team is laser-focused on robotics, autonomous driving, and AI. With top-notch engineering skills, we turn groundbreaking ideas into real-world products, shaping the future of physical AI agents. We've brought together a dozen world-class AI scientists whose work has been cited more than a few hundred thousand times on Google Scholar—proof of our global leadership in algorithm innovation. </p>​",
         "teamTit": "Our Stories"
     },
