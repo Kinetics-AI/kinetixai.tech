@@ -101,7 +101,7 @@ export const CompanyList = () => {
                                 <FadeInUp className="inner">
                                     <div className="txt-box">
                                         <div className="dot"><i></i></div>
-                                        <div className="year">{year}</div>
+                                        <div className="year" dangerouslySetInnerHTML={{ __html: year }}></div>
                                         <div className="tit" dangerouslySetInnerHTML={{ __html: title }}></div>
                                     </div>
                                     <div className="img-box">

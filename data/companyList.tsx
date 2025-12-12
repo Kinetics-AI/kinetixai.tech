@@ -13,7 +13,7 @@ type LanguageData = {
 export const companyListData: LanguageData = {
     zh: [
         {
-            year: "2023",
+            year: "Beginnings</br>2023",
             title: "自主设计兼量产医用上肢外骨骼",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-1.png"
         },
@@ -50,7 +50,7 @@ export const companyListData: LanguageData = {
     ],
     en: [
         {
-            year: "2023",
+            year: "Beginnings</br>2023",
             title: "Self-Designed and Mass-Produced Medical Upper-Limb Exoskeleton",
             pic: "https://assets.kinetixai.tech/kinetixai/company/img-2-1.png"
         },

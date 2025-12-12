@@ -17,10 +17,10 @@
     "Home": {
         "title": "Kinetix AI",
         "indexBannerTit": "Building Ultra-Human-Like Robots<p>Emergent Intelligence, Movement, and Emotion</p>",
-        "indexCompanyTit": "<span>Company</span> Profile",
-        "indexCompanyPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough “Latent World Model + Whole-Body” control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p>​",
+        "indexCompanyTit": "<span>Company</span>",
+        "indexCompanyPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough \"Latent World Model + Whole-Body\" control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p>​",
         "indexCompanyBtn": "Learn more",
-        "indexTechTit": "Core <span>Value</span>",
+        "indexTechTit": "Core <span>Technolgies</span>",
         "indexTechSTit": "From the 'Five Core Technologies' to' Silicon based Life '",
         "indexSceneTit": "Core <span>scenario</span>",
         "indexNewsTit": "<span>News</span> center",
@@ -39,14 +39,45 @@
         "loading": "Loading"
     },
     "Company": {
-        "bannerTit": "About Us",
+        "bannerTit": "About",
         "introTit": "Company Profile",
-        "introPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough “Latent World Model + Whole-Body” control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p><p>Our core team is laser-focused on robotics, autonomous driving, and AI. With top-notch engineering skills, we turn groundbreaking ideas into real-world products, shaping the future of physical AI agents. We've brought together a dozen world-class AI scientists whose work has been cited more than a few hundred thousand times on Google Scholar—proof of our global leadership in algorithm innovation. </p>​",
+        "introPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough \"Latent World Model + Whole-Body\" control system gives our humanoid robots a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we’re creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what’s possible with technology.</p><p>Our core team is laser-focused on robotics, autonomous driving, and AI. With top-notch engineering skills, we turn groundbreaking ideas into real-world products, shaping the future of physical AI agents. We've brought together a dozen world-class AI scientists whose work has been cited more than a few hundred thousand times on Google Scholar—proof of our global leadership in algorithm innovation. </p>​",
         "teamTit": "Our Stories"
     },
     "Research": {
         "label": "Research",
         "para": "<p>Exploring the technological breakthroughs and practical engineering behind the DYNA basic model</p><p>Built specifically for large-scale autonomous operation</p>"
     },
-    "ResearchDetail1": {}
+    "ResearchDetail1": {
+        "label": "Research",
+        "titleTips": "AMS",
+        "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+        "source": "<p>Yixuan Pan<sup>1*</sup>, Ruoyi Qiao<sup>4*</sup>, Li Chen<sup>1</sup>, Kashyap Chitta<sup>2</sup>, Liang Pan<sup>1</sup>, Haoguang Mai<sup>1</sup>, Qingwen Bu<sup>1</sup>, Cunyuan Zheng<sup>4</sup>, Hao Zhao<sup>3</sup>, Ping Luo<sup>1</sup>, Hongyang Li<sup>1</sup></p><p><sup>1</sup>The University of Hong Kong, <sup>2</sup>NVIDIA, <sup>3</sup>Tsinghua University, <sup>4</sup>Individual Contributor <sup>*</sup>Equal Contribution</p>",
+        "share1": "arXiv",
+        "share2": "YouTube",
+        "share3": "Code (Est. Feb 2026) ",
+        "copy": "Share",
+        "copysuccess": "The page link has been copied",
+        "paraTitle1": "Extreme Balance Motions",
+        "paraTitle2": "Dynamic Motions",
+        "paraTitle3": "IMU-based Teleoperation",
+        "paraTitle4": "RGB-based Real-time Teleoperation",
+        "paraTitle5": "Abstract",
+        "paraTitle6": "Overview of AMS",
+        "paraTitle7": "Citation",
+        "para1Subtitle1": "Ip Man's Squat (Unseen Data) - (叶问蹲)",
+        "para1Subtitle2": "Single-Leg Balance Standing (Randomly Generated)",
+        "para2ItemTitle1": "Running",
+        "para2ItemTitle2": "Basketball Dribbling",
+        "para2ItemTitle3": "Waist Twists (Unseen Data from Video)",
+        "para2ItemTitle4": "Lunge (Unseen Data from Video)",
+        "para2ItemTitle5": "Swing and Squat (Unseen Data from Video)",
+        "para2ItemTitle6": "Prayer Squat (Unseen Data from Video)",
+        "para3Subtitle1": "(No Optical MoCap System in Use, 1x)",
+        "para3Item1Title1": "Kungfu",
+        "para3Item1Title2": "Football",
+        "para3Subtitle2": "Multi-robots Teleoperation",
+        "para5Artical": "<p>Humanoid robots are envisioned to perform a wide range of tasks in human-centered environments, requiring controllers that combine agility with robust balance. Recent advances in locomotion and whole-body tracking have enabled impressive progress in either agile dynamic skills or stability-critical behaviors, but existing methods remain specialized, focusing on one capability while compromising the other.</p><p>In this work, we introduce AMS (Agility Meets Stability), the first framework that unifies both dynamic motion tracking and extreme balance maintenance in a single policy. Our key insight is to leverage heterogeneous data sources: human motion capture datasets that provide rich, agile behaviors, and physically constrained synthetic balance motions that capture stability configurations. To reconcile the divergent optimization goals of agility and stability, we design a hybrid reward scheme that applies general tracking objectives across all data while injecting balance-specific priors only into synthetic motions. Further, an adaptive learning strategy with performance-driven sampling and motion-specific reward shaping enables efficient training across diverse motion distributions.</p><p>We validate AMS extensively in simulation and on a real Unitree G1 humanoid. Experiments demonstrate that a single policy can execute agile skills such as dancing and running, while also performing zero-shot extreme balance motions like Ip Man's Squat, highlighting AMS as a versatile control paradigm for future humanoid applications.</p>",
+        "para6Artical": "<p>(a) The general whole-body tracking pipeline retargets human MoCap data to reference motions and adopts a teacher-student-based strategy for reinforcement learning To address data limitations and conflicting optimization objectives, AMS introduces three key components as follows. (b) Synthetic balance data is generated to complement human MoCap data and address data limitations. (c) Adaptive learning is employed with adaptive sampling and reward shaping based on individual motion performance. (d) Hybrid rewards are designed with general rewards for all motions and balance prior rewards exclusively for synthetic motions.</p>"
+    }
 }

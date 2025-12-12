@@ -1,7 +1,7 @@
 "use client"
 import {useTranslations} from "next-intl";
 import { useParams, usePathname  } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import Link from "next/link"
 import Image from 'next/image'
@@ -35,6 +35,47 @@ export function Header() {
         { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
     ];
 
+    const [isOpen, setIsOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    // 处理鼠标进入menubtn
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        setIsHovered(true);
+    };
+
+    // 处理鼠标离开menubtn
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setIsHovered(false);
+        }, 200); // 200ms延迟，避免鼠标移动到菜单时意外关闭
+    };
+
+    // 点击菜单按钮
+    const handleMenuButtonClick = () => {
+        setIsOpen(!isOpen);
+        setIsHovered(false); // 点击时关闭hover状态
+    };
+
+    // 点击菜单项
+    const handleMenuItemClick = () => {
+        setIsOpen(false);
+        setIsHovered(false);
+    };
+
+    // 清理定时器
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+  
 
 
 
@@ -58,7 +99,13 @@ export function Header() {
                         </div>
                     </div>
                     <div className="line"></div>
-                    <div className="menubtn">
+                    <div                    
+                        ref={menuRef}
+                        className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleMenuButtonClick}
+                    >
                         <div className="btn"></div>
                         <div className="menu-box">
                             <div className="items">                        
@@ -68,7 +115,7 @@ export function Header() {
                                             {link}
                                         </Link>
                                     ) : (
-                                        <Link href={`/${locale}${url}`} key={idx}>
+                                        <Link href={`/${locale}${url}`} key={idx} onClick={handleMenuItemClick}>
                                             {link}
                                         </Link>
                                     )
