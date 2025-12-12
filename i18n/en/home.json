@@ -46,13 +46,12 @@
     },
     "Research": {
         "label": "Research",
-        "para": "<p>Exploring the technological breakthroughs and practical engineering behind the DYNA basic model</p><p>Built specifically for large-scale autonomous operation</p>"
+        "para": "<p>Dive into the tech and engineering that make embodied intelligence actually work in the real world.Built for autonomous Ultra-Human-Like Robots.</p>"
     },
     "ResearchDetail1": {
         "label": "Research",
         "titleTips": "AMS",
         "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
-        "source": "<p>Yixuan Pan<sup>1*</sup>, Ruoyi Qiao<sup>4*</sup>, Li Chen<sup>1</sup>, Kashyap Chitta<sup>2</sup>, Liang Pan<sup>1</sup>, Haoguang Mai<sup>1</sup>, Qingwen Bu<sup>1</sup>, Cunyuan Zheng<sup>4</sup>, Hao Zhao<sup>3</sup>, Ping Luo<sup>1</sup>, Hongyang Li<sup>1</sup></p><p><sup>1</sup>The University of Hong Kong, <sup>2</sup>NVIDIA, <sup>3</sup>Tsinghua University, <sup>4</sup>Individual Contributor <sup>*</sup>Equal Contribution</p>",
         "share1": "arXiv",
         "share2": "YouTube",
         "share3": "Code (Est. Feb 2026) ",

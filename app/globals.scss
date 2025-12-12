@@ -603,6 +603,7 @@ img {
 }
 .index-s3{    
 	height: 300vh;
+    display: none;
 	.sticky{
 		position: sticky;
 		top: 0;
@@ -697,6 +698,7 @@ img {
 	}
 }
 .m-index-s3{
+    display: none;
     .label{
         font-size: 0.6rem;
         color: #fff;

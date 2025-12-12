@@ -29,9 +29,9 @@ export function Header() {
         isExternal?: boolean;
     }[] = [
         { link: t("home"), url: "" },
-        { link: t("about"), url: "/about" },
         { link: t("product"), url: "/product" },
         { link: t("research"), url: "/research" },
+        { link: t("about"), url: "/about" },
         { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
     ];
 

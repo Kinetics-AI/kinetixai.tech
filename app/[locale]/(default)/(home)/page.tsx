@@ -73,23 +73,11 @@ export default function Page(){
     return (
         <div className="index-main">
             <div className="index-s1">
-                {isDesktop ? (
-                    <div className="video-box">
-                        <video autoPlay muted loop playsInline>
-                            <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                ) : (
-                    <div className="img-box">
-                        <Image
-                            src="https://assets.kinetixai.tech/kinetixai/index/banner.jpg"
-                            alt=""
-                            width={800}
-                            height={800}
-                            priority
-                        />
-                    </div>
-                )}
+                <div className="video-box">
+                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.tech/kinetixai/index/banner.jpg">
+                        <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                    </video>
+                </div>
                 <div className="txt-box">
                     <div className="wrap-s">
                         <FadeInUp className="tit">

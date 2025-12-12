@@ -176,12 +176,6 @@ export default function ResearchDetail1Page(){
                     <div className="title">
                         <span>{t('titleTips')}</span>{t('title')}
                     </div>
-                    <div className="source">
-                        {t.rich('source', {
-                            sup: (chunks) => <sup>{chunks}</sup>,
-                            p: (chunks) => <p>{chunks}</p>
-                        })}
-                    </div>
                     <div className="ope">                        
                         <Link href="https://arxiv.org/abs/2511.17373" target='_blank'>
                             {t('share1')}

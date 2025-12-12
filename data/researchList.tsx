@@ -15,18 +15,18 @@ type LanguageData = {
 export const researchListData: LanguageData = {
     zh: [
         {
-            tips: "DYNA-1 模型",
-            title: "DYNA-1 基于先进的视觉-语言-动作系统构建，并在真实环境中直接进行训练——不依赖任何模拟捷径。",
-            date: "2025年10月15日",
+            tips: "AMS",
+            title: "统一人形机器人全身控制框架，首次实现在单一策略中同时具备动态运动跟踪和极限平衡控制能力。",
+            date: "2025年11月24日",
             pic: "https://assets.kinetixai.tech/kinetixai/research/img-1-1.jpg",
             url: "research/detail-1"
         }
     ],
     en: [
         {
-            tips: "DYNA-1 model",
-            title: "DYNA-1 Built on advanced visual language action systems and trained directly in real environments without relying on any simulation shortcuts.",
-            date: "2025-10-15",
+            tips: "AMS",
+            title: "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+            date: "Nov 24 '2025",
             pic: "https://assets.kinetixai.tech/kinetixai/research/img-1-1.jpg",
             url: "research/detail-1"
         }

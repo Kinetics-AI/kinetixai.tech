@@ -46,13 +46,12 @@
     },
     "Research": {
         "label": "研究",
-        "para": "<p>探索 DYNA 基础模型背后的技术突破和实际工程</p><p>专为大规模自主运行而构建</p>"
+        "para": "<p>探索具身智能落地所需的每一个技术和工程细节</p><p>真正打造超拟人人形机器人</p>"
     },
     "ResearchDetail1": {
         "label": "Research",
         "titleTips": "AMS",
         "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
-        "source": "<p>Yixuan Pan<sup>1*</sup>, Ruoyi Qiao<sup>4*</sup>, Li Chen<sup>1</sup>, Kashyap Chitta<sup>2</sup>, Liang Pan<sup>1</sup>, Haoguang Mai<sup>1</sup>, Qingwen Bu<sup>1</sup>, Cunyuan Zheng<sup>4</sup>, Hao Zhao<sup>3</sup>, Ping Luo<sup>1</sup>, Hongyang Li<sup>1</sup></p><p><sup>1</sup>The University of Hong Kong, <sup>2</sup>NVIDIA, <sup>3</sup>Tsinghua University, <sup>4</sup>Individual Contributor <sup>*</sup>Equal Contribution</p>",
         "share1": "arXiv",
         "share2": "YouTube",
         "share3": "Code (Est. Feb 2026) ",
