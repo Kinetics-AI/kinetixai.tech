@@ -127,7 +127,7 @@ export default function Page(){
                 ) : (
                 <IndexSceneItemListMobile />
             )}
-            <div className="index-s4">
+            {/* <div className="index-s4">
                 <div className="wrap-s">
                     <FadeInUp className="label">
                         {t.rich('indexNewsTit', {
@@ -141,7 +141,7 @@ export default function Page(){
                         </Link>
                     </FadeInUp>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )
