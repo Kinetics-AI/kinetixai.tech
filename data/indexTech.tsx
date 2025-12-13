@@ -29,7 +29,7 @@ export const indexTechData: LanguageData = {
         },
         {
             title: "具身智能基础设施",
-            pic: "https://assets.kinetixai.cn/20251211/Advanced%20Embodied%20AI%20Infrastructure.gif"
+            pic: "https://assets.kinetixai.cn/kinetixai/1f49e3b8cd9b2f34ae1dba3d35210e5d.png"
         }
     ],
     en: [
@@ -51,7 +51,7 @@ export const indexTechData: LanguageData = {
         },
         {
             title: "Advanced Embodied AI Infrastructure",
-            pic: "https://assets.kinetixai.cn/20251211/Advanced%20Embodied%20AI%20Infrastructure.gif"
+            pic: "https://assets.kinetixai.cn/kinetixai/1f49e3b8cd9b2f34ae1dba3d35210e5d.png"
         }
     ]
 };
