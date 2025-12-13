@@ -74,7 +74,7 @@ export default function Page(){
         <div className="index-main">
             <div className="index-s1">
                 <div className="video-box">
-                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.tech/kinetixai/index/banner-20251212.jpg">
+                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
                         <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
                     </video>
                 </div>
@@ -113,7 +113,7 @@ export default function Page(){
                     <div className="img-box" ref={sectionRef}>
                         <Image
                             ref={boxRef} 
-                            src="https://assets.kinetixai.tech/kinetixai/index/img-1.png"
+                            src="https://assets.kinetixai.cn/kinetixai/index/img-1.png"
                             alt=""
                             width={800}
                             height={800}

@@ -190,6 +190,9 @@ export default function ResearchDetail1Page(){
                             {t('copy')}
                         </div>
                     </div>
+                    <div className="source">                        
+                            {t('date')}
+                    </div>
                     <div className="video-box">
                         <video
                             autoPlay 
@@ -199,9 +202,9 @@ export default function ResearchDetail1Page(){
                             playsInline
                             x5-playsinline=""
                             x5-video-player-type="h5" 
-                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-1.jpg"
+                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-1.jpg"
                         >
-                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-1.mp4" type="video/mp4" />
+                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-1.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>
@@ -253,9 +256,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-2-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-2-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-2-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-2-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -271,9 +274,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-2-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-2-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-2-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-2-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -305,9 +308,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-3-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-3-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-3-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-3-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -323,9 +326,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-3-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-3-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-3-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-3-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -359,9 +362,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -380,9 +383,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -401,9 +404,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-3.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-3.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-3.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-3.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -422,9 +425,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-4.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-4.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-4.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-4.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -443,9 +446,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-5.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-5.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-5.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-5.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -464,9 +467,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-6.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-6.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-4-6.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-4-6.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -506,9 +509,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-5-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-5-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-5-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-5-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -527,9 +530,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-5-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-5-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-5-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-5-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                     <div className="txt-box">
@@ -564,9 +567,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-6-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-6-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-6-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-6-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -582,9 +585,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-6-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-6-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-6-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-6-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -618,9 +621,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-7-1.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-7-1.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-7-1.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-7-1.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -636,9 +639,9 @@ export default function ResearchDetail1Page(){
                                                             playsInline
                                                             x5-playsinline=""
                                                             x5-video-player-type="h5" 
-                                                            poster="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-7-2.jpg"
+                                                            poster="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-7-2.jpg"
                                                         >
-                                                            <source src="https://assets.kinetixai.tech/kinetixai/research/detail-1/video-7-2.mp4" type="video/mp4" />
+                                                            <source src="https://assets.kinetixai.cn/kinetixai/research/detail-1/video-7-2.mp4" type="video/mp4" />
                                                         </video>
                                                     </div>
                                                 </div>
@@ -663,7 +666,7 @@ export default function ResearchDetail1Page(){
                             </div>
                             <div className="img-box">
                                 <Image
-                                    src="https://assets.kinetixai.tech/kinetixai/research/detail-1/img-1.png"
+                                    src="https://assets.kinetixai.cn/kinetixai/research/detail-1/img-1.png"
                                     alt=""
                                     width={1440}
                                     height={515}

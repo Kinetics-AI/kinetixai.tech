@@ -16,8 +16,8 @@ export default function ProductPage(){
         <div className="product-main">
             <div className="inner-s5">
                 <div className="video-box">
-                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.tech/kinetixai/product/video.jpg">
-                        <source src="https://assets.kinetixai.tech/kinetixai/product/video.mp4" type="video/mp4" />
+                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/product/video.jpg">
+                        <source src="https://assets.kinetixai.cn/kinetixai/product/video.mp4" type="video/mp4" />
                     </video>
                 </div>
                 <div className="txt-box">

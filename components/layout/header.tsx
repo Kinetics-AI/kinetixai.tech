@@ -98,7 +98,7 @@ export function Header() {
             <div className="innerblock">
                 <Link href={`/${locale}`} className="logo">
                     <Image
-                        src="https://assets.kinetixai.tech/kinetixai/logo-1.svg"
+                        src="https://assets.kinetixai.cn/kinetixai/logo-1.svg"
                         alt=""
                         width={160}
                         height={61}

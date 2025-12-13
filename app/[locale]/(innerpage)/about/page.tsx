@@ -24,7 +24,7 @@ export default function AboutPage(){
             <div className="inner-s2">
                 <div className="img-box">
                     <Image
-                        src="https://assets.kinetixai.tech/kinetixai/company/banner-1.png"
+                        src="https://assets.kinetixai.cn/kinetixai/company/banner-1.png"
                         alt=""
                         width={1920}
                         height={1080}
@@ -54,7 +54,7 @@ export default function AboutPage(){
                     </div>
                     <div className="img-box">
                         <Image
-                            src="https://assets.kinetixai.tech/kinetixai/index/img-1.png"
+                            src="https://assets.kinetixai.cn/kinetixai/index/img-1.png"
                             alt=""
                             width={800}
                             height={800}
