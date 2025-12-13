@@ -44,27 +44,27 @@ export function Footer() {
         { 
             tit: "X",
             url: "https://x.com/Kai_Robotics",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-1.svg"
+            icon: "https://assets.kinetixai.cn/kinetixai/share-1-en.svg"
         },
         { 
             tit: "YouTube",
             url: "https://www.youtube.com/@Kai_Robotics",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-2.svg"
+            icon: "https://assets.kinetixai.cn/kinetixai/share-2-en.svg"
         },
         {
             tit: "Linkedin",
             url: "https://www.linkedin.com/in/%E5%8A%A8%E5%8A%9B-%E8%B6%85%E7%BB%B4-a0260538a/",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-3.svg"
+            icon: "https://assets.kinetixai.cn/kinetixai/share-3-en.svg"
         },
         {
             tit: "Instagram",
             url: "https://www.instagram.com/kai_robotics/",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-4.svg"
+            icon: "https://assets.kinetixai.cn/kinetixai/share-4-en.svg"
         },
         {
             tit: "TikTok",
             url: "https://www.tiktok.com/@kai_robotics",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-5.svg"
+            icon: "https://assets.kinetixai.cn/kinetixai/share-5-en.svg"
         },
         { 
             tit: "小红书",
