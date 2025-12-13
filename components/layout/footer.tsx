@@ -68,31 +68,31 @@ export function Footer() {
         },
         { 
             tit: "小红书",
-            url: "https://x.com/Kai_Robotics",
+            url: "https://www.xiaohongshu.com/user/profile/68479e93000000001d027b57",
             icon: "https://assets.kinetixai.cn/kinetixai/share-1-cn.svg",
             cn: true
         },
         { 
             tit: "微博",
-            url: "https://www.youtube.com/@Kai_Robotics",
+            url: "https://weibo.com/u/4078962512",
             icon: "https://assets.kinetixai.cn/kinetixai/share-2-cn.svg",
             cn: true
         },
         {
             tit: "抖音",
-            url: "https://www.linkedin.com/in/%E5%8A%A8%E5%8A%9B-%E8%B6%85%E7%BB%B4-a0260538a/",
+            url: "https://www.douyin.com/user/self?from_tab_name=main",
             icon: "https://assets.kinetixai.cn/kinetixai/share-3-cn.svg",
             cn: true
         },
         {
             tit: "bilibili",
-            url: "https://www.instagram.com/kai_robotics/",
+            url: "https://space.bilibili.com/3632307174902629?spm_id_from=333.1007.0.0",
             icon: "https://assets.kinetixai.cn/kinetixai/share-4-cn.svg",
             cn: true
         },
         {
             tit: "知乎",
-            url: "https://www.tiktok.com/@kai_robotics",
+            url: "https://www.zhihu.com/org/chao-wei-dong-li-kai",
             icon: "https://assets.kinetixai.cn/kinetixai/share-5-cn.svg",
             cn: true
         },
