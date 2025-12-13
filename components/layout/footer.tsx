@@ -99,13 +99,13 @@ export function Footer() {
         {
             tit: "微信公众号",
             icon: "https://assets.kinetixai.cn/kinetixai/share-6-cn.svg",
-            img: "https://assets.kinetixai.cn/kinetixai/wecht-1.png",
+            img: "https://assets.kinetixai.cn/kinetixai/wechat-1.png",
             cn: true
         },
         {
             tit: "微信视频号",
-            icon: "https://assets.kinetixai.cn/kinetixai/share-7.svg",
-            img: "https://assets.kinetixai.cn/kinetixai/wecht-2.png",
+            icon: "https://assets.kinetixai.cn/kinetixai/share-7-cn.svg",
+            img: "https://assets.kinetixai.cn/kinetixai/wechat-2.png",
             cn: true
         },
     ];
