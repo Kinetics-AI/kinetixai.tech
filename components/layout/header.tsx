@@ -34,12 +34,13 @@ export function Header() {
     ];
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isGlobalActive, setIsGlobalActive] = useState(false);
 
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     const menuRef = useRef<HTMLDivElement>(null);
+    const globalRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
 
     // 判断是否为当前路径
     const isCurrentPath = useCallback(
@@ -66,7 +67,6 @@ export function Header() {
         window.addEventListener('resize', checkIsMobile);
         return () => window.removeEventListener('resize', checkIsMobile);
     }, []);
-    
 
     // 监听页面滚动
     useEffect(() => {
@@ -76,52 +76,69 @@ export function Header() {
                 setIsScrolled(scrollTop > 20);
             }
         };
-        window.addEventListener('scroll', handleScroll);        
+        window.addEventListener('scroll', handleScroll);
         handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
     }, [isMobile]);
 
 
-    // 鼠标进入menubtn
-    const handleMouseEnter = () => {
-        if (isMobile) return;
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-        setIsHovered(true);
-    };
-
-    // 鼠标离开menubtn
-    const handleMouseLeave = () => {
-        if (isMobile) return;
-        timeoutRef.current = setTimeout(() => {
-            setIsHovered(false);
-        }, 200);
-    };
 
     // 点击菜单链接关闭菜单
     const handleLinkClick = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
         setIsOpen(false);
-        setIsHovered(false);
+        setIsGlobalActive(false);
     };
 
     // 点击菜单按钮切换展开/收起
     const handleMenuBtnClick = () => {
         if (!isMobile) return;
         setIsOpen(prev => !prev);
-        setIsHovered(false);
+        setIsGlobalActive(false);
     };
+
+    // 点击global切换active状态
+    const handleGlobalClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setIsGlobalActive(prev => !prev);
+        setIsOpen(false);
+    };
+
+    // 点击页面其他地方关闭active状态
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            // 检查是否点击在header外部
+            if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+                setIsOpen(false);
+                setIsGlobalActive(false);
+            } else {
+                const target = e.target as Node;
+                const isClickOnMenu = menuRef.current && menuRef.current.contains(target);
+                const isClickOnGlobal = globalRef.current && globalRef.current.contains(target);
+                
+                if (!isClickOnMenu) {
+                    setIsOpen(false);
+                }
+                if (!isClickOnGlobal) {
+                    setIsGlobalActive(false);
+                }
+            }
+        };
+
+        // 监听全局点击事件
+        document.addEventListener('mousedown', handleClickOutside);
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
   
 
 
 
     return (
-        <FadeIn className={`header ${!isMobile && isScrolled ? 'down' : ''}`}>
-            <div className="innerblock">
+        <div ref={headerRef} className={`header ${!isMobile && isScrolled ? 'down' : ''}`}>
+            <FadeIn className="innerblock">
                 <Link href={`/${locale}`} className="logo">
                     <Image
                         src="https://assets.kinetixai.cn/kinetixai/logo-1.svg"
@@ -135,9 +152,7 @@ export function Header() {
                     <div className="ope">
                         <div
                             ref={menuRef}
-                            className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}                        
+                            className={`menubtn ${isOpen ? 'active' : ''}`}
                         >
                             <div className="btn" onClick={handleMenuBtnClick}></div>
                             <div className="menu-box">
@@ -157,7 +172,11 @@ export function Header() {
                             </div>
                         </div>
                         <div className="line"></div>
-                        <div className="global" onClick={handleLinkClick}>
+                        <div
+                            ref={globalRef}
+                            className={`global ${isGlobalActive ? 'active' : ''}`} 
+                            onClick={handleGlobalClick}
+                        >
                             <div className="show"></div>
                             <div className="hide">
                                 <LanguageDrawer/>
@@ -184,7 +203,7 @@ export function Header() {
                                 )
                             })}
                         </ul>
-                        <div className="global" onClick={handleLinkClick}>
+                        <div className="global">
                             <div className="show"></div>
                             <div className="hide">
                                 <LanguageDrawer/>
@@ -192,7 +211,7 @@ export function Header() {
                         </div>
                     </div>
                 )}
-            </div>
-        </FadeIn>
+            </FadeIn>
+        </div>
     )
 }

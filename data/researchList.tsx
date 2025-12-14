@@ -26,7 +26,7 @@ export const researchListData: LanguageData = {
         {
             tips: "AMS",
             title: "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
-            date: "Nov 24 '2025",
+            date: "Nov 24, 2025",
             pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-1.jpg?v=1",
             url: "research/detail-1"
         }

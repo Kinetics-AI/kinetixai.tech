@@ -252,13 +252,24 @@ img {
                 }
             }
         }
-        &:hover{
+        &.active{
             .show{
                 background-color: #0b34fe;
             }
             .hide{
                 opacity: 1;
                 pointer-events: auto;
+            }
+        }
+        @media (any-hover: hover){
+            &:hover{
+                .show{
+                    background-color: #0b34fe;
+                }
+                .hide{
+                    opacity: 1;
+                    pointer-events: auto;
+                }
             }
         }
     }

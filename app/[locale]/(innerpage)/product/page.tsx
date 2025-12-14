@@ -26,12 +26,6 @@ export default function ProductPage(){
                 <div className="txt-box">
                     <FadeInUp className="num">
                         2026
-                        {/* <CountUp
-                            start={2023}
-                            end={2026}
-                            duration={3}
-                            separator=""
-                        /> */}
                     </FadeInUp>
                     <FadeInUp className="tips" delay={0.1}>
                         {t('txt')}
