@@ -143,13 +143,13 @@ export function Footer() {
                                     )
                                 ))}
                         </div>
-                        {/* <div className="info">
+                        <div className="info">
                             <div className="txtbox">
                                 <div className="tit">{t('footerRightTit')}</div>
                                 <p>{t('footerRightP')}</p>
                             </div>
                             <EmailSubscribe/>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
                 <div className="bot-block">
