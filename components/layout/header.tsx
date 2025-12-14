@@ -1,7 +1,7 @@
 "use client"
 import {useTranslations} from "next-intl";
 import { useParams, usePathname  } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 import Link from "next/link"
 import Image from 'next/image'
@@ -15,8 +15,6 @@ import { FadeIn } from "@/components/animation/fade-in"
 
 
 export function Header() {
-
-
 
     const t = useTranslations("Layout");
     const params = useParams();
@@ -38,23 +36,51 @@ export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     const menuRef = useRef<HTMLDivElement>(null);
 
+    // 判断是否为当前路径
+    const isCurrentPath = useCallback(
+        (url: string): boolean => {
+            if (url === "") {
+                // 首页匹配
+                return pathname === `/${locale}` || pathname === `/${locale}/`;
+            }
+            if (url.startsWith("http")) {
+                return false;
+            }
+            const targetPath = `/${locale}${url}`;
+            return pathname === targetPath || pathname.startsWith(`${targetPath}/`);
+        },
+        [locale, pathname]
+    );
+
     // 监听窗口大小变化
     useEffect(() => {
-        // 初始化检测
         const checkIsMobile = () => {
             setIsMobile(window.innerWidth < 1025);
         };
         checkIsMobile();
-
-        // 监听窗口大小变化
         window.addEventListener('resize', checkIsMobile);
-
-        // 清理函数
         return () => window.removeEventListener('resize', checkIsMobile);
     }, []);
+    
+
+    // 监听页面滚动
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!isMobile) {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                setIsScrolled(scrollTop > 20);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);        
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isMobile]);
+
 
     // 鼠标进入menubtn
     const handleMouseEnter = () => {
@@ -94,7 +120,7 @@ export function Header() {
 
 
     return (
-        <FadeIn className="header">
+        <FadeIn className={`header ${!isMobile && isScrolled ? 'down' : ''}`}>
             <div className="innerblock">
                 <Link href={`/${locale}`} className="logo">
                     <Image
@@ -105,39 +131,67 @@ export function Header() {
                         priority
                     />
                 </Link>
-                <div className="ope">
-                    <div                    
-                        ref={menuRef}
-                        className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        
-                    >
-                        <div className="btn" onClick={handleMenuBtnClick}></div>
-                        <div className="menu-box">
-                            <div className="items">                        
-                                {links.map(({link, url, isExternal}, idx) => (
-                                    isExternal ? (
-                                        <Link href={url} key={idx} target="_blank" onClick={handleLinkClick}>
-                                            {link}
-                                        </Link>
-                                    ) : (
-                                        <Link href={`/${locale}${url}`} key={idx} onClick={handleLinkClick}>
-                                            {link}
-                                        </Link>
-                                    )
-                                ))}
+                {isMobile ? (
+                    <div className="ope">
+                        <div
+                            ref={menuRef}
+                            className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}                        
+                        >
+                            <div className="btn" onClick={handleMenuBtnClick}></div>
+                            <div className="menu-box">
+                                <div className="items">
+                                    {links.map(({link, url, isExternal}, idx) => (
+                                        isExternal ? (
+                                            <Link href={url} key={idx} target="_blank" onClick={handleLinkClick}>
+                                                {link}
+                                            </Link>
+                                        ) : (
+                                            <Link href={`/${locale}${url}`} key={idx} onClick={handleLinkClick}>
+                                                {link}
+                                            </Link>
+                                        )
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="line"></div>
+                        <div className="global" onClick={handleLinkClick}>
+                            <div className="show"></div>
+                            <div className="hide">
+                                <LanguageDrawer/>
                             </div>
                         </div>
                     </div>
-                    <div className="line"></div>
-                    <div className="global" onClick={handleLinkClick}>
-                        <div className="show"></div>
-                        <div className="hide">
-                            <LanguageDrawer/>
+                ) : (
+                    <div className="right-block">
+                        <ul>
+                            {links.map(({link, url, isExternal}, idx) => {
+                                const isActive = isCurrentPath(url);
+                                return isExternal ? (
+                                    <li key={idx} className={isActive ? 'active' : ''}>
+                                        <Link href={url} target="_blank">
+                                            {link}
+                                        </Link>
+                                    </li>
+                                ) : (
+                                    <li key={idx} className={isActive ? 'active' : ''}>
+                                        <Link href={`/${locale}${url}`}>
+                                            {link}
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        <div className="global" onClick={handleLinkClick}>
+                            <div className="show"></div>
+                            <div className="hide">
+                                <LanguageDrawer/>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </FadeIn>
     )
