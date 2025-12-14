@@ -173,7 +173,7 @@ img {
         .hide{
             position: absolute;
             top: 100%;
-            left: 0;
+            right: -10px;
             padding-top: 10px;
             opacity: 0;
             pointer-events: none;
@@ -444,14 +444,12 @@ img {
                         }
                     }
                 }
-                @media (any-hover: hover){
-                    &:hover{
-                        .show{  
-                            border-color: rgba(255,255,255,.4);
-                        }
-                        .ewm-box{
-                            opacity: 1;
-                        }
+                &:hover{
+                    .show{  
+                        border-color: rgba(255,255,255,.4);
+                    }
+                    .ewm-box{
+                        opacity: 1;
                     }
                 }
             }
@@ -1443,14 +1441,20 @@ img {
         width: 100%;
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 2;
         .num{
             font-size: 4.8rem;
+            line-height: 1;
             color: #fff;
             text-align: center;
             font-family: 'Rajdhani-Bold';
+        }
+        .tips{
+            font-size: max(14px, 0.18rem);
+            color: #fff;
         }
     }
 }

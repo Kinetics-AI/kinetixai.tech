@@ -42,7 +42,7 @@ export const indexTechData: LanguageData = {
             pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20Control.gif"
         },
         {
-            title: "Whole-Body Foundation Model for Vision, Language, Touch, Action, and Emotion",
+            title: "Foundation Model for Vision, Language, Touch, Action, and Emotion",
             pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20ControlWhole-Body%20Foundation%20Model%20for%20Vision%2C%20Language%2C%20Touch%2C%20Action%2C%20and%20Emotion.gif"
         },
         {

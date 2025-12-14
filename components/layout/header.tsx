@@ -106,13 +106,6 @@ export function Header() {
                     />
                 </Link>
                 <div className="ope">
-                    <div className="global">
-                        <div className="show"></div>
-                        <div className="hide">
-                            <LanguageDrawer/>
-                        </div>
-                    </div>
-                    <div className="line"></div>
                     <div                    
                         ref={menuRef}
                         className={`menubtn ${isOpen || isHovered ? 'active' : ''}`}
@@ -135,6 +128,13 @@ export function Header() {
                                     )
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="global" onClick={handleLinkClick}>
+                        <div className="show"></div>
+                        <div className="hide">
+                            <LanguageDrawer/>
                         </div>
                     </div>
                 </div>
