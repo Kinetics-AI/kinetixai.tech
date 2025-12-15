@@ -15,16 +15,6 @@ const nextConfig: NextConfig = {
                 hostname: 'assets.kinetixai.cn',
                 pathname: '/**',
             },
-            {
-                protocol: 'https',
-                hostname: 'img.shields.io',
-                pathname: '/**',
-            },
-            {
-                protocol: 'https',
-                hostname: 'ik.imagekit.io',
-                pathname: '/**',
-            },
         ],
         dangerouslyAllowSVG: true,
         unoptimized: true,
