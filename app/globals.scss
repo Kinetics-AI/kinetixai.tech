@@ -2096,6 +2096,7 @@ img {
     }
     .index-s2 .top-block .btns{
         margin-top: 20px;
+        justify-content: center;
     }
     .index-s2 .img-box{
         width: 100%;
@@ -2311,7 +2312,7 @@ img {
         height: 100vw;
     }
     .inner-s2 .img-box img{
-        object-position: 75% center;
+        object-position: 65% center;
     }
     .inner-s2 .txt-box .tit{
         font-size: 30px;
@@ -2330,6 +2331,9 @@ img {
     }
     .inner-s4 .label{
         font-size: 30px;
+    }
+    .inner-s4 .cont-block{
+        margin-top: 1rem;
     }
     .inner-s4 .line{
         left: 20px;
