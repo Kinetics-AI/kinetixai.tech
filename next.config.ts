@@ -12,11 +12,6 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'assets.kinetixai.tech',
-                pathname: '/**',
-            },
-            {
-                protocol: 'https',
                 hostname: 'assets.kinetixai.cn',
                 pathname: '/**',
             },
