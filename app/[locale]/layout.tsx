@@ -27,7 +27,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
     title: {
-        default: "Kinetix AI - agi for robotic superintelligence",
+        default: "Kinetix AI - AGI for Robotic Superintelligence",
         template: "%s | Kinetix AI"
     },
     // description: "xxx",
