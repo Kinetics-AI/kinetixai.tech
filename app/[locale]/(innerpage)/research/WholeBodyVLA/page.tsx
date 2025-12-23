@@ -155,9 +155,6 @@ export default function ResearchDetail1Page(){
                         <Link href="https://arxiv.org/abs/2512.11047" target='_blank'>
                             {t('share2')}
                         </Link>
-                        <Link href="https://assets.kinetixai.cn/kinetixai/research/detail-2/WholeBodyVLA.pdf" target='_blank'>
-                            {t('share3')}
-                        </Link>
                         <Link href="https://github.com/OpenDriveLab/WholebodyVLA" target='_blank'>
                             {t('share4')}
                         </Link>
