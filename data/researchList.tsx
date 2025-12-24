@@ -20,6 +20,13 @@ export const researchListData: LanguageData = {
             date: "2025年11月24日",
             pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-1.jpg?v=1",
             url: "research/AMS"
+        },
+        {
+            tips: "WholeBodyVLA",
+            title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
+            date: "2025年12月16日",
+            pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
+            url: "research/WholeBodyVLA"
         }
     ],
     en: [
@@ -29,6 +36,13 @@ export const researchListData: LanguageData = {
             date: "Nov 24, 2025",
             pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-1.jpg?v=1",
             url: "research/AMS"
+        },
+        {
+            tips: "WholeBodyVLA",
+            title: "Towards Unified Latent VLA for Whole-body Loco-manipulation Control",
+            date: "Dec 16, 2025",
+            pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
+            url: "research/WholeBodyVLA"
         }
     ]
 };
