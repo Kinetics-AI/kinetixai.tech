@@ -32,16 +32,16 @@ export const companyListData: LanguageData = {
             title: "入选Morgan Stanley《Humanoid 100》的高拟人人形机器人",
             pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-4.gif"
         },
-        {
-            year: "2025",
-            title: "国产统一语言与视觉生成多模态大模型</br>联合创始人P笑称：“自然杂志《Nature》报道这是震撼全球的中国AI之一。”",
-            pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-5.png"
-        },
-        {
-            year: "2025",
-            title: "全球首个开源分层AI Agent框架",
-            pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-6.png"
-        },
+        // {
+        //     year: "2025",
+        //     title: "国产统一语言与视觉生成多模态大模型</br>联合创始人P笑称：“自然杂志《Nature》报道这是震撼全球的中国AI之一。”",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-5.png"
+        // },
+        // {
+        //     year: "2025",
+        //     title: "全球首个开源分层AI Agent框架",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-6.png"
+        // },
         // {
         //     year: "2025",
         //     title: "性能超过PI0.5的跨本体VLA大模型",
@@ -69,16 +69,16 @@ export const companyListData: LanguageData = {
             title: "Highly humanlike humanoid robot selected for Morgan Stanley's \"Humanoid 100\" list",
             pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-4.gif"
         },
-        {
-            year: "2025",
-            title: "The Unified Language-Vision Understanding and Generation Foundation Model received more than 18k stars on GitHub.</br>Co-founder P remarked, \"Nature magazine reported that this is one of China's AIs that shocked the world.\"",
-            pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-5.png"
-        },
-        {
-            year: "2025",
-            title: "The world's first hierarchical AI agent ranked first among open-source models on the GAIA benchmark and received more than 18k GitHub stars.",
-            pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-6.png"
-        },
+        // {
+        //     year: "2025",
+        //     title: "The Unified Language-Vision Understanding and Generation Foundation Model received more than 18k stars on GitHub.</br>Co-founder P remarked, \"Nature magazine reported that this is one of China's AIs that shocked the world.\"",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-5.png"
+        // },
+        // {
+        //     year: "2025",
+        //     title: "The world's first hierarchical AI agent ranked first among open-source models on the GAIA benchmark and received more than 18k GitHub stars.",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/company/img-2-6.png"
+        // },
         // {
         //     year: "2025",
         //     title: "Unified Vision-Language-Action (VLA) foundation model outperforming PI0.5",
