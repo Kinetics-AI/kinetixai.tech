@@ -156,7 +156,7 @@ export function Footer() {
                     <div className="copyright">
                         contact@kinetixai.tech
                         <br></br>
-                        深圳市南山区粤海街道高新区社区深圳湾科技生态园
+                        {t('footerAddress')}
                         <br></br>
                         {t('footerCopyright')}
                     </div>
