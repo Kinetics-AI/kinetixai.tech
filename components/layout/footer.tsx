@@ -153,7 +153,13 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="bot-block">
-                    <div className="copyright">{t('footerCopyright')}</div>
+                    <div className="copyright">
+                        contact@kinetixai.tech
+                        <br></br>
+                        深圳市南山区粤海街道高新区社区深圳湾科技生态园
+                        <br></br>
+                        {t('footerCopyright')}
+                    </div>
                     <div className="share">
                         {filteredMedia.map(({tit, url, icon, img, cn}, idx) => (
                         
