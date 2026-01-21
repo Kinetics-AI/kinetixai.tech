@@ -49,8 +49,10 @@
         "txt": "Coming in early 2026. Stay tuned."
     },
     "Research": {
-        "label": "Research",
-        "para": "<p>Dive into the tech and engineering that make embodied intelligence actually work in the real world. Built for autonomous Ultra-Human-Like Robots.</p>"
+        "label_en": "Research",
+        "para_en": "<p>Dive into the tech and engineering that make embodied intelligence actually work in the real world. Built for autonomous Ultra-Human-Like Robots.</p>",
+        "label": "研究",
+        "para": "<p>探索具身智能落地所需的每一个技术和工程细节</p><p>真正打造超拟人人形机器人</p>"
     },
     "ResearchDetail1": {
         "label": "Research",

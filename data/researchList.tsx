@@ -30,6 +30,20 @@ export const researchListData: LanguageData = {
         }
     ],
     en: [
+        // {
+        //     tips: "WholeBodyVLA",
+        //     title: "Towards Unified Latent VLA for Whole-body Loco-manipulation Control",
+        //     date: "Dec 16, 2025",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
+        //     url: "research/WholeBodyVLA"
+        // },
+        // {
+        //     tips: "AMS",
+        //     title: "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+        //     date: "Nov 24, 2025",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-1.jpg?v=1",
+        //     url: "research/AMS"
+        // }
         {
             tips: "WholeBodyVLA",
             title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
