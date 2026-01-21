@@ -26,7 +26,11 @@ export const ResearchList = () => {
         <div className="items">
             {items.map(({ tips, title, date, pic, url }, idx) => (
                 <FadeInUp key={idx} className='item' delay={0.1}>
-                    <Link href={`/${locale}/${url}`} target='_blank' rel="noopener noreferrer" className='inner'>
+                    <Link 
+                    href={url.startsWith('https') ? url : `/${locale}/${url}`} 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    className='inner'>
                     <div className="tips">{tips}</div>
                         <div className="img-box">
                             <Image
