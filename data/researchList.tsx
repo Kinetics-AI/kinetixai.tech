@@ -21,13 +21,13 @@ export const researchListData: LanguageData = {
             pic: "https://assets.kinetixai.cn/20260119/20260121.jpg",
             url: "https://mmlab.hk/research/kai0"
         },
-        {
-            tips: "WholeBodyVLA",
-            title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
-            date: "2025年12月16日",
-            pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
-            url: "research/WholeBodyVLA"
-        },
+        // {
+        //     tips: "WholeBodyVLA",
+        //     title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
+        //     date: "2025年12月16日",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
+        //     url: "research/WholeBodyVLA"
+        // },
         {
             tips: "AMS",
             title: "AMS：统一人形机器人全身控制框架，首次实现在单一策略中同时具备动态运动跟踪和极限平衡控制能力",
@@ -58,13 +58,13 @@ export const researchListData: LanguageData = {
             pic: "https://assets.kinetixai.cn/20260119/20260121.jpg",
             url: "https://mmlab.hk/research/kai0"
         },
-        {
-            tips: "WholeBodyVLA",
-            title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
-            date: "2025年12月16日",
-            pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
-            url: "research/WholeBodyVLA"
-        },
+        // {
+        //     tips: "WholeBodyVLA",
+        //     title: "WholeBodyVLA：一种面向人形机器人移动操作的全身VLA框架",
+        //     date: "2025年12月16日",
+        //     pic: "https://assets.kinetixai.cn/kinetixai/research/img-1-2.jpg",
+        //     url: "research/WholeBodyVLA"
+        // },
         {
             tips: "AMS",
             title: "AMS：统一人形机器人全身控制框架，首次实现在单一策略中同时具备动态运动跟踪和极限平衡控制能力",
