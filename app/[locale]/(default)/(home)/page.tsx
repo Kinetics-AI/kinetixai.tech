@@ -9,6 +9,12 @@ import Image from 'next/image'
 import { FadeIn } from "@/components/animation/fade-in"
 import { FadeInUp } from "@/components/animation/fade-in-up"
 
+import {Pagination, Autoplay} from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperClass } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 import { IndexSceneItemList } from '@/components/index/IndexSceneItemList';
 import { IndexTechItemList } from '@/components/index/IndexTechItemList';
@@ -73,21 +79,50 @@ export default function Page(){
     return (
         <div className="index-main">
             <div className="index-s1">
-                <div className="video-box">
-                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                        <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="txt-box">
-                    <div className="wrap-s">
-                        <FadeInUp className="tit">
-                            {t.rich('indexBannerTit', {
-                                span: (chunks) => <span>{chunks}</span>,
-                                p: (chunks) => <p>{chunks}</p>
-                            })}
-                        </FadeInUp>
-                    </div>
-                </div>
+                <Swiper
+                    modules={[Pagination,Autoplay]}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                        waitForTransition: true,
+                    }}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    speed={800}
+                    pagination={{ clickable: true }}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
+                >
+                    <SwiperSlide
+                        className='item'
+                    >
+                        <div className="video-box">
+                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
+                                <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div className="txt-box">
+                            <div className="wrap-s">
+                                <FadeInUp className="tit">
+                                    {t.rich('indexBannerTit', {
+                                        span: (chunks) => <span>{chunks}</span>,
+                                        p: (chunks) => <p>{chunks}</p>
+                                    })}
+                                </FadeInUp>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide
+                        className='item'
+                    >
+                        <div className="video-box">
+                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
+                                <source src="https://assets.kinetixai.cn/20260119/robotic.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
             <div className="index-s2">
                 <div className="wrap-s">
