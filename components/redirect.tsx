@@ -15,6 +15,7 @@ export default function Redirect() {
     // project
     if (
         pathname.toLowerCase().startsWith('/en/research/kai0-rl')
+        || pathname.toLowerCase().startsWith('/zh/research/kai0-rl')
     ) {
         redirect('https://opendrivelab.com/kai0-RL')
     }
