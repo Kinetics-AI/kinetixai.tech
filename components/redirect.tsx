@@ -16,6 +16,8 @@ export default function Redirect() {
     if (
         pathname.toLowerCase().startsWith('/en/research/kai0-rl')
         || pathname.toLowerCase().startsWith('/zh/research/kai0-rl')
+        || pathname.toLowerCase().startsWith('/en/research/rise')
+        || pathname.toLowerCase().startsWith('/zh/research/rise')
     ) {
         redirect('https://opendrivelab.com/kai0-rl')
     }
