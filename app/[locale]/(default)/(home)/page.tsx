@@ -118,7 +118,7 @@ export default function Page(){
                     >
                         <div className="video-box">
                             <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                                <source src="https://assets.kinetixai.cn/20260119/robotic.mp4" type="video/mp4" />
+                                <source src="https://assets.kinetixai.cn/20260119/20260203.mp4" type="video/mp4" />
                             </video>
                         </div>
                     </SwiperSlide>

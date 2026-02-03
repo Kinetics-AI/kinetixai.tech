@@ -164,7 +164,7 @@ export default function ResearchDetail1Page(){
                             x5-video-player-type="h5" 
                             poster="https://assets.kinetixai.cn/FoldAnything/full.png"
                         >
-                            <source src="https://assets.kinetixai.cn/20260119/robotic.mp4" type="video/mp4" />
+                            <source src="https://assets.kinetixai.cn/20260119/20260203.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>
