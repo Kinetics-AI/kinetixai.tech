@@ -6,7 +6,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {routing} from '@/i18n/routing';
 
-import { Header } from "@/components/layout/header"
+import { DynamicHeader } from "@/components/layout/DynamicHeader"
 import { Footer } from "@/components/layout/footer"
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({locale}));
@@ -72,7 +72,7 @@ export default async function RootLayout({
             <body>       
                 <NextIntlClientProvider>
 
-                    <Header/>
+                    <DynamicHeader/>
 
                     <main className="mainpage">
 

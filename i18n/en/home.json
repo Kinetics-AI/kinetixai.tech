@@ -192,5 +192,30 @@
         "para5Artical6": "The impact of these designs is evaluated using a combination of task success rate and the quality of the advantage signal, measured in terms of temporal smoothness and stability, as reported in the following evaluation.",
         "para5Artical7": "<span>Value-diff</span> computes the advantage by subtracting two independently predicted state values. <span>Direct</span> predicts the advantage as the relative improvement from paired observations. <span>Direct+Stage (ours)</span> uses stage-conditioned direct advantage prediction for long-horizon training, achieving smoother results (lower MSTD), greater stability (higher SFR), and higher success rates.",
         "para6Artical": "<ul><li>Not all robot data is equally valuable. The quality and characteristics of training data significantly impact policy performance.</li><li>The capability of the base policy is crucial, but knowing how to rapidly evaluate and select a capable base policy is even more important. A fast research iteration cycle is essential for developing intuition and understanding of base policy behavior.</li><li>Model arithmetic can surprisingly turn lead into gold. Simple arithmetic operations on model weights can transform mediocre policies into high-performing ones.</li><li>Stage-conditioned advantage estimation still has room for improvement. Revisiting fundamental concepts from reinforcement learning may unlock further gains.</li></ul>"
+    },
+    "Headband": {
+        "section1Label": "Real world, real data",
+        "section1sLabel": "<p>A full-pipeline embodied AI data solution, </p><p>from lightweight capture to robot deployment.</p>",
+        "section2Label": "See what our data can do",
+        "section2Para": "Robots trained on our data performing real household tasks—folding clothes, organizing and tidying, and sorting canned goods.",
+        "section2BtnTxt": "Learn more",
+        "section2VideoBtn": "Full screen",
+
+        
+        "section5Para1": "<p>Clamping cost at the hundred-yuan level, </p><p>large-scale deployment possible, </p><p>no limitations on collection sites</p>",
+        "section5Para2": "<p>Proven to effectively improve </p><p>robot task success rate</p>",
+        "section6Label": "<p>One capture session, </p><p>multi-dimensional data</p>",
+        "section6sLabel": "<p>Each natural operation simultaneously captures</p><p>data from multiple dimensions, including vision, motion, and semantics,</p><p>providing complete perceptual information for robot training.</p>",
+        "section7Label": "Continuously growing at scale",
+
+        "section8Label1": "Daily collection count:",
+        "section8Label2": "Cumulative total: ",
+
+        
+        "section9Label": "<p>From raw capture to </p><p>delivery-ready datasets</p>",
+        "section9sLabel": "<p>Management,QA,annotation,</p><p>andaugmentation,end-to-end.</p>",        
+        "section10Label": "Data-driven,real-worlddeployment",
+        "section10sLabel": "<p>Every task below was trained</p><p>on our captured data.</p>",
+        "section11Label": "<p>Lightweight and unobtrusive,</p><p>enabling truly natural data.</p>"
     }
 }
