@@ -33,6 +33,42 @@ export default function Page(){
 
     // banner
     const [isDesktop, setIsDesktop] = useState(false);
+
+    // 设置截止时间：4月25日 19:00
+    const targetDate = new Date('2026-04-25T19:00:00').getTime();
+
+    // 倒计时状态
+    const [countdown, setCountdown] = useState('');
+    const [showCountdown, setShowCountdown] = useState(true);
+    
+    // 倒计时逻辑
+    useEffect(() => {
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                // 倒计时结束
+                setShowCountdown(false);
+                return;
+            }
+            
+            const hours = Math.floor(distance / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            setCountdown(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+        };
+        
+        // 立即更新一次
+        updateCountdown();
+        
+        // 每秒更新一次
+        const timer = setInterval(updateCountdown, 1000);
+        
+        return () => clearInterval(timer);
+    }, [targetDate]);
+
     useEffect(() => {
         const checkScreenSize = () => {
             setIsDesktop(window.innerWidth > 1024);
@@ -98,8 +134,8 @@ export default function Page(){
                         className='item'
                     >
                         <div className="video-box">
-                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                                <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20260421.jpg">
+                                <source src="https://assets.kinetixai.cn/202603262/2026421172756.mp4" type="video/mp4" />
                             </video>
                         </div>
                         <div className="txt-box">
@@ -110,7 +146,21 @@ export default function Page(){
                                         p: (chunks) => <p>{chunks}</p>
                                     })}
                                 </FadeInUp>
+                                {showCountdown && (
+                                    <FadeInUp className="countdown" delay={0.1}>
+                                        {countdown}
+                                    </FadeInUp>
+                                )}
                             </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide
+                        className='item'
+                    >
+                        <div className="video-box">
+                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
+                                <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                            </video>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide
