@@ -19,18 +19,18 @@ export default function ProductPage(){
         <div className="product-main">
             <div className="inner-s5">
                 <div className="video-box">
-                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/product/video.jpg">
-                        <source src="https://assets.kinetixai.cn/kinetixai/product/video.mp4" type="video/mp4" />
+                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/20251211/2026051801.jpg">
+                        <source src="https://assets.kinetixai.cn/20251211/2026051801.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div className="txt-box">
+                {/* <div className="txt-box">
                     <FadeInUp className="num">
                         2026
                     </FadeInUp>
                     <FadeInUp className="tips" delay={0.1}>
                         {t('txt')}
                     </FadeInUp>
-                </div>
+                </div> */}
             </div>
         </div>
     )
