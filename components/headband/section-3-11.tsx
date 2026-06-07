@@ -19,33 +19,6 @@ export const HeadbandSection3 = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let currentIndex = -1;
-
-    const drawImage = (
-      ctx: CanvasRenderingContext2D,
-      canvas: HTMLCanvasElement,
-      img: HTMLImageElement | undefined,
-      index: number
-    ) => {
-      if (!img || !img.complete || img.naturalWidth === 0) return;
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const scale = Math.max(
-        canvas.width / img.naturalWidth,
-        canvas.height / img.naturalHeight
-      );
-      const imgWidth = img.naturalWidth * scale;
-      const imgHeight = img.naturalHeight * scale;
-      const x = (canvas.width - imgWidth) / 2;
-      const y = (canvas.height - imgHeight) / 2;
-
-      ctx.drawImage(img, x, y, imgWidth, imgHeight);
-      currentIndex = index;
-    };
-
     const loadImages = (): Promise<HTMLImageElement[]> => {
       return new Promise((resolve) => {
         const images: HTMLImageElement[] = [];
@@ -76,49 +49,71 @@ export const HeadbandSection3 = () => {
       });
     };
 
-    const initScrollTrigger = async () => {
-      try {
-        const images = await loadImages();
-        imagesRef.current = images;
+    const drawImage = (
+      ctx: CanvasRenderingContext2D,
+      canvas: HTMLCanvasElement,
+      img: HTMLImageElement
+    ) => {
+      if (!img || !img.complete || img.naturalWidth === 0) return;
 
-        const canvas = canvasRef.current;
-        const container = containerRef.current;
-        if (!canvas || !container) return;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+      const scale = Math.max(
+        canvas.width / img.naturalWidth,
+        canvas.height / img.naturalHeight
+      );
+      const imgWidth = img.naturalWidth * scale;
+      const imgHeight = img.naturalHeight * scale;
+      const x = (canvas.width - imgWidth) / 2;
+      const y = (canvas.height - imgHeight) / 2;
 
-        const { gsap } = await import('gsap');
-        const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
-
-        setIsReady(true);
-
-        ScrollTrigger.create({
-          trigger: container,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: true,
-          markers: false,
-          onUpdate: (self: any) => {
-            const progress = self.progress;
-            const index = Math.min(
-              Math.floor(progress * TOTAL_IMAGES),
-              TOTAL_IMAGES - 1
-            );
-
-            if (index !== currentIndex && imagesRef.current[index]) {
-              drawImage(ctx, canvas, imagesRef.current[index], index);
-            }
-          },
-        });
-      } catch (err) {
-        console.error('Init failed:', err);
-        setIsReady(true);
-      }
+      ctx.drawImage(img, x, y, imgWidth, imgHeight);
     };
 
-    initScrollTrigger();
+    const initScrollTrigger = async () => {
+      const images = await loadImages();
+      imagesRef.current = images;
+      setIsReady(true);
+
+      const canvas = canvasRef.current;
+      const container = containerRef.current;
+      if (!canvas || !container) return;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const { gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.create({
+        trigger: container,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        markers: false,
+        onUpdate: (self: any) => {
+          const progress = self.progress;
+          const index = Math.min(
+            Math.floor(progress * TOTAL_IMAGES),
+            TOTAL_IMAGES - 1
+          );
+
+          if (index !== lastIndexRef.current && imagesRef.current[index]) {
+            lastIndexRef.current = index;
+            drawImage(ctx, canvas, imagesRef.current[index]);
+          }
+        },
+      });
+    };
+
+    if (document.readyState === 'complete') {
+      initScrollTrigger();
+    } else {
+      window.addEventListener('load', initScrollTrigger);
+    }
   }, []);
 
   const fallbackImages = CONFIG.FALLBACK_IMAGES.map(
