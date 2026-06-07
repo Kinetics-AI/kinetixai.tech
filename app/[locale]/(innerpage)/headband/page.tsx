@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { HeadbandSection1 } from "@/components/headband/section-1"
 import { HeadbandSection2 } from "@/components/headband/section-2"
+import { HeadbandSection3 } from "@/components/headband/section-3"
 import { HeadbandSection4 } from "@/components/headband/section-4"
 import { HeadbandSection4Mobile } from "@/components/headband/section-4-m"
 import { HeadbandSection5 } from "@/components/headband/section-5"
@@ -41,6 +42,7 @@ export default function HeadbandPage(){
         <div className="headband-main">
             <HeadbandSection1 />
             <HeadbandSection2 />
+            <HeadbandSection3 />
             {isDesktop ? (
             <HeadbandSection4 />
             ) : (
