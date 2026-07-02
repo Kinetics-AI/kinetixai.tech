@@ -1,20 +1,143 @@
 'use client';
 
 import { FadeInUp } from "@/components/animation/fade-in-up"
-import {useTranslations} from 'next-intl';
-import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
+import { useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
-
-import {Pagination} from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-
 
 import { headbandSection10Data, headbandSection10 } from "@/data/headbandSection10";
 
+
+
+
+
+interface VideoItemProps {
+    title: string;
+    para: string;
+    pic: string;
+    video: string;
+    t: any;
+    idx: number;
+    activeIndex: number | null;
+    setActiveIndex: (index: number | null) => void;
+}
+
+const VideoItem = ({ title, para, pic, video, t, idx, activeIndex, setActiveIndex }: VideoItemProps) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [progress, setProgress] = useState(0);
+
+    const isActive = activeIndex === idx;
+
+    // 播放/暂停切换
+    const togglePlay = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
+
+    // 更新播放进度
+    const handleTimeUpdate = () => {
+        if (videoRef.current) {
+            const currentProgress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+            setProgress(currentProgress);
+        }
+    };
+
+    // 全屏播放
+    const handleFullscreen = () => {
+        if (videoRef.current) {
+            if (videoRef.current.requestFullscreen) {
+                videoRef.current.requestFullscreen();
+            }
+        }
+    };
+
+    // 点击 para 展开/收起
+    const handleParaClick = () => {
+        if (isActive) {
+            setActiveIndex(null);
+            if (videoRef.current) {
+                videoRef.current.pause();
+            }
+        } else {
+            setActiveIndex(idx);
+            if (videoRef.current) {
+                videoRef.current.currentTime = 0;
+                videoRef.current.play();
+                setIsPlaying(true);
+            }
+        }
+    };
+
+    return (
+        <FadeInUp className={`item ${isActive ? 'active' : ''}`} delay={0.1}>
+            <div className="txt-box">
+                <div className="tit">
+                    <span>{title}</span>
+                </div>
+                <div className="para" onClick={handleParaClick}>{para}</div>
+            </div>
+            <div className="bot-box">
+                <div className="video-box">
+                    <video
+                        autoPlay={isActive}
+                        muted
+                        loop
+                        playsInline
+                        poster={pic}
+                        ref={videoRef}
+                        onTimeUpdate={handleTimeUpdate}
+                    >
+                        <source src={video} type="video/mp4" />
+                    </video>
+                </div>
+                <div className="btns-box">
+                    <svg className="line" viewBox="0 0 36 36">
+                        <circle
+                            cx="18"
+                            cy="18"
+                            r="16"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeDasharray={`${2 * Math.PI * 16}`}
+                            strokeDashoffset={`${2 * Math.PI * 16 * (1 - progress / 100)}`}
+                            strokeLinecap="round"
+                        />
+                    </svg>
+                    <div
+                        className="btn"
+                        onClick={togglePlay}
+                    >
+                        {isPlaying ? (
+                            <svg className="" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill="#ffffff" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                            </svg>
+                        ) : (
+                            <svg className="" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill="#ffffff" d="M8 5v14l11-7z" />
+                            </svg>
+                        )}
+                    </div>
+                </div>
+                <div
+                    className="full-box"
+                    onClick={handleFullscreen}
+                >
+                    <span>
+                        {t.rich('section2VideoBtn')}
+                    </span>
+                </div>
+            </div>
+        </FadeInUp>
+    );
+};
 
 
 
@@ -24,28 +147,16 @@ import { headbandSection10Data, headbandSection10 } from "@/data/headbandSection
 export const HeadbandSection10 = () => {
     const t = useTranslations('Headband');
     const params = useParams();
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    // 判断是否是PC端
-    const [isDesktop, setIsDesktop] = useState(false);
-    useEffect(() => {
-        const checkScreenSize = () => {
-            setIsDesktop(window.innerWidth > 1025);
-        };
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
-    
-    
     // 获取当前语言的数据
-    const headbandSection10Items = (): headbandSection10[] => {  
+    const headbandSection10Items = (): headbandSection10[] => {
         const locale = typeof params.locale === 'string' ? params.locale : 'en';
         return headbandSection10Data[locale] || headbandSection10Data.en;
     };
 
     const items = headbandSection10Items();
     if (!items.length) return null;
-
 
     return (
         <div className="headband-s10" id="section10">
@@ -58,65 +169,21 @@ export const HeadbandSection10 = () => {
                         p: (chunks) => <p>{chunks}</p>
                     })}
                 </FadeInUp>
-                {isDesktop ? (
-                    <div className="items">
-                        {items.map(({title, para, pic}, idx) => (
-                            <FadeInUp key={idx} className='item' delay={0.1}>
-                                <div className="img-box">
-                                    <Image
-                                        src={pic}
-                                        alt={title}
-                                        width={800}
-                                        height={800}
-                                    />
-                                </div>
-                                <div className="txt-box">
-                                    <div className="inner">
-                                        <div className="tit">
-                                            <span>{title}</span>
-                                        </div>
-                                        <div className="para">{para}</div>
-                                    </div>
-                                </div>
-                            </FadeInUp>
-                        ))}
-                    </div>
-                ) : (
-                    <FadeInUp className="items" delay={0.1}>
-                        <Swiper
-                            modules={[Pagination]}
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            pagination={{ clickable: true }}
-                            // onSlideChange={() => console.log('slide change')}
-                            // onSwiper={(swiper) => console.log(swiper)}
-                        >
-                            {items.map(({title, para, pic}, idx) => (
-                                <SwiperSlide
-                                    key={idx}
-                                    className='item'
-                                >
-                                    <div className="img-box">
-                                        <Image
-                                            src={pic}
-                                            alt={title}
-                                            width={800}
-                                            height={800}
-                                        />
-                                    </div>
-                                    <div className="txt-box">
-                                        <div className="inner">
-                                            <div className="tit">
-                                                <span>{title}</span>
-                                            </div>
-                                            <div className="para">{para}</div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </FadeInUp>
-                )}
+                <div className="items">
+                    {items.map(({ title, para, pic, video }, idx) => (
+                        <VideoItem
+                            key={idx}
+                            idx={idx}
+                            title={title}
+                            para={para}
+                            pic={pic}
+                            video={video}
+                            t={t}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

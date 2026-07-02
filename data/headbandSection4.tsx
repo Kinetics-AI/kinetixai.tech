@@ -2,6 +2,7 @@
 export interface headbandSection4 {
     title: string;
     description: string;
+    video: string;
     image: string;
     isTaskPerformance ? : boolean;
     successTitle ? : string;
@@ -18,17 +19,19 @@ export const headbandSection4Data: LanguageData = {
         {
             title: "Hardware solution",
             description: "Head-mounted device + self-developed wearable clamp, collecting operation data \ncorresponding to the robotic arm's clamping.",
-            image: "/headband/s4-1-1.jpg",
+            video: "/headband/s4-20260702-1.mp4",
+            image: "/headband/s4-20260702-1.jpg",
             isTaskPerformance: false
         },
         {
             title: "Task performance",
             description: "Can storage, success rate in new scenarios increased from 23% to 90% \nafter adding Kai-UMI data.",
-            image: "/headband/s4-1-2.jpg",
+            video: "/headband/s4-20260702-2.mp4",
+            image: "/headband/s4-20260702-2.jpg",
             isTaskPerformance: true,
             successTitle: "Success rate: ",
             successRate: (
-                <>
+                <>·
                     23% <span></span> 90%
                 </>
             )
@@ -38,17 +41,19 @@ export const headbandSection4Data: LanguageData = {
         {
             title: "Hardware solution",
             description: "Head-mounted device + self-developed wearable clamp, collecting operation data \ncorresponding to the robotic arm's clamping.",
-            image: "/headband/s4-1-1.jpg",
+            video: "/headband/s4-20260702-1.mp4",
+            image: "/headband/s4-20260702-1.jpg",
             isTaskPerformance: false
         },
         {
             title: "Task performance",
             description: "Can storage, success rate in new scenarios increased from 23% to 90% \nafter adding Kai-UMI data.",
-            image: "/headband/s4-1-2.jpg",
+            video: "/headband/s4-20260702-2.mp4",
+            image: "/headband/s4-20260702-2.jpg",
             isTaskPerformance: true,
             successTitle: "Success rate: ",
             successRate: (
-                <>
+                <>·
                     23% <span></span> 90%
                 </>
             )

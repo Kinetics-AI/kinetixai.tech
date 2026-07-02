@@ -28,9 +28,9 @@ export const HeadbandSection11 = () => {
                 </FadeInUp>
                 <FadeInUp className="btns">
                     <Link
-                        href="mailto:contact@kinetix.com"
+                        href="mailto:contact@kinetixai.tech"
                     >
-                        <span>contact@kinetix.com</span>
+                        <span>contact@kinetixai.tech</span>
                     </Link>
                 </FadeInUp>
             </div>

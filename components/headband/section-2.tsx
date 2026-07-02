@@ -79,11 +79,11 @@ export const HeadbandSection2 = () => {
                             muted
                             loop
                             playsInline
-                            poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg"
+                            poster="/headband/s2-20260702.jpg"
                             ref={videoRef}
                             onTimeUpdate={handleTimeUpdate}
                         >
-                            <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                            <source src="/headband/s2-20260702.mp4" type="video/mp4" />
                         </video>
                     </div>
                     <div className="btns-box">

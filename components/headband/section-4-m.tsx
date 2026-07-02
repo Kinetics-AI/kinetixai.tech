@@ -41,18 +41,21 @@ export const HeadbandSection4Mobile = () => {
                         slidesPerView={1}
                         pagination={{ clickable: true }}
                     >
-                        {items.map(({title, description, image, isTaskPerformance, successTitle, successRate}, idx) => (
+                        {items.map(({title, description, video, image, isTaskPerformance, successTitle, successRate}, idx) => (
                             <SwiperSlide
                                 key={idx}
                                 className='item'
                             >
-                                <div className="img-box">
-                                    <Image
-                                        src={image}
-                                        alt={title}
-                                        width={800}
-                                        height={800}
-                                    />
+                                <div className="video-box">
+                                    <video
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        poster={image}
+                                    >
+                                        <source src={video} type="video/mp4" />
+                                    </video>
                                 </div>
                                 <div className="txt-box">
                                     <div className="tit">{title}</div>

@@ -132,19 +132,22 @@ export const HeadbandSection4 = () => {
                 <div className="wrapper">
                     <FadeInUp className="cont-block">                        
                         <div className="items">
-                            {items.map(({title, description, image, isTaskPerformance, successTitle, successRate}, idx) => (
+                            {items.map(({title, description, video, image, isTaskPerformance, successTitle, successRate}, idx) => (
                                 <div
                                     key={idx}
                                     className='item'
                                     ref={el => { itemsRef.current[idx] = el; }}
                                 >
-                                    <div className="img-box">
-                                        <Image
-                                            src={image}
-                                            alt={title}
-                                            width={800}
-                                            height={800}
-                                        />
+                                    <div className="video-box">
+                                        <video
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            poster={image}
+                                        >
+                                            <source src={video} type="video/mp4" />
+                                        </video>
                                     </div>
                                     <div className="txt-box">
                                         <div className="tit">{title}</div>

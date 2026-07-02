@@ -20,12 +20,12 @@ export const headbandSection9Data: LanguageData = {
         {
             title: "Automated Quality Inspection",
             para: "Automatically detects issues such as video image quality, abnormal joint poses, and data synchronization errors, and generates quality inspection reports with real-time visibility into pass rates and issue distribution.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-2.jpg"
         },
         {
             title: "Semantic Annotation & Task Segmentation",
             para: "Performs frame-by-frame annotation of continuous video, including action type, interaction object, operating hand, and more, then segments it into independent task clips. Includes semantic descriptions in both Chinese and English.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-3.jpg"
         },
         {
             title: "Data Augmentation",
@@ -42,12 +42,12 @@ export const headbandSection9Data: LanguageData = {
         {
             title: "Automated Quality Inspection",
             para: "Automatically detects issues such as video image quality, abnormal joint poses, and data synchronization errors, and generates quality inspection reports with real-time visibility into pass rates and issue distribution.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-2.jpg"
         },
         {
             title: "Semantic Annotation & Task Segmentation",
             para: "Performs frame-by-frame annotation of continuous video, including action type, interaction object, operating hand, and more, then segments it into independent task clips. Includes semantic descriptions in both Chinese and English.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-3.jpg"
         },
         {
             title: "Data Augmentation",
