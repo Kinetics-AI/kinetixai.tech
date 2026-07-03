@@ -12,30 +12,38 @@ type LanguageData = {
 export const headbandSection7Data: LanguageData = {
     zh: [
         {
-            data: "99,000+",
-            description: "Nearly 100,000 total samples collected, with a total duration of 1,600+ hours, \ncontinuously growing every day.",
-        },
-        {
-            data: "1,600+",
-            description: "Data Collection Hours",
+            data: "100,000+",
+            description: "",
         },
         {
             data: "150+",
             description: "Annotated Action Types",
+        },
+        {
+            data: "2,000+",
+            description: "Annotated Skills",
+        },
+        {
+            data: "10,000+",
+            description: "Scenarios",
         }
     ],
     en: [
         {
-            data: "99,000+",
-            description: "Nearly 100,000 total samples collected, with a total duration of 1,600+ hours, \ncontinuously growing every day.",
-        },
-        {
-            data: "1,600+",
-            description: "Data Collection Hours",
+            data: "100,000+",
+            description: "",
         },
         {
             data: "150+",
             description: "Annotated Action Types",
+        },
+        {
+            data: "2,000+",
+            description: "Annotated Skills",
+        },
+        {
+            data: "10,000+",
+            description: "Scenarios",
         }
     ]
 };

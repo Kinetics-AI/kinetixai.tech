@@ -201,12 +201,15 @@
         "section2BtnTxt": "Learn more",
         "section2VideoBtn": "Full screen",
 
+        "section3Para1": "Elaborately optimized placement and microsecond-level synchronization, these four fisheye cameras support panoramic environmental perception for geometric reconstruction and robust, occlusion-free tracking of dexterous hand manipulation.",
+        "section3Para2": "Complementing the front camera array, four downward-oriented cameras are thoughtfully laid out for comprehensive human pose capture.",
+
         
         "section5Para1": "<p>Lightweight and low-cost hardware for unbounded large-scale deployment, flexible and natural data collection anywhere.</p>",
         "section5Para2": "<p>High-performance processing AI infra enable fine-grained action semantic annotation，3D scene and full body pose recovery, validated across multiple different robot embodiments for real-world task training.</p>",
         "section6Label": "<p>One-shot capture,</p><p>comprehensive multi-modal dataset acquisition</p>",
         "section6sLabel": "<p>Every natural human manipulation synchronously </p><p>captures multi-modal dataset spanning vision, motion semantics and 3D scene,</p><p>delivering complete perceptual priors to empower efficient embodied robot training.</p>",
-        "section7Label": "Continuously growing at scale",
+        "section7Label": "Data Collection Hours",
 
         "section8Label1": "Daily collection count:",
         "section8Label2": "Cumulative total: ",

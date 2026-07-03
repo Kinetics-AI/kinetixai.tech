@@ -39,7 +39,7 @@ export const HeadbandSection8 = () => {
             const winWidth = window.innerWidth;
             setItemWidth(window.innerWidth / 79);
 
-            setContainerHeight(winHeight + totalWidth - winWidth);
+            setContainerHeight(winHeight + totalWidth - winWidth + 500); // 500px 是为了确保图表完全可见
 
             if (topBlockRef.current) {
                 setChartHeight(topBlockRef.current.clientHeight);

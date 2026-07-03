@@ -1,13 +1,22 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import {useTranslations} from 'next-intl';
+
+
+
+
+
 
 export const HeadbandSection3 = () => {
+  
+  const t = useTranslations('Headband');
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const lastIndexRef = useRef(0);
   const [isReady, setIsReady] = useState(false);
+  const [visiblePara, setVisiblePara] = useState<'para-1' | 'para-2' | null>(null);
 
   const CONFIG = {
     START_INDEX: 16,
@@ -108,7 +117,17 @@ export const HeadbandSection3 = () => {
             );
 
             if (index !== currentIndex && imagesRef.current[index]) {
+              console.log('Current image index:', index);
               drawImage(ctx, canvas, imagesRef.current[index], index);
+
+              // 更新显示的段落
+              if (index >= 85 && index <= 170) {
+                setVisiblePara('para-1');
+              } else if (index >= 220 && index <= 280) {
+                setVisiblePara('para-2');
+              } else {
+                setVisiblePara(null);
+              }
             }
           },
         });
@@ -144,7 +163,12 @@ export const HeadbandSection3 = () => {
         </div>
       )}
       <div className="txt-block">
-
+        <div className="para-1" style={{ opacity: visiblePara === 'para-1' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          {t.rich('section3Para1')}
+        </div>
+        <div className="para-2" style={{ opacity: visiblePara === 'para-2' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          {t.rich('section3Para2')}
+        </div>
       </div>
     </div>
   );

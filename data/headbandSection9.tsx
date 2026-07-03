@@ -30,7 +30,7 @@ export const headbandSection9Data: LanguageData = {
         {
             title: "Data Augmentation",
             para: "Generates additional training samples based on existing data, increasing data volume while preserving distribution diversity.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-4.jpg"
         }
     ],
     en: [
@@ -52,7 +52,7 @@ export const headbandSection9Data: LanguageData = {
         {
             title: "Data Augmentation",
             para: "Generates additional training samples based on existing data, increasing data volume while preserving distribution diversity.",
-            pic: "/headband/s9-1-1.jpg"
+            pic: "/headband/s9-1-4.jpg"
         }
     ]
 };

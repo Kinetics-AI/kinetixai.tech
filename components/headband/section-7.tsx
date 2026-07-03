@@ -32,35 +32,23 @@ export const HeadbandSection7 = () => {
     return (
         <div className="headband-s7">
             <div className="wrapper">
-                <div className="left-box">
-                    <FadeInUp className="label">
-                        {t.rich('section7Label')}
-                    </FadeInUp>
-                    <FadeInUp className="items" delay={0.1}>
-                        {items.map(({data, description}, idx) => (
-                            <div
-                                key={idx}
-                                className="item"
-                            >
-                                <div className="num">{data}</div>
-                                <div className="para">
-                                    {description.split('\n').map((line, i) => (
-                                        <p key={i}>{line}</p>
-                                    ))}
-                                </div>
+                <FadeInUp className="label">
+                    {t.rich('section7Label')}
+                </FadeInUp>
+                <FadeInUp className="items" delay={0.1}>
+                    {items.map(({data, description}, idx) => (
+                        <div
+                            key={idx}
+                            className="item"
+                        >
+                            <div className="num">{data}</div>
+                            <div className="para">
+                                {description.split('\n').map((line, i) => (
+                                    <p key={i}>{line}</p>
+                                ))}
                             </div>
-                        ))}
-                    </FadeInUp>
-                </div>
-                <FadeInUp className="right-box">
-                    <div className="img-box">
-                        <Image
-                            src="/headband/s7-1.png"
-                            alt=""
-                            width={800}
-                            height={800}
-                        />
-                    </div>
+                        </div>
+                    ))}
                 </FadeInUp>
             </div>
         </div>
