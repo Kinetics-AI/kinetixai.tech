@@ -15,12 +15,12 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "First-person video",
             para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
-            pic: "/headband/s6-1-1.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-1.jpg"
         },
         {
             title: "Full-body pose capture",
             para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
-            pic: "/headband/s6-1-2.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-2.jpg"
         },
         {
             title: "Hand pose (fine-grained)",
@@ -35,7 +35,7 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "Semantic action annotation",
             para: "Frame-by-frame labeling of action categories, manipulated objects, and time segments, with semantic descriptions in both Chinese and English.",
-            pic: "/headband/s6-1-5.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-5.jpg"
         },
         {
             title: "Rich scene coverage",
@@ -47,12 +47,12 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "First-person video",
             para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
-            pic: "/headband/s6-1-1.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-1.jpg"
         },
         {
             title: "Full-body pose capture",
             para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
-            pic: "/headband/s6-1-2.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-2.jpg"
         },
         {
             title: "Hand pose (fine-grained)",
@@ -67,7 +67,7 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "Semantic action annotation",
             para: "Frame-by-frame labeling of action categories, manipulated objects, and time segments, with semantic descriptions in both Chinese and English.",
-            pic: "/headband/s6-1-5.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-5.jpg"
         },
         {
             title: "Rich scene coverage",
