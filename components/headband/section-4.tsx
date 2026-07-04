@@ -132,7 +132,7 @@ export const HeadbandSection4 = () => {
                 <div className="wrapper">
                     <FadeInUp className="cont-block">                        
                         <div className="items">
-                            {items.map(({title, description, video, image, isTaskPerformance, successTitle, successRate}, idx) => (
+                            {items.map(({video, image}, idx) => (
                                 <div
                                     key={idx}
                                     className='item'
@@ -148,20 +148,6 @@ export const HeadbandSection4 = () => {
                                         >
                                             <source src={video} type="video/mp4" />
                                         </video>
-                                    </div>
-                                    <div className="txt-box">
-                                        <div className="tit">{title}</div>
-                                        <div className="para">
-                                            {description.split('\n').map((line, i) => (
-                                                <p key={i}>{line}</p>
-                                            ))}
-                                        </div>
-                                        {isTaskPerformance && successRate && (
-                                            <div className="rate">
-                                                <div className="stit">{successTitle}</div>
-                                                <div className="num">{successRate}</div>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             ))}

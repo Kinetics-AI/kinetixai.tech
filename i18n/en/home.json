@@ -216,7 +216,7 @@
 
         
         "section9Label": "<p>From raw capture to </p><p>delivery-ready datasets</p>",
-        "section9sLabel": "<p>Management,QA,annotation,</p><p>andaugmentation,end-to-end.</p>",        
+        "section9sLabel": "<p>Management, QA, annotation,</p><p>andaugmentation, end-to-end.</p>",        
         "section10Label": "Data-driven,real-worlddeployment",
         "section10sLabel": "<p>Every task below was trained</p><p>on our captured data.</p>",
         "section11Label": "<p>Lightweight and unobtrusive device,</p><p>for natural and diverse real-life data collection.</p>"

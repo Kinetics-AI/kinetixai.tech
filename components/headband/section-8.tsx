@@ -37,7 +37,7 @@ export const HeadbandSection8 = () => {
         const update = () => {
             const winHeight = window.innerHeight;
             const winWidth = window.innerWidth;
-            setItemWidth(window.innerWidth / 79);
+            setItemWidth(window.innerWidth / 120);
 
             setContainerHeight(winHeight + totalWidth - winWidth + 500); // 500px 是为了确保图表完全可见
 
