@@ -3083,6 +3083,12 @@ img {
             font-size: max(20px, 0.28rem);
             color: #fff;
             opacity: 0;   
+            .tit{
+                font-size: max(24px, 0.4rem);
+                color: #fff;
+                text-align: center;
+                margin-bottom: 0.3rem;
+            }
         }
         .para-2{
             width: 86%;

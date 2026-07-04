@@ -164,6 +164,7 @@ export const HeadbandSection3 = () => {
       )}
       <div className="txt-block">
         <div className="para-1" style={{ opacity: visiblePara === 'para-1' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          <div className="tit">{t('section3Label')}</div>
           {t.rich('section3Para1')}
         </div>
         <div className="para-2" style={{ opacity: visiblePara === 'para-2' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
