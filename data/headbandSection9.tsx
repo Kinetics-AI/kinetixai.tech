@@ -24,12 +24,12 @@ export const headbandSection9Data: LanguageData = {
         },
         {
             title: "Semantic Annotation & Task Segmentation",
-            para: "Performs frame-by-frame annotation of continuous video, including action type, interaction object, operating hand, and more, then segments it into independent task clips. Includes semantic descriptions in both Chinese and English.",
+            para: "Conducts frame-by-frame annotation on continuous video for action types, interaction objects, operating hands and other labels, auto-segments videos into separate task clips, and provides Chinese-English bilingual semantic annotations.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s9-1-3.jpg"
         },
         {
             title: "Data Augmentation",
-            para: "Generates additional training samples based on existing data, increasing data volume while preserving distribution diversity.",
+            para: "Applies data augmentation to generate supplementary training samples from existing data, expanding dataset size while enriching visual diversity.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s9-1-4.jpg"
         }
     ],
@@ -46,12 +46,12 @@ export const headbandSection9Data: LanguageData = {
         },
         {
             title: "Semantic Annotation & Task Segmentation",
-            para: "Performs frame-by-frame annotation of continuous video, including action type, interaction object, operating hand, and more, then segments it into independent task clips. Includes semantic descriptions in both Chinese and English.",
+            para: "Conducts frame-by-frame annotation on continuous video for action types, interaction objects, operating hands and other labels, auto-segments videos into separate task clips, and provides Chinese-English bilingual semantic annotations.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s9-1-3.jpg"
         },
         {
             title: "Data Augmentation",
-            para: "Generates additional training samples based on existing data, increasing data volume while preserving distribution diversity.",
+            para: "Applies data augmentation to generate supplementary training samples from existing data, expanding dataset size while enriching visual diversity.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s9-1-4.jpg"
         }
     ]
