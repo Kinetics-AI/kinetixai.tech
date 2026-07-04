@@ -2942,7 +2942,7 @@ img {
                     width: 6px;
                     height: 8px;
                     @include backcontain;
-                    background-image: url('../public/headband/s2-1.svg');
+                    background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s2-1.svg');
                 }
                 @media (any-hover: hover){
                     &:hover{
@@ -3030,7 +3030,7 @@ img {
                 background-color: rgba(255,255,255,.3);
                 border-radius: 50%;
                 @include backimg;
-                background-image: url('../public/headband/s2-2.svg');
+                background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s2-2.svg');
                 background-size: auto 10px;
             }
         }
@@ -3717,7 +3717,7 @@ img {
                         width: 0.16rem;
                         height: 0.16rem;
                         @include backcontain;
-                        background-image: url('../public/headband/s4-2.png');
+                        background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-2.png');
                     }
                 }
             }
@@ -3799,7 +3799,7 @@ img {
                 content: '';
                 width: 8px;
                 height: 6px;
-                background: url('../public/headband/s10-2.svg') center center no-repeat;
+                background: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s10-2.svg') center center no-repeat;
                 background-size: contain;
                 position: absolute;
                 top: 5px;
@@ -3886,7 +3886,7 @@ img {
                 background-color: rgba(255,255,255,.3);
                 border-radius: 50%;
                 @include backimg;
-                background-image: url('../public/headband/s2-2.svg');
+                background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s2-2.svg');
                 background-size: auto 10px;
             }
         }
@@ -3899,7 +3899,7 @@ img {
 }
 .headband-s11{
     padding: 2.4rem 0 1.8rem;
-    background: #000 url('../public/headband/s11-1.png') center bottom no-repeat;
+    background: #000 url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s11-1.png') center bottom no-repeat;
     background-size: 100% auto;
     .label{
         display: flex;
@@ -3932,7 +3932,7 @@ img {
                 width: 14px;
                 height: 12px;
                 @include backcontain;
-                background-image: url('../public/headband/s11-2.svg');
+                background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s11-2.svg');
             }
             span{
                 font-size: max(12px, 0.14rem);

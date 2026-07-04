@@ -62,8 +62,8 @@ export const HeadbandSection3 = () => {
 
         for (let i = CONFIG.START_INDEX; i <= CONFIG.END_INDEX; i++) {
           const img = new Image();
-          img.src = `/headband/s3/头环_${String(i).padStart(5, '0')}.jpg`;
-          img.crossOrigin = 'anonymous';
+          img.src = `https://assets.kinetixai.cn/shucai/s10-20260702-2/s3/头环_${String(i).padStart(5, '0')}.jpg`;
+          // img.crossOrigin = 'anonymous';
 
           img.onload = () => {
             loaded++;
@@ -141,7 +141,7 @@ export const HeadbandSection3 = () => {
   }, []);
 
   const fallbackImages = CONFIG.FALLBACK_IMAGES.map(
-    (idx) => `/headband/s3/头环_${String(idx).padStart(5, '0')}.jpg`
+    (idx) => `https://assets.kinetixai.cn/shucai/s10-20260702-2/s3/头环_${String(idx).padStart(5, '0')}.jpg`
   );
 
   return (

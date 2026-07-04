@@ -30,7 +30,7 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "3D scene reconstruction",
             para: "Automatically generates high-quality 3D point clouds to faithfully reconstruct real-world environments.",
-            pic: "/headband/s6-1-4.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-4.jpg"
         },
         {
             title: "Semantic action annotation",
@@ -62,7 +62,7 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "3D scene reconstruction",
             para: "Automatically generates high-quality 3D point clouds to faithfully reconstruct real-world environments.",
-            pic: "/headband/s6-1-4.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-4.jpg"
         },
         {
             title: "Semantic action annotation",

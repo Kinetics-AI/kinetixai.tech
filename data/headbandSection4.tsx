@@ -12,22 +12,22 @@ type LanguageData = {
 export const headbandSection4Data: LanguageData = {
     zh: [
         {
-            video: "/headband/s4-20260702-1.mp4",
-            image: "/headband/s4-20260702-1.jpg",
+            video: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-1.mp4",
+            image: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-1.jpg",
         },
         {
-            video: "/headband/s4-20260702-2.mp4",
-            image: "/headband/s4-20260702-2.jpg",
+            video: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-2.mp4",
+            image: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-2.jpg",
         }
     ],
     en: [
         {
-            video: "/headband/s4-20260702-1.mp4",
-            image: "/headband/s4-20260702-1.jpg",
+            video: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-1.mp4",
+            image: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-1.jpg",
         },
         {
-            video: "/headband/s4-20260702-2.mp4",
-            image: "/headband/s4-20260702-2.jpg",
+            video: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-2.mp4",
+            image: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s4-20260702-2.jpg",
         }
     ]
 };

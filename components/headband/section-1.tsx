@@ -19,7 +19,7 @@ export const HeadbandSection1 = () => {
         <div className="headband-s1">
             <div className="video-box">
                 <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                    <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
+                    <source src="https://assets.kinetixai.cn/shucai/s10-20260702-2/20260704banner.mp4" type="video/mp4" />
                 </video>
             </div>
             <div className="txt-box">
