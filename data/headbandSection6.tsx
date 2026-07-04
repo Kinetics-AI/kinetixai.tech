@@ -15,17 +15,17 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "First-person video",
             para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
-            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-1.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-1.jpg"
         },
         {
             title: "Full-body pose capture",
             para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
-            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-2.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-2.jpg"
         },
         {
             title: "Hand pose (fine-grained)",
             para: "High-precision hand keypoint detection, capturing the movement of every finger.",
-            pic: "/headband/s6-1-3.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-3.jpg"
         },
         {
             title: "3D scene reconstruction",
@@ -40,24 +40,24 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "Rich scene coverage",
             para: "Covering homes, hotels, supermarkets, offices, hospitals, and more.",
-            pic: "/headband/s6-1-6.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-6.jpg"
         }
     ],
     en: [
         {
             title: "First-person video",
             para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
-            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-1.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-1.jpg"
         },
         {
             title: "Full-body pose capture",
             para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
-            pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-2.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-2.jpg"
         },
         {
             title: "Hand pose (fine-grained)",
             para: "High-precision hand keypoint detection, capturing the movement of every finger.",
-            pic: "/headband/s6-1-3.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-3.jpg"
         },
         {
             title: "3D scene reconstruction",
@@ -72,7 +72,7 @@ export const headbandSection6Data: LanguageData = {
         {
             title: "Rich scene coverage",
             para: "Covering homes, hotels, supermarkets, offices, hospitals, and more.",
-            pic: "/headband/s6-1-6.jpg"
+            pic: "https://assets.kinetixai.cn/shucai/s6-1-6.jpg"
         }
     ]
 };
