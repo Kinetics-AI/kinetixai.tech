@@ -17,15 +17,15 @@ export const headbandSection7Data: LanguageData = {
         },
         {
             data: "150+",
-            description: "Annotated Action Types",
+            description: "标注动作类别",
         },
         {
             data: "2,000+",
-            description: "Annotated Skills",
+            description: "标注技能类别",
         },
         {
             data: "10,000+",
-            description: "Scenarios",
+            description: "覆盖场景数量",
         }
     ],
     en: [

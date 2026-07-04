@@ -190,5 +190,34 @@
         "para5Artical6": "The impact of these designs is evaluated using a combination of task success rate and the quality of the advantage signal, measured in terms of temporal smoothness and stability, as reported in the following evaluation.",
         "para5Artical7": "<span>Value-diff</span> computes the advantage by subtracting two independently predicted state values. <span>Direct</span> predicts the advantage as the relative improvement from paired observations. <span>Direct+Stage (ours)</span> uses stage-conditioned direct advantage prediction for long-horizon training, achieving smoother results (lower MSTD), greater stability (higher SFR), and higher success rates.",
         "para6Artical": "<ul><li>Not all robot data is equally valuable. The quality and characteristics of training data significantly impact policy performance.</li><li>The capability of the base policy is crucial, but knowing how to rapidly evaluate and select a capable base policy is even more important. A fast research iteration cycle is essential for developing intuition and understanding of base policy behavior.</li><li>Model arithmetic can surprisingly turn lead into gold. Simple arithmetic operations on model weights can transform mediocre policies into high-performing ones.</li><li>Stage-conditioned advantage estimation still has room for improvement. Revisiting fundamental concepts from reinforcement learning may unlock further gains.</li></ul>"
+    },
+    "Headband": {
+        "section1Label": "Kai Ego Suite：从人类动作，到人形智能",
+        "section1sLabel": "<p>全栈具身 AI 数据方案，</p><p>极速采集训练数据，落地真机实景部署</p>",
+        "section2Label": "高质量多模态具身数据，让机器人胜任现实场景任务",
+        "section2Para": "基于专属数据集训练，机器人能够自主执行家务操作，包含衣物折叠、纸盒收纳、工具规整等任务。",
+        "section2BtnTxt": "更多任务展示",
+        "section2VideoBtn": "全屏",
+
+        "section3Label": "Kai Halo",
+        "section3Para1": "经过精细化布局调校与微秒级时序同步，四目鱼眼相机可实现全景环境感知，用于三维几何重建，并对双手动作进行稳定、抗遮挡跟踪。",
+        "section3Para2": "作为前置相机阵列的补充，四个朝下视角相机经过合理布局设计，实现全方位人体姿态采集。",
+
+        
+        "section5Para1": "<p>轻量化、低成本硬件支持规模化部署，数采人员可随时随地完成自然、灵活的数据采集。</p>",
+        "section5Para2": "<p>高性能 AI 数据基建支持细粒度动作语义标注、三维场景重建与全身姿态还原，可适配多类机器人本体，可用于真实场景任务训练。</p>",
+        "section6Label": "<p>一键式采集，</p><p>一站式完成具身多模态数据集构建</p>",
+        "section6sLabel": "<p>同步采集人类全部自然操作行为，生成包含视觉、动作语义、三维场景信息的多模态数据集，输出完整感知先验知识，高效支撑具身机器人模型训练。</p>",
+        "section7Label": "累计采集时长",
+
+        "section8Label1": "Daily collection count:",
+        "section8Label2": "Cumulative total: ",
+
+        
+        "section9Label": "<p>从原始采集素材，</p><p>到可交付成品数据集</p>",
+        "section9sLabel": "<p>一站式完成数据管理、质检、标注与数据增强全流程</p>",        
+        "section10Label": "部署案例",
+        "section10sLabel": "<p>下述所有任务，</p><p>均基于采集数据集完成模型训练</p>",
+        "section11Label": "<p>Kai Ego Suite：穿戴采集全域数据，全链路赋能跨本体具身智能</p>"
     }
 }
