@@ -195,7 +195,7 @@
     },
     "Headband": {
         "section1Label": "Kai Ego Suite: From Human to  Humanoid",
-        "section1sLabel": "<p>A full-stack embodied AI data solution,</p><p>from rapid training data acquisition to real-world robot depolyment</p>",
+        "section1sLabel": "<p>A full-stack embodied AI data solution,</p><p>from rapid training data acquisition to real-world robot deployment</p>",
         "section2Label": "High-quality multimodal embodied training data empowers robots to execute real-world tasks",
         "section2Para": "Our proprietary dataset enables robots to autonomously complete household tasks: folding clothes, folding cartons, and organizing tools.",
         "section2BtnTxt": "Learn more",
