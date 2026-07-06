@@ -210,8 +210,8 @@
         "section6sLabel": "<p>同步采集人类全部自然操作行为，生成包含视觉、动作语义、三维场景信息的多模态数据集，输出完整感知先验知识，高效支撑具身机器人模型训练。</p>",
         "section7Label": "累计采集时长",
 
-        "section8Label1": "Daily collection count:",
-        "section8Label2": "Cumulative total: ",
+        "section8Label1": "每日数采量：",
+        "section8Label2": "累计总量：",
 
         
         "section9Label": "<p>从原始采集素材，</p><p>到可交付成品数据集</p>",

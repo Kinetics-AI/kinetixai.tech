@@ -1,7 +1,6 @@
 
 export interface headbandSection6 {
     title: string;
-    para: string;
     pic: string;
 }
 
@@ -14,64 +13,52 @@ export const headbandSection6Data: LanguageData = {
     zh: [
         {
             title: "第一视角视频",
-            para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-1.jpg"
         },
         {
             title: "全身姿态重建",
-            para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-2.jpg"
         },
         {
             title: "精细手部姿态捕捉",
-            para: "High-precision hand keypoint detection, capturing the movement of every finger.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-3.jpg"
         },
         {
             title: "三维场景重建",
-            para: "Automatically generates high-quality 3D point clouds to faithfully reconstruct real-world environments.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-4.jpg"
         },
         {
             title: "动作语义标注",
-            para: "Frame-by-frame labeling of action categories, manipulated objects, and time segments, with semantic descriptions in both Chinese and English.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-5.jpg"
         },
         {
             title: "海量场景覆盖",
-            para: "Covering homes, hotels, supermarkets, offices, hospitals, and more.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-6.jpg"
         }
     ],
     en: [
         {
             title: "First-person video",
-            para: "Using gripper data collected with the Kai-UMI solution for training, the robotic arm performs can picking and sorting placement. After incorporating our data, the task success rate in new scenarios increased from 23% to 90%.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-1.jpg"
         },
         {
             title: "Full-body pose capture",
-            para: "Real-time motion capture with support for retargeting to multiple robot embodiments.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-2.jpg"
         },
         {
             title: "Hand pose (fine-grained)",
-            para: "High-precision hand keypoint detection, capturing the movement of every finger.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-3.jpg"
         },
         {
             title: "3D scene reconstruction",
-            para: "Automatically generates high-quality 3D point clouds to faithfully reconstruct real-world environments.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-4.jpg"
         },
         {
             title: "Semantic action annotation",
-            para: "Frame-by-frame labeling of action categories, manipulated objects, and time segments, with semantic descriptions in both Chinese and English.",
             pic: "https://assets.kinetixai.cn/shucai/s10-20260702-2/s6-1-5.jpg"
         },
         {
             title: "Rich scene coverage",
-            para: "Covering homes, hotels, supermarkets, offices, hospitals, and more.",
             pic: "https://assets.kinetixai.cn/shucai/s6-1-6.jpg"
         }
     ]

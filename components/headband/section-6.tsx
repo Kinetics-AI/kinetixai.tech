@@ -44,7 +44,7 @@ export const HeadbandSection6 = () => {
                 </div>
                 <div className="cont-block">
                     <FadeInUp className="left-box">
-                        {items.map(({title, para}, idx) => (
+                        {items.map(({title}, idx) => (
                             <div
                                 key={idx}
                                 className={`item ${activeIndex === idx ? 'active' : ''}`}
@@ -57,7 +57,6 @@ export const HeadbandSection6 = () => {
                                     </div>
                                     <span>{title}</span>
                                 </div>
-                                <div className="para">{para}</div>
                             </div>
                         ))}
                     </FadeInUp>

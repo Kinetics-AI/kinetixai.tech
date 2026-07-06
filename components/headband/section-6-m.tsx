@@ -50,7 +50,7 @@ export const HeadbandSection6Mobile = () => {
                         slidesPerView={1}
                         pagination={{ clickable: true }}
                     >
-                        {items.map(({ title, pic, para }, idx) => (
+                        {items.map(({ title, pic }, idx) => (
                             <SwiperSlide
                                 key={idx}
                                 className='item'
@@ -65,7 +65,6 @@ export const HeadbandSection6Mobile = () => {
                                 </div>
                                 <div className="txt-box">
                                     <div className="tit">{title}</div>
-                                    <div className="para">{para}</div>
                                 </div>
                             </SwiperSlide>
                         ))}
