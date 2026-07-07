@@ -3,7 +3,7 @@
 
 import { usePathname } from "next/navigation";
 import { Header } from "./header";
-import { Header1 } from "./header1";
+// import { Header1 } from "./header1";
 
 export function DynamicHeader() {
   const pathname = usePathname();
