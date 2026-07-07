@@ -28,6 +28,7 @@ export function Footer() {
         isExternal?: boolean;
     }[] = [
         { link: t("product"), url: "/kaibot" },
+        { link: t("KaiEgo"), url: "/KaiEgo" },
         { link: t("research"), url: "/research" },
         { link: t("about"), url: "/about" },
         { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },

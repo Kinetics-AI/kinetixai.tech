@@ -18,16 +18,16 @@ interface VideoItemProps {
     video: string;
     t: any;
     idx: number;
-    activeIndex: number | null;
-    setActiveIndex: (index: number | null) => void;
+    activeIndices: number[];
+    toggleActiveIndex: (index: number) => void;
 }
 
-const VideoItem = ({ title, para, pic, video, t, idx, activeIndex, setActiveIndex }: VideoItemProps) => {
+const VideoItem = ({ title, para, pic, video, t, idx, activeIndices, toggleActiveIndex }: VideoItemProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const [progress, setProgress] = useState(0);
 
-    const isActive = activeIndex === idx;
+    const isActive = activeIndices.includes(idx);
 
     // 播放/暂停切换
     const togglePlay = () => {
@@ -60,14 +60,11 @@ const VideoItem = ({ title, para, pic, video, t, idx, activeIndex, setActiveInde
 
     // 点击 para 展开/收起
     const handleParaClick = () => {
-        if (isActive) {
-            setActiveIndex(null);
-            if (videoRef.current) {
+        toggleActiveIndex(idx);
+        if (videoRef.current) {
+            if (isActive) {
                 videoRef.current.pause();
-            }
-        } else {
-            setActiveIndex(idx);
-            if (videoRef.current) {
+            } else {
                 videoRef.current.currentTime = 0;
                 videoRef.current.play();
                 setIsPlaying(true);
@@ -147,7 +144,15 @@ const VideoItem = ({ title, para, pic, video, t, idx, activeIndex, setActiveInde
 export const HeadbandSection10 = () => {
     const t = useTranslations('Headband');
     const params = useParams();
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [activeIndices, setActiveIndices] = useState<number[]>([0, 1]);
+
+    const toggleActiveIndex = (index: number) => {
+        setActiveIndices(prev => 
+            prev.includes(index) 
+                ? prev.filter(i => i !== index)
+                : [...prev, index]
+        );
+    };
 
     // 获取当前语言的数据
     const headbandSection10Items = (): headbandSection10[] => {
@@ -179,8 +184,8 @@ export const HeadbandSection10 = () => {
                             pic={pic}
                             video={video}
                             t={t}
-                            activeIndex={activeIndex}
-                            setActiveIndex={setActiveIndex}
+                            activeIndices={activeIndices}
+                            toggleActiveIndex={toggleActiveIndex}
                         />
                     ))}
                 </div>
