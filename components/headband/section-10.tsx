@@ -149,8 +149,8 @@ export const HeadbandSection10 = () => {
     const toggleActiveIndex = (index: number) => {
         setActiveIndices(prev => 
             prev.includes(index) 
-                ? prev.filter(i => i !== index)
-                : [...prev, index]
+                ? []  // 点击已展开的item，收起所有
+                : [index]  // 点击未展开的item，只展开当前item，收起其他
         );
     };
 
