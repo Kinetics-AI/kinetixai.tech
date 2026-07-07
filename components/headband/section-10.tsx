@@ -17,17 +17,14 @@ interface VideoItemProps {
     pic: string;
     video: string;
     t: any;
-    idx: number;
-    activeIndices: number[];
-    toggleActiveIndex: (index: number) => void;
 }
 
-const VideoItem = ({ title, para, pic, video, t, idx, activeIndices, toggleActiveIndex }: VideoItemProps) => {
+const VideoItem = ({ title, para, pic, video, t }: VideoItemProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const [progress, setProgress] = useState(0);
 
-    const isActive = activeIndices.includes(idx);
+    const isActive = true;
 
     // 播放/暂停切换
     const togglePlay = () => {
@@ -58,27 +55,13 @@ const VideoItem = ({ title, para, pic, video, t, idx, activeIndices, toggleActiv
         }
     };
 
-    // 点击 para 展开/收起
-    const handleParaClick = () => {
-        toggleActiveIndex(idx);
-        if (videoRef.current) {
-            if (isActive) {
-                videoRef.current.pause();
-            } else {
-                videoRef.current.currentTime = 0;
-                videoRef.current.play();
-                setIsPlaying(true);
-            }
-        }
-    };
-
     return (
         <FadeInUp className={`item ${isActive ? 'active' : ''}`} delay={0.1}>
             <div className="txt-box">
                 <div className="tit">
                     <span>{title}</span>
                 </div>
-                <div className="para" onClick={handleParaClick}>{para}</div>
+                <div className="para">{para}</div>
             </div>
             <div className="bot-box">
                 <div className="video-box">
@@ -144,15 +127,6 @@ const VideoItem = ({ title, para, pic, video, t, idx, activeIndices, toggleActiv
 export const HeadbandSection10 = () => {
     const t = useTranslations('Headband');
     const params = useParams();
-    const [activeIndices, setActiveIndices] = useState<number[]>([0, 1]);
-
-    const toggleActiveIndex = (index: number) => {
-        setActiveIndices(prev => 
-            prev.includes(index) 
-                ? []  // 点击已展开的item，收起所有
-                : [index]  // 点击未展开的item，只展开当前item，收起其他
-        );
-    };
 
     // 获取当前语言的数据
     const headbandSection10Items = (): headbandSection10[] => {
@@ -178,14 +152,11 @@ export const HeadbandSection10 = () => {
                     {items.map(({ title, para, pic, video }, idx) => (
                         <VideoItem
                             key={idx}
-                            idx={idx}
                             title={title}
                             para={para}
                             pic={pic}
                             video={video}
                             t={t}
-                            activeIndices={activeIndices}
-                            toggleActiveIndex={toggleActiveIndex}
                         />
                     ))}
                 </div>
