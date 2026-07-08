@@ -2,7 +2,7 @@
 
 import { FadeInUp } from "@/components/animation/fade-in-up"
 import { useTranslations } from 'next-intl';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 
 import { headbandSection10Data, headbandSection10 } from "@/data/headbandSection10";
@@ -21,10 +21,54 @@ interface VideoItemProps {
 
 const VideoItem = ({ title, para, pic, video, t }: VideoItemProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const itemRef = useRef<HTMLDivElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isInViewport, setIsInViewport] = useState(false);
 
-    const isActive = true;
+    // 使用 Intersection Observer 检测视频是否进入视口
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsInViewport(true);
+                        // 进入视口时加载视频
+                        if (!isLoaded) {
+                            setIsLoaded(true);
+                        }
+                        // 自动播放
+                        if (videoRef.current) {
+                            videoRef.current.play().catch(() => {
+                                // 自动播放被阻止，静默处理
+                            });
+                            setIsPlaying(true);
+                        }
+                    } else {
+                        // 离开视口时暂停
+                        if (videoRef.current) {
+                            videoRef.current.pause();
+                            setIsPlaying(false);
+                        }
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: '100px',
+                threshold: 0.3,
+            }
+        );
+
+        if (itemRef.current) {
+            observer.observe(itemRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [isLoaded]);
 
     // 播放/暂停切换
     const togglePlay = () => {
@@ -56,27 +100,42 @@ const VideoItem = ({ title, para, pic, video, t }: VideoItemProps) => {
     };
 
     return (
-        <FadeInUp className={`item ${isActive ? 'active' : ''}`} delay={0.1}>
-            <div className="txt-box">
-                <div className="tit">
-                    <span>{title}</span>
+        <div ref={itemRef} className="item">
+            <FadeInUp delay={0.1}>
+                <div className="txt-box">
+                    <div className="tit">
+                        <span>{title}</span>
+                    </div>
+                    <div className="para">{para}</div>
                 </div>
-                <div className="para">{para}</div>
-            </div>
-            <div className="bot-box">
-                <div className="video-box">
-                    <video
-                        autoPlay={isActive}
-                        muted
-                        loop
-                        playsInline
-                        poster={pic}
-                        ref={videoRef}
-                        onTimeUpdate={handleTimeUpdate}
-                    >
-                        <source src={video} type="video/mp4" />
-                    </video>
-                </div>
+                <div className="bot-box">
+                    <div className="video-box">
+                        {!isInViewport ? (
+                            // 未进入视口时显示占位图，不加载视频元素
+                            <div className="poster-placeholder" style={{
+                                width: '100%',
+                                height: '100%',
+                                backgroundColor: '#f0f0f0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <span>Loading...</span>
+                            </div>
+                        ) : (
+                            <video
+                                muted
+                                loop
+                                playsInline
+                                poster={pic}
+                                ref={videoRef}
+                                onTimeUpdate={handleTimeUpdate}
+                                preload="none"
+                            >
+                                {isLoaded && <source src={video} type="video/mp4" />}
+                            </video>
+                        )}
+                    </div>
                 <div className="btns-box">
                     <svg className="line" viewBox="0 0 36 36">
                         <circle
@@ -106,16 +165,17 @@ const VideoItem = ({ title, para, pic, video, t }: VideoItemProps) => {
                         )}
                     </div>
                 </div>
-                <div
-                    className="full-box"
-                    onClick={handleFullscreen}
-                >
-                    <span>
-                        {t.rich('section2VideoBtn')}
-                    </span>
+                    <div
+                        className="full-box"
+                        onClick={handleFullscreen}
+                    >
+                        <span>
+                            {t.rich('section2VideoBtn')}
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </FadeInUp>
+            </FadeInUp>
+        </div>
     );
 };
 

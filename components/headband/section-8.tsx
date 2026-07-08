@@ -116,7 +116,7 @@ export const HeadbandSection8 = () => {
 
 
 
-    // 下方月份标签
+    // 下方月份标签 - 只显示数据条数 >= 8 的月份
     const { monthLabels } = useMemo(() => {
         const monthMap: Record < string, number > = {};
         daily_data.forEach(item => {
@@ -125,11 +125,13 @@ export const HeadbandSection8 = () => {
             if (!monthMap[key]) monthMap[key] = 0;
             monthMap[key]++;
         });
-        const monthLabels = Object.entries(monthMap).map(([month, days]) => ({
-            month,
-            width: days * ITEM_WIDTH,
-            text: month.replace('-', ' - ')
-        }));
+        const monthLabels = Object.entries(monthMap)
+            .filter(([_, days]) => days >= 8) // 只保留数据条数 >= 8 的月份
+            .map(([month, days]) => ({
+                month,
+                width: days * ITEM_WIDTH,
+                text: month.replace('-', ' - ')
+            }));
         return { monthLabels };
     }, [daily_data, ITEM_WIDTH]);
 

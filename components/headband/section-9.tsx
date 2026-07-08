@@ -35,7 +35,7 @@ export const HeadbandSection9 = () => {
     const totalTabs = items.length;
 
     useEffect(() => {
-        setScrollRangeHeight(window.innerHeight * 2);
+        setScrollRangeHeight(window.innerHeight * 3.5);
     }, []);
 
     // 防抖

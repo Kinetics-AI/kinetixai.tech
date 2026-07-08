@@ -18,7 +18,7 @@ export const HeadbandSection1 = () => {
     return (
         <div className="headband-s1">
             <div className="video-box">
-                <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/shucai/s10-20260702-2/fmt-banner.jpg">
+                <video autoPlay muted loop playsInline preload="auto" poster="https://assets.kinetixai.cn/shucai/s10-20260702-2/fmt-banner.jpg">
                     <source src="https://assets.kinetixai.cn/shucai/s10-20260702-2/20260704banner.mp4" type="video/mp4" />
                 </video>
             </div>
