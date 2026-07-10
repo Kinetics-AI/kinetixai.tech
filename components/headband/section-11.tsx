@@ -32,6 +32,12 @@ export const HeadbandSection11 = () => {
                     >
                         <span>contact@kinetixai.tech</span>
                     </Link>
+                    <Link
+                        href="https://huggingface.co/datasets/Kinetix-AI/kai-data-minibatch"
+                        target="_blank"
+                    >
+                        <span>huggingface</span>
+                    </Link>
                 </FadeInUp>
             </div>
         </div>
