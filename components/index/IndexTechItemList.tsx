@@ -84,12 +84,21 @@ export const IndexTechItemList = () => {
                         >
                             <div className="inner">
                                 <div className="img-box">
-                                    <Image
+                                    {/* <Image
                                         src={pic}
                                         alt={title}
                                         width={800}
                                         height={800}
-                                    />
+                                    /> */}
+                                    <video
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        poster={image}
+                                    >
+                                        <source src={pic} type="video/mp4" />
+                                    </video>
                                 </div>
                                 <div className="txt-box">
                                     <div className="tit">{title}</div>
