@@ -95,7 +95,6 @@ export const IndexTechItemList = () => {
                                         muted
                                         loop
                                         playsInline
-                                        poster={image}
                                     >
                                         <source src={pic} type="video/mp4" />
                                     </video>
