@@ -12,46 +12,38 @@ type LanguageData = {
 export const indexTechData: LanguageData = {
     zh: [
         {
-            title: "空间智能",
-            pic: "https://assets.kinetixai.cn/20251211/Spatial%20Intelligence.gif"
+            title: "KAI 具身智能基础设施",
+            pic: "https://assets.kinetixai.cn/20260811/Embodied%20AI%20Infra.mp4"
         },
         {
-            title: "高拟人全身运动控制",
-            pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20Control.gif"
+            title: "KAI 世界模型",
+            pic: "https://assets.kinetixai.cn/20260811/KAI%20World%20Model.mp4"
         },
         {
-            title: "全身视觉-语言-触觉-动作大模型",
-            pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20ControlWhole-Body%20Foundation%20Model%20for%20Vision%2C%20Language%2C%20Touch%2C%20Action%2C%20and%20Emotion.gif"
+            title: "KAI 第一人称数据采集工厂",
+            pic: "https://assets.kinetixai.cn/20260811/KAI%20Ego%20Data.MP4"
         },
         {
-            title: "全身数采工厂",
-            pic: "https://assets.kinetixai.cn/20251211/Whole-Body%20Data%20Acquisition%20Factory.gif"
-        },
-        {
-            title: "具身智能基础设施",
-            pic: "https://assets.kinetixai.cn/kinetixai/1f49e3b8cd9b2f34ae1dba3d35210e5d.png"
+            title: "超高拟人人形机器人KAI Bot",
+            pic: "https://assets.kinetixai.cn/20260811/Ultra-high%20humanlike.mp4"
         }
     ],
     en: [
         {
-            title: "Spatial Intelligence",
-            pic: "https://assets.kinetixai.cn/20251211/Spatial%20Intelligence.gif"
+            title: "KAI Embodied AI Infra",
+            pic: "https://assets.kinetixai.cn/20260811/Embodied%20AI%20Infra.mp4"
         },
         {
-            title: "Highly Human-Like Whole-Body Control",
-            pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20Control.gif"
+            title: "KAI World Model",
+            pic: "https://assets.kinetixai.cn/20260811/KAI%20World%20Model.mp4"
         },
         {
-            title: "Foundation Model for Vision, Language, Touch, Action, and Emotion",
-            pic: "https://assets.kinetixai.cn/20251211/Highly%20Human-Like%20Whole-Body%20ControlWhole-Body%20Foundation%20Model%20for%20Vision%2C%20Language%2C%20Touch%2C%20Action%2C%20and%20Emotion.gif"
+            title: "KAI Ego Data",
+            pic: "https://assets.kinetixai.cn/20260811/KAI%20Ego%20Data.MP4"
         },
         {
-            title: "Whole-Body Data Acquisition Factory",
-            pic: "https://assets.kinetixai.cn/20251211/Whole-Body%20Data%20Acquisition%20Factory.gif"
-        },
-        {
-            title: "Advanced Embodied AI Infrastructure",
-            pic: "https://assets.kinetixai.cn/kinetixai/1f49e3b8cd9b2f34ae1dba3d35210e5d.png"
+            title: "KAI Bot Ultra-high humanlike humanoid",
+            pic: "https://assets.kinetixai.cn/20260811/Ultra-high%20humanlike.mp4"
         }
     ]
 };
