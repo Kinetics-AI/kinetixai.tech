@@ -13,7 +13,7 @@ export const indexTechData: LanguageData = {
     zh: [
         {
             title: "KAI 具身智能基础设施",
-            pic: "https://assets.kinetixai.cn/20260811/Embodied%20AI%20Infra.mp4"
+            pic: "https://assets.kinetixai.cn/20260811/20260812-160115.mp4"
         },
         {
             title: "KAI 世界模型",
@@ -31,7 +31,7 @@ export const indexTechData: LanguageData = {
     en: [
         {
             title: "KAI Embodied AI Infra",
-            pic: "https://assets.kinetixai.cn/20260811/Embodied%20AI%20Infra.mp4"
+            pic: "https://assets.kinetixai.cn/20260811/20260812-160115.mp4"
         },
         {
             title: "KAI World Model",
