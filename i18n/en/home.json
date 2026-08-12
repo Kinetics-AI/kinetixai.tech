@@ -20,7 +20,7 @@
         "title": "Kinetix AI",
         "indexBannerTit": "Building Ultra-human-like Robot<p>AGI Emergent Capability for Intelligence, Motion, and Feeling</p>",
         "indexCompanyTit": "<span>Vision</span>",
-        "indexCompanyPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough, Physical World Model for Whole-body Control system, gives the humanoid a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we're creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what's possible with technology.</p>",
+        "indexCompanyPara": "<p>Founded in July 2025, KinetixAI is a full-stack embodied AI company at the forefront of foundation model development for robotics. We are a team of engineers and researchers driven by a shared belief: that robots can only meaningfully enter the human world by adopting human-like bodies, interaction paradigms, and learning trajectories.</p>",
         "indexCompanyBtn": "Learn more",
         "indexTechTit": "Core <span>Essentials</span>",
         "indexTechSTit": "From the 'Five Core Technologies' to' Silicon based Life '",
@@ -43,7 +43,7 @@
     "Company": {
         "bannerTit": "About",
         "introTit": "Company",
-        "introPara": "<p>At Kinetix AI, we're a team of passionate tech enthusiasts building robots that feel and think like humans. Our breakthrough, Physical World Model for Whole-body Control system, gives the humanoid a unique blend of wise decision-making and genuine emotion. By testing our robots in everyday life, we're creating a future where intelligent machines naturally integrate into every part of your world. Join us on this exciting journey as we redefine what's possible with technology.</p><p>Our core team is laser-focused on robotics, autonomous driving, and AI. With top-notch engineering skills, we turn groundbreaking ideas into real-world products, shaping the future of physical AI agents. We've brought together a dozen world-class AI scientists whose work has been cited more than a few hundred thousand times on Google Scholar—proof of our global leadership in algorithm innovation.</p>​",
+        "introPara": "<p>Founded in July 2025, KinetixAI is a full-stack embodied AI company at the forefront of foundation model development for robotics. We are a team of engineers and researchers driven by a shared belief: that robots can only meaningfully enter the human world by adopting human-like bodies, interaction paradigms, and learning trajectories.</p><p>This conviction defines our architecture. KinetixAI is committed to the highly anthropomorphic humanoid form factor, building end-to-end capabilities across four domains — hardware embodiment, cognitive intelligence, dexterous manipulation, and data infrastructure. KaiBot is our highly anthropomorphic humanoid robot platform. KAI Hand enables precision dexterous manipulation. KAI Halo Lite and the KAI EGO Dataset establish the data pipeline for grounded, real-world learning. SMASH stress-tests perception and decision-making under high-speed dynamic conditions. KAI Embodied AI Infra provides the foundational infrastructure that drives our continuous iteration at scale.</p>​",
         "teamTit": "Our Stories"
     },
     "Product": {
