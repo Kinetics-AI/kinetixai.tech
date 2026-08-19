@@ -28,10 +28,13 @@ export function Footer() {
         isExternal?: boolean;
     }[] = [
         { link: t("product"), url: "/kaibot" },
+        // KaiHand 导航仅中文站显示
+        ...(locale === 'zh' ? [{ link: t("KaiHand"), url: "/kaihand" }] : []),
         { link: t("KaiEgo"), url: "/KaiEgo" },
         { link: t("research"), url: "/research" },
         { link: t("about"), url: "/about" },
         { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
+        // 文档导航中英文站暂不显示(路由已迁移至 /docs/kaihand,启用时 url 用 "/docs/kaihand")
     ];
 
 

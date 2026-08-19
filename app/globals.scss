@@ -3968,6 +3968,1250 @@ img {
 }
 
 
+//document
+.document-main{
+    background-color: #000000;
+    padding-top: max(76px, 1.21rem);
+    .main-block{
+        display: flex;
+        border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .left-block{
+        width: 3.8rem;
+        background-color: #0e0e0e;
+        border-right: 1px solid rgba(255,255,255,.1);
+        .sticky{
+            position: sticky;
+            top: max(60px, 0.8rem);
+            padding: 0.4rem 0.6rem 0.6rem;
+        }
+        .top-box{
+            span{
+                font-size: 0.28rem;
+                color: #fff;
+                font-weight: bold;
+            }
+            p{
+                font-size: max(14px, 0.18rem);
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+        .nav-box{
+            margin-top: 0.3rem;
+            a{
+                display: block;
+                font-size: max(12px, 0.15rem);
+                color: #cccccc;
+                margin-top: 0.12rem;
+                padding: 0.1rem 0.2rem;
+                border-radius: 6px;
+                &:nth-of-type(1){
+                    margin-top: 0;
+                }
+                &.active{
+                    background-color: #0b34fc;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .right-block{
+        width: calc(100% - 3.8rem);
+        .main-box{
+            display: flex;
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+    }
+    .crumbs-box{
+        padding: 0.3rem 0.6rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        span{
+            font-size: max(12px, 0.15rem);
+            color: #fff;
+            position: relative;
+            &:after{
+                content: '/';
+                position: absolute;
+                top: 0;
+                left: 100%;
+                font-size: max(13px, 0.15rem);
+                color: #fff;
+                width: 0.3rem;
+                text-align: center;
+            }
+            &:nth-of-type(1){
+                color: #cccccc;
+                &:after{
+                    color: #cccccc;
+                }
+            }
+            &:last-of-type{
+                &:after{
+                    display: none;
+                }
+            }
+        }
+    }
+    .center-box{
+        width: calc(100% - 3.8rem);
+        padding-top: 0.6rem;
+        .top-box{
+            margin: 0 0.6rem;
+            padding: 0.3rem 0.4rem 0.2rem;
+            background-color: #191919;
+            border-radius: 0.1rem;
+            .label{
+                font-size: max(20px, 0.28rem);
+                color: #fff;
+                font-weight: bold;
+            }
+            .info{
+                display: flex;  
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 0.1rem;
+                gap: 0.1rem;
+            }
+            .date{
+                font-size: max(12px, 0.15rem);
+                color: #cccccc;
+            }
+            a{
+                min-width: 1.3rem;
+                padding: 0 0.3rem;
+                height: max(34px, 0.38rem);
+                border-radius: 19px;
+                background-color: rgba(255,255,255,.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.1rem;
+                &:before{
+                    content: '';
+                    width: max(14px, 0.18rem);
+                    height: max(14px, 0.18rem);
+                    @include backcontain;
+                    background-image: url('../public/doc/icon-1.svg');
+                }
+                span{
+                    font-size: max(12px, 0.15rem);
+                    color: #fff;
+                }
+            }
+        }
+        .edit-box{
+            padding: 0.6rem;
+            .doc-section{
+                scroll-margin-top: 120px;
+                margin-top: 0.6rem;
+                &:first-of-type{
+                    margin-top: 0;
+                }
+            }
+            .doc-subsection{
+                scroll-margin-top: 120px;
+                padding-bottom: 0.3rem;
+                margin-bottom: 0.3rem;
+                border-bottom: 1px solid #222226;
+                &:last-of-type{
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border: none;
+                }
+            }
+            .doc-h2{
+                font-size: max(18px, 0.24rem);
+                color: #fff;
+                padding-bottom: 0.3rem;
+                margin-bottom: 0.3rem;
+                border-bottom: 1px solid #222226;
+            }
+            .doc-h3{
+                font-size: max(14px, 0.18rem);
+                color: #fff;
+                margin-bottom: 0.15rem;
+            }
+            .doc-body{
+                color: #cccccc;
+                font-size: max(12px, 0.15rem);
+                line-height: 2;
+                overflow-x: auto;
+                & + .doc-subsection{
+                    margin-top: 0.3rem;
+                }
+            }
+            table{
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                th{
+                    padding: 0.15rem 0.3rem;
+                    text-align: left;
+                    background-color: #191919;
+                    &:first-of-type{
+                        border-top-left-radius: 8px;
+                        border-bottom-left-radius: 8px;
+                    }
+                    &:last-of-type{
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                    }
+                }
+                td{
+                    border-bottom: 1px solid #191919;
+                    padding: 0.15rem 0.3rem;
+                }
+            }
+            .doc-markdown{
+                .doc-heading{
+                    scroll-margin-top: 120px;
+                }
+                h2{
+                    font-size: max(18px, 0.24rem);
+                    color: #fff;
+                    padding-bottom: 0.3rem;
+                    margin: 0.4rem 0 0.3rem;
+                    border-bottom: 1px solid #222226;
+                }
+                h3{
+                    font-size: max(14px, 0.18rem);
+                    color: #fff;
+                    margin: 0.3rem 0 0.15rem;
+                }
+                h4,
+                h5{
+                    font-size: max(13px, 0.16rem);
+                    color: #fff;
+                    margin: 0.25rem 0 0.1rem;
+                }
+                p{
+                    margin-bottom: 0.15rem;
+                }
+                ul,
+                ol{
+                    padding-left: 0.3rem;
+                    margin-bottom: 0.15rem;
+                    list-style: disc;
+                }
+                ol{
+                    list-style: decimal;
+                }
+                a{
+                    color: #7ab8ff;
+                    word-break: break-all;
+                }
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    margin: 0.2rem 0;
+                    border-radius: 8px;
+                }
+                .doc-figure{
+                    text-align: center;
+                    margin: 0.2rem 0;
+                    img{
+                        display: inline-block;
+                        margin: 0;
+                    }
+                    figcaption{
+                        margin-top: 0.1rem;
+                        font-size: max(12px, 0.14rem);
+                        color: #999;
+                        line-height: 1.6;
+                    }
+                }
+                code{
+                    background-color: #191919;
+                    padding: 0 0.05rem;
+                    border-radius: 4px;
+                }
+                pre{
+                    background-color: #191919;
+                    padding: 0.2rem 0.3rem;
+                    border-radius: 8px;
+                    overflow-x: auto;
+                    margin: 0.2rem 0;
+                    code{
+                        background: none;
+                        padding: 0;
+                    }
+                }
+                blockquote{
+                    border-left: 3px solid #333333;
+                    padding-left: 0.2rem;
+                    color: #999;
+                    margin: 0.15rem 0;
+                }
+                table{
+                    margin: 0.2rem 0;
+                }
+            }
+        }
+        .bot-box{
+            border-top: 1px solid #222226;
+            padding: 0.3rem 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            .page{
+                width: calc(50% - 0.1rem);
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #0e0e0e;
+                    border-radius: 0.1rem;
+                    padding: 0.2rem 0.4rem;
+                    @media (any-hover: hover) {
+                        &:hover{
+                            background-color: #191919;
+                        }
+                    }
+                }
+                i{
+                    font-size: max(12px, 0.15rem);
+                    color: #cccccc;
+                    font-style: normal;
+                }
+                span{
+                    font-size: max(12px, 0.15rem);  
+                    color: #fff;
+                }
+                &:nth-of-type(1){
+                    i{
+                        order: 2;
+                    }
+                    span{
+                        order: 1;
+                    }
+                }
+                &:nth-of-type(2){
+                    i{
+                        order: 1;
+                    }
+                    span{
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+    .right-box{
+        width: 3.8rem;
+        border-left: 1px solid rgba(255,255,255,.1);
+        .sticky{
+            position: sticky;
+            top: max(60px, 0.8rem);
+            padding: 0.4rem 0.4rem 0.6rem;
+        }
+        .label{
+            font-size: max(12px, 0.15rem);
+            color: #fff;
+            font-weight: 500;
+        }
+        .content{
+            margin-top: 0.2rem;
+            .outline-list{
+                & > li{
+                    position: relative;
+                    list-style: none;
+                    padding: 0 0 0.2rem;
+                    margin: 0;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 22px;
+                        bottom: 0;
+                        left: 3px;
+                        width: 1px;
+                        background-color: #222226;
+                    }
+                    &:last-of-type{
+                        padding: 0;
+                        &:after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .outline-item{
+                display: flex;
+                align-items: center;
+                gap: 0.15rem;
+                transition: all .3s ease;
+                &:before{
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: #6f6f70;
+                }
+                span{
+                    font-size: max(12px, 0.15rem);
+                    line-height: 22px;
+                    color: #a1a1a1;
+                    @media (any-hover: hover){
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+                &.active{
+                    &:before{
+                        background-color: #0b34fc;
+                    }
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+            .outline-sublist{
+                padding: 0.1rem 0 0 0.36rem;
+                & > li{
+                    margin-top: 0.15rem;
+                    &:nth-of-type(1){
+                        margin-top: 0;
+                    }
+                }
+            }
+            .outline-subitem{
+                display: block;
+                span{
+                    font-size: max(12px, 0.15rem);
+                    color: #a1a1a1;
+                    @media (any-hover: hover){
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+                &.active{
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//kaihand
+.kaihand-main{
+    background-color: #000;
+    .wrapper{
+        width: 93.75%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+    }
+}
+.kaihand-s1{
+    height: 100svh;
+    position: relative;
+    overflow: hidden;
+    .video-box{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        video{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &:after{
+            content: '';
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.9));
+            z-index: 2;
+        }
+    }
+    .txt-box{
+        position: absolute;
+        bottom: 0.6rem;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+    .wrapper{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .left-box{
+        display: flex;
+        align-items: flex-end;
+        gap: 0.8rem;
+        .img-box{
+            width: 3.6rem;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .tips-box{
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        .line{
+            width: 1px;
+            height: 0.66rem;
+            background-color: rgba(255,255,255,.2);
+        }
+    }
+    .tips{
+        span{
+            display: block;
+            font-size: 0.46rem;
+            font-family: 'BrunoAce-Regular';
+            color: #fff;
+        }
+        p{
+            font-size: max(15px, 0.2rem);
+            color: #bbbbbb;
+        }
+    }
+    .right-box{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.1rem;
+        .btn{
+            position: relative;
+            min-width: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.24rem;
+            padding: 0 0.2rem;
+            height: max(40px, 0.46rem);
+            span{
+                font-size: max(12px, 0.15rem);
+                color: #bbbbbb;
+                position: relative;
+                z-index: 2;
+            }
+            i{
+                &.icon-1{
+                    width: 6px;
+                    height: 8px;
+                    @include backcontain;
+                    background-image: url('../public/kaihand/icon-3.svg');
+                }
+                &.icon-2{
+                    width: 0.16rem;
+                    height: 0.16rem;
+                    @include backcontain;
+                    background-image: url('../public/kaihand/icon-4.svg');
+                }
+            }
+            &:before,&:after{
+                content: "";
+                width: 100%;
+                height: 100%;
+                @include backimg;
+                background-size: 100% 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            &:before{
+                background-image: url('../public/kaihand/icon-1.png');
+            }
+            &:after{
+                background-image: url('../public/kaihand/icon-2.png');
+                transition: opacity .3s ease;
+            }
+            @media (any-hover: hover){
+                &:hover{
+                    &:after{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+    .video-fullscreen{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .video-content{
+            width: 86%;
+            max-width: 1200px;
+            video{
+                width: 100%;
+                height: auto;
+                max-height: 90vh;
+            }
+        }
+        .close-btn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            line-height: 1;
+            padding-bottom: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+            cursor: pointer;
+            &:hover{
+                background: rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+}
+.kaihand-anchornav{
+    padding-top: 1rem;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    .box{
+        background-color: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 9000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1rem;
+        padding: 4px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    a{
+        padding: 0.1rem 0.24rem;
+        font-size: max(12px, 0.15rem);
+        color: #bbbbbb;
+        border-radius: 9000px;
+        cursor: pointer;
+        &:last-of-type{
+            background-color: rgba(255,255,255,.1);
+            color: #fff;
+        }
+        &.active{
+            background-color: #0f3bac;
+        }
+    }
+}
+.kaihand-s2{
+    .wrapper{
+        padding: 1.6rem 0;
+        border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    .cont-block{
+        max-width: 12rem;
+        margin: 0 auto;
+    }
+    .top-block{
+        .s-tit{
+            font-size: max(15px, 0.2rem);
+            color: #777777;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tit{
+            font-size: 0.46rem;
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 0.1rem;
+        }
+    }
+    .items{
+        margin-top: 0.7rem;
+    }
+    .item{
+        margin-top: 0.2rem;
+        position: relative;
+        aspect-ratio: 1200 / 500;
+        @include backimg;
+        background-size: 100% 100%;
+        &:before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include backimg;
+            background-size: 100% 100%;
+            z-index: 1;
+        }
+        .inner{
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .img-box{
+            width: 50%;
+            aspect-ratio: 6 / 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .txt-box{
+            width: 50%;
+        }
+        .label{
+            font-size: max(12px, 0.15rem);
+            color: #bbbbbb;
+        }
+        .title{
+            font-size: max(18px, 0.26rem);
+            color: #ffffff;
+            font-weight: 500;
+            margin-top: 0.1rem;
+        }
+        .data-box{
+            margin-top: 0.3rem;
+            padding-top: 0.3rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .data{
+            span{
+                display: block;
+                font-size: 0.4rem;
+                color: #bbbbbb;
+                font-family: 'BrunoAce-Regular';
+            }
+            p{
+                font-size: max(15px, 0.2rem);
+                color: #bbbbbb;
+            }
+        }
+        .icon{
+            font-size: 0.3rem;
+            color: #bbbbbb;
+        }
+        &:nth-of-type(1){
+            margin-top: 0;
+        }
+        &:nth-of-type(odd){
+            background-image: url('../public/kaihand/img-3-1.png');
+            &:before{
+                background-image: url('../public/kaihand/img-4-1.png');
+            }
+            .img-box{
+                order: 1;
+            }
+            .txt-box{
+                order: 2;
+                padding: 0 0.6rem 0 0.3rem;
+            }
+        }
+        &:nth-of-type(even){
+            background-image: url('../public/kaihand/img-3-2.png');
+            &:before{
+                background-image: url('../public/kaihand/img-4-2.png');
+            }
+            .img-box{
+                order: 2;
+            }
+            .txt-box{
+                order: 1;
+                padding: 0 0 0 1.2rem;
+            }
+        }
+    }
+}
+.kaihand-s3{
+    .scroll-container{
+        height: 400vh;
+    }
+    .sticky{
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before{
+            content: "";
+            width: 100%;
+            aspect-ratio: 1920 / 1852;
+            @include backimg;
+            background-size: 100% 100%;
+            background-image: url('../public/kaihand/img-7.png');
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+    }
+    .cont-block{
+        max-width: 12rem;
+        margin: 0 auto;
+    }
+    .top-block{
+        .s-tit{
+            font-size: max(15px, 0.2rem);
+            color: #777777;
+            font-weight: bold;
+        }
+        .tit{
+            font-size: 0.46rem;
+            color: #fff;
+            font-weight: 500;
+            margin-top: 0.1rem;
+        }
+        p{
+            font-size: max(12px, 0.15rem);
+            color: #bbbbbb;
+            margin-top: 0.3rem;
+        }
+    }
+    .tab-wrap{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 0.4rem;
+        padding-top: 0.4rem;
+        border-top: 1px solid rgba(255,255,255,.2);
+    }
+    .tab-tit{
+        width: 4.2rem;
+        .item{
+            margin-top: 0.1rem;
+            cursor: pointer;
+            &:nth-of-type(1){
+                margin-top: 0;
+            }
+            .show{
+                background-image: linear-gradient(90deg, #1e1e20, transparent, transparent);
+                padding: 0.2rem;
+                border-radius: 9000px;
+                .tit{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.08rem;
+                    &:before{
+                        content: "+";
+                        width: 20px;
+                        height: 20px;
+                        padding-bottom: 2px;
+                        background-color: #0f3bac;
+                        border-radius: 50%;
+                        font-size: 15px;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                span{
+                    font-size: max(12px, 0.15rem);
+                    color: #bbbbbb;
+                }
+            }
+            .hide{
+                position: relative;
+                display: none;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include backimg;
+                    background-image: url('../public/kaihand/img-6.png');
+                    background-size: 100% 100%;
+                    z-index: 1;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include backimg;
+                    background-image: url('../public/kaihand/img-5.png');
+                    background-size: 100% 100%;
+                    z-index: 1;
+                }
+                .inner{
+                    min-height: 1.54rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 0.1rem;
+                    padding: 0 0.3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+                .tit{
+                    font-size: max(18px, 0.26rem);
+                    color: #fff;
+                    font-weight: 500;
+                }
+                p{
+                    font-size: max(12px, 0.15rem);
+                    color: #bbbbbb;
+                }
+            }
+            &.active{
+                .show{
+                    display: none;
+                }
+                .hide{
+                    display: block;
+                }
+            }
+        }
+    }
+    .tab-cont{
+        width: calc(100% - 4.2rem);
+        padding-left: 1.2rem;
+        .child{
+            position: relative;
+            border-radius: 0.3rem;
+            overflow: hidden;
+            display: none;
+            &.active{
+                display: block;
+            }
+        }        
+        .video-box{
+            aspect-ratio: 66 / 45;
+            video{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .btns-box{
+            position: absolute;
+            right: 0.3rem;
+            bottom: 0.3rem;
+            width: 28px;
+            height: 28px;
+            background-color: rgba(255,255,255,.1);
+            border-radius: 50%;
+            z-index: 3;
+            .line{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                transform: rotate(-90deg);
+                z-index: 2;
+            }
+            .btn{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding-left: 1px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 1;
+                svg{
+                    width: 50%;
+                    height: 50%;
+                }
+            }
+        }
+        .txt-box{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.6rem 1rem 0.3rem 0.3rem;
+            background-image: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.8));
+            z-index: 2;
+            .tit{
+                font-size: max(12px, 0.14rem);
+                color: #fff;
+            }
+            p{
+                display: none;
+            }
+        }
+    }
+}
+.kaihand-s4{
+    .wrapper{
+        padding: 1.6rem 0;
+        border-top: 1px solid rgba(255,255,255,.2);
+    }
+    .cont-block{
+        max-width: 12rem;
+        margin: 0 auto;
+    }
+    .top-block{
+        .s-tit{
+            font-size: max(15px, 0.2rem);
+            color: #777777;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tit{
+            font-size: 0.46rem;
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 0.1rem;
+        }
+    }
+    .items{
+        margin-top: 0.6rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item{
+        width: 50%;
+        background: url('../public/kaihand/img-8.png') no-repeat center center;
+        background-size: 100% 100%;
+        padding: 0.2rem 0.3rem;
+        @media screen and (min-width: 1025px){
+            &:nth-of-type(4n-1),
+            &:nth-of-type(4n){
+                background-image: none;
+            }
+        }
+        .inner{
+            display: flex;
+            align-items: center;
+        }
+        span{
+            width: calc(50% - 0.3rem);
+            font-size: max(12px, 0.15rem);
+            color: #bbbbbb;
+            padding-right: 0.2rem;
+        }
+        p{
+            width: calc(50% + 0.3rem);
+            font-size: max(12px, 0.15rem);
+            color: #ffffff;
+        }
+    }
+}
+.kaihand-s5{
+    background-image: linear-gradient(90deg, #020202, #1e1e20, #000000);
+    .wrapper{
+        padding: 1.6rem 0;
+    }
+    .cont-block{
+        max-width: 12rem;
+        margin: 0 auto;
+    }
+    .top-block{
+        .s-tit{
+            font-size: max(15px, 0.2rem);
+            color: #777777;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tit{
+            font-size: 0.46rem;
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 0.1rem;
+        }
+        p{
+            font-size: max(12px, 0.15rem);
+            color: #bbbbbb;
+            text-align: center;
+            margin-top: 0.3rem;
+        }
+    }
+    .items{
+        max-width: max(350px, 4.2rem);
+        margin: 0.6rem auto 0;
+    }
+    .item{
+        margin-top: 0.15rem;
+        position: relative;
+        &:nth-of-type(1){
+            margin-top: 0;
+        }
+        &:before,&:after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            @include backimg;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &:before{
+            background-image: url('../public/kaihand/img-9.png');
+        }
+        &:after{
+            background-image: url('../public/kaihand/img-10.png');
+            transition: opacity .3s ease;
+        }
+        .inner{
+            aspect-ratio: 420 / 68;
+            display: flex;
+            align-items: center;
+            padding: 0 0.2rem;
+            position: relative;
+            z-index: 2;
+            &:after{
+                content: "";
+                width: 6px;
+                height: 8px;
+                @include backcontain;
+                background-image: url('../public/kaihand/icon-3.svg');
+                position: absolute;
+                top: calc(50% - 4px);
+                right: 0.2rem;
+            }
+        }
+        .icon{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #484848;
+            border: 1px solid #5a5a5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                max-width: 14px;
+                max-height: 14px;
+            }
+        }
+        span{
+            flex: 1;
+            padding: 0 14px 0 8px;
+            font-size: max(14px, 0.18rem);
+            color: #bbbbbb;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                &:after{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+.kaihand-s6{
+    background-color: #000000;
+    .wrapper{
+        width: 93.75%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+    }
+    .top-block{
+        padding: 2.2rem 0 1.4rem;
+        @include backcover;
+        background-image: url('../public/kaihand/img-11.png');
+        .label{
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 500;
+            color: transparent;
+            background-image: linear-gradient(180deg, #ffffff, #ababab);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        .tips{
+            font-size: max(18px, 0.26rem);
+            color: #777777;
+            text-align: center;
+            margin-top: 0.3rem;
+        }
+    }
+    .bot-block{
+        padding: 1.2rem 0;
+        .label{
+            font-size: max(18px, 0.26rem);
+            color: #777777;
+            padding-left: 0.2rem;
+            background: url('../public/kaihand/icon-7.png') no-repeat left center;
+            background-size: auto 0.23rem;
+        }
+    }
+    .items{
+        margin-top: 0.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.2rem;
+    }
+    .item{
+        width: calc((100% - 0.4rem) / 3);
+        background-color: #0f0f10;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(255,255,255,.1);
+        padding: 0.4rem 0.6rem 0.8rem;
+        .icon{
+            width: 56px;
+            height: 56px;
+            background-color: #000;
+            border: 1px solid #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                max-width: 24px;
+                max-height: 24px;
+            }
+        }
+        .title{
+            font-size: max(12px, 0.15rem);
+            color: #4b77e7;
+            margin-top: 0.6rem;
+        }
+        .para{
+            margin-top: 0.3rem;
+            font-size: 0.34rem;
+            color: #fff;
+            &.addr{
+                font-size: max(15px, 0.24rem);
+                line-height: 1.5;
+            }
+        }
+    }
+}
 
 
 
@@ -4385,6 +5629,107 @@ img {
     .headband-s10 .swiper-pagination-bullet-active{
         opacity: 1;
     }
+
+    .document-main .main-block{
+        display: block;
+    }
+    .document-main .left-block .sticky{
+        padding: 0.3rem;
+    }
+    .document-main .left-block .nav-box{
+        display: flex;
+        gap: 0.1rem;
+        flex-wrap: wrap;
+    }
+    .document-main .left-block .nav-box a{
+        margin: 0;
+    }
+    .document-main .left-block{
+        width: 100%;
+    }
+    .document-main .right-block{
+        width: 100%;
+    }
+    .document-main .right-box{
+        display: none;
+    }
+    .document-main .center-box{
+        width: 100%;
+    }
+    .kaihand-s1 .wrapper{
+        display: block;
+    }
+    .kaihand-s1 .right-box{
+        margin-top: 20px;
+    }
+    .kaihand-anchornav{
+        display: none;
+    }
+    .kaihand-s2 .item{
+        aspect-ratio: auto;
+        background-image: none !important;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,.1);
+        overflow: hidden;
+    }
+    .kaihand-s2 .item:before{
+        background-size: cover;
+    }
+    .kaihand-s2 .item .inner{
+        display: block;
+    }
+    .kaihand-s2 .item .img-box{
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .kaihand-s2 .item .txt-box{
+        width: 100%;
+        padding: 0.6rem !important;
+    }
+    .kaihand-s3 .scroll-container{
+        height: auto;
+    }
+    .kaihand-s3 .sticky{
+        height: auto;
+        padding: 1.6rem 0;
+    }
+    .kaihand-s3 .tab-tit{
+        display: none;
+    }
+    .kaihand-s3 .tab-cont{
+        width: 100%;
+        padding-left: 0;
+    }
+    .kaihand-s3 .tab-cont .child{
+        display: block;
+        margin-top: 0.2rem;
+        &:nth-of-type(1){
+            margin-top: 0;
+        }
+    }
+    .kaihand-s3 .tab-cont .txt-box .tit{
+        font-size: 16px;
+    }
+    .kaihand-s3 .tab-cont .txt-box p{
+        font-size: 12px;
+        display: block;
+        margin-top: 10px;
+        color: #bbbbbb;
+    }
+
+    .kaihand-s4 .item{
+        width: 100%;
+    }
+    .kaihand-s4 .item:nth-of-type(even){
+        background-image: none;
+    }
+    .kaihand-s6 .item{
+        width: 100%;
+    }
+    .kaihand-s6 .top-block .label{
+        font-size: 0.6rem;
+    }    
 }
 @media screen and (max-width: 640px){
     .footer .top-block{
@@ -4693,6 +6038,116 @@ img {
     .headband-s11 .label .inner{
         font-size: 20px;
     }
+
+
+    .document-main .left-block .sticky{
+        padding: 20px 7vw;
+    }
+    .document-main .crumbs-box{
+        padding: 15px 7vw;
+    }
+    .document-main .center-box .top-box{
+        margin: 0 7vw;
+        padding: 15px;
+    }
+    .document-main .center-box .top-box .label{
+        font-size: 18px;
+    }
+    .document-main .center-box .edit-box{
+        padding: 0.6rem 7vw;
+    }
+    .document-main .center-box .top-box .info{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .document-main .center-box .bot-box .page{
+        width: 100%;
+    }
+    .document-main .center-box .bot-box .page:nth-of-type(1) i{
+        order: 1;
+    }
+    .document-main .center-box .bot-box .page:nth-of-type(1) span{
+        order: 2;
+    }
+    .document-main .center-box .bot-box{
+        padding: 30px 7vw;;
+    }
     
+
+
+    .kaihand-main .wrapper{
+        width: 86%;
+    }
+    .kaihand-s1 .left-box{
+        display: block;
+    }
+    .kaihand-s1 .left-box .img-box{
+        width: 30vw;
+        max-width: 216px;
+    }
+    .kaihand-s1 .tips-box{
+        margin-top: 20px;
+        gap: 15px;
+    }
+    .kaihand-s1 .tips p{
+        font-size: 13px;
+    }
+    .kaihand-s2 .wrapper{
+        padding: 60px 0;
+    }
+    .kaihand-s2 .top-block .tit{
+        font-size: 20px;
+    }
+    .kaihand-s2 .item .txt-box{
+        padding: 20px !important;
+    }
+    .kaihand-s2 .item .title{
+        font-size: 16px;
+    }
+    .kaihand-s2 .item .data-box{
+        gap: 10px;
+    }
+    .kaihand-s3 .sticky{
+        padding: 60px 0;
+    }
+    .kaihand-s3 .top-block .tit{
+        font-size: 20px;
+    }
+    .kaihand-s4 .wrapper{
+        padding: 60px 0;
+    }
+    .kaihand-s4 .top-block .tit{
+        font-size: 20px;
+    }
+    .kaihand-s4 .item .inner{
+        display: block;
+    }
+    .kaihand-s4 .item span{
+        width: 100%;
+        padding-right: 0;
+    }
+    .kaihand-s4 .item p{
+        width: 100%;
+        margin-top: 0.1rem;
+    }
+    .kaihand-s5 .wrapper{
+        padding: 60px 0;
+    }
+    .kaihand-s5 .top-block .tit{
+        font-size: 20px;
+    }
+
+
+    .kaihand-s6 .wrapper{
+        width: 86%;
+    }
+    .kaihand-s6 .top-block .label{
+        font-size: 24px;
+    }
+    .kaihand-s6 .top-block .tips{
+        font-size: 16px;
+    }    
 
 }
