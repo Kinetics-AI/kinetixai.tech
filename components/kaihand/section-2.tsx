@@ -1,6 +1,9 @@
 'use client';
 
+
 import { FadeInUp } from "@/components/animation/fade-in-up"
+import { FadeInUpScale } from "@/components/animation/fade-in-up-scale"
+
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -39,25 +42,26 @@ export const KaihandSection2 = () => {
                             <FadeInUp
                                 key={idx}
                                 className='item'
-                                delay={0.2}
                             >
                                 <div className="inner">
-                                    <div className="img-box">                                    
+                                    <FadeInUpScale className="img-box" delay={0.1}>                                    
                                         <Image
                                             src={image}
                                             alt={label}
                                             width={600}
                                             height={500}
                                         />
-                                    </div>
+                                    </FadeInUpScale>
                                     <div className="txt-box">
-                                        <div className="label">
+                                        <FadeInUpScale className="label" delay={0.2}>
                                             {label}
-                                        </div>
-                                        <div className="title">
+                                        </FadeInUpScale>
+                                        <FadeInUpScale className="title" delay={0.2}>
                                             {title}
-                                        </div>
+                                        </FadeInUpScale>
+                                        <FadeInUpScale delay={0.2}>                                            
                                         <div className="data-box" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                                        </FadeInUpScale>
                                     </div>
                                 </div>
                             </FadeInUp>

@@ -339,6 +339,10 @@ img {
     font-family: 'Rajdhani-Bold';
     src: url('/fonts/Rajdhani-Bold-4.ttf');
 }
+@font-face {
+    font-family: 'BrunoAce-Regular';
+    src: url('/fonts/BrunoAce-Regular.ttf');
+}
 
 .wrap-s{
 	width: 86%;
@@ -3968,18 +3972,29 @@ img {
 }
 
 
-//document
+// ============================================================
+// 文档模块样式(路由 /[locale]/docs/kaihand,渲染组件 components/document/DocumentClient.tsx)
+// .document-main                  文档页外层容器(黑底三栏布局)
+//   .left-block                   左栏:文档列表导航(navItems)
+//   .right-block .crumbs-box      面包屑
+//   .center-box .top-box          文档标题 + 更新时间 + PDF 下载按钮(仅后台上传 PDF 后显示)
+//   .center-box .edit-box         正文容器
+//     .doc-markdown               Markdown 正文样式:.doc-heading 锚点 / .doc-h2~h5 标题 / 段落 /
+//                                 图片 / .doc-figure+figcaption 图注 / 表格 / 代码块 / 引用等
+//   .right-box .outline-list      右栏:本文大纲(滚动高亮 .active,二级 .outline-sublist)
+//   .bot-box .page                上一篇 / 下一篇导航
+// 响应式覆写见下方两处:“文档模块响应式(平板 ≤1025px)”“文档模块响应式(手机 ≤640px)”
+// ============================================================
 .document-main{
     background-color: #000000;
     padding-top: max(76px, 1.21rem);
     .main-block{
-        background-color: #ffffff;
         display: flex;
-        border-top: 1px solid rgba(0,0,0,.1);
+        border-top: 1px solid rgba(255,255,255,.1);
     }
     .left-block{
         width: 3.8rem;
-        background-color: #f3f3f4;
+        background-color: #0e0e0e;
         border-right: 1px solid rgba(255,255,255,.1);
         .sticky{
             position: sticky;
@@ -3989,12 +4004,12 @@ img {
         .top-box{
             span{
                 font-size: 0.28rem;
-                color: #191919;
+                color: #fff;
                 font-weight: bold;
             }
             p{
                 font-size: max(14px, 0.18rem);
-                color: #191919;
+                color: #fff;
                 font-weight: bold;
             }
         }
@@ -4003,7 +4018,7 @@ img {
             a{
                 display: block;
                 font-size: max(12px, 0.15rem);
-                color: #191919;
+                color: #cccccc;
                 margin-top: 0.12rem;
                 padding: 0.1rem 0.2rem;
                 border-radius: 6px;
@@ -4011,8 +4026,8 @@ img {
                     margin-top: 0;
                 }
                 &.active{
-                    background-color: #e8eaef;
-                    color: #0b34fc;
+                    background-color: #0b34fc;
+                    color: #fff;
                 }
             }
         }
@@ -4021,7 +4036,7 @@ img {
         width: calc(100% - 3.8rem);
         .main-box{
             display: flex;
-            border-top: 1px solid #e8eaef;
+            border-top: 1px solid rgba(255,255,255,.1);
         }
     }
     .crumbs-box{
@@ -4031,7 +4046,7 @@ img {
         gap: 0.3rem;
         span{
             font-size: max(12px, 0.15rem);
-            color: #191919;
+            color: #fff;
             position: relative;
             &:after{
                 content: '/';
@@ -4039,14 +4054,14 @@ img {
                 top: 0;
                 left: 100%;
                 font-size: max(13px, 0.15rem);
-                color: #191919;
+                color: #fff;
                 width: 0.3rem;
                 text-align: center;
             }
             &:nth-of-type(1){
-                color: #191919;
+                color: #cccccc;
                 &:after{
-                    color: #191919;
+                    color: #cccccc;
                 }
             }
             &:last-of-type{
@@ -4062,7 +4077,7 @@ img {
         .top-box{
             margin: 0 0.6rem;
             padding: 0.3rem 0.4rem 0.2rem;
-            background-color: #0b34fc;
+            background-color: #191919;
             border-radius: 0.1rem;
             .label{
                 font-size: max(20px, 0.28rem);
@@ -4078,9 +4093,14 @@ img {
             }
             .date{
                 font-size: max(12px, 0.15rem);
-                color: #ffffff;
+                color: #cccccc;
             }
             a{
+                min-width: 1.3rem;
+                padding: 0 0.3rem;
+                height: max(34px, 0.38rem);
+                border-radius: 19px;
+                background-color: rgba(255,255,255,.1);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -4111,7 +4131,7 @@ img {
                 scroll-margin-top: 120px;
                 padding-bottom: 0.3rem;
                 margin-bottom: 0.3rem;
-                border-bottom: 1px solid #e8eaef;
+                border-bottom: 1px solid #222226;
                 &:last-of-type{
                     margin-bottom: 0;
                     padding-bottom: 0;
@@ -4120,18 +4140,18 @@ img {
             }
             .doc-h2{
                 font-size: max(18px, 0.24rem);
-                color: #191919;
+                color: #fff;
                 padding-bottom: 0.3rem;
                 margin-bottom: 0.3rem;
-                border-bottom: 1px solid #e8eaef;
+                border-bottom: 1px solid #222226;
             }
             .doc-h3{
                 font-size: max(14px, 0.18rem);
-                color: #191919;
+                color: #fff;
                 margin-bottom: 0.15rem;
             }
             .doc-body{
-                color: #191919;
+                color: #cccccc;
                 font-size: max(12px, 0.15rem);
                 line-height: 2;
                 overflow-x: auto;
@@ -4146,7 +4166,7 @@ img {
                 th{
                     padding: 0.15rem 0.3rem;
                     text-align: left;
-                    background-color: #f3f3f4;
+                    background-color: #191919;
                     &:first-of-type{
                         border-top-left-radius: 8px;
                         border-bottom-left-radius: 8px;
@@ -4157,104 +4177,13 @@ img {
                     }
                 }
                 td{
-                    border-bottom: 1px solid #f3f3f4;
+                    border-bottom: 1px solid #191919;
                     padding: 0.15rem 0.3rem;
-                }
-                img{
-                    max-width: clamp(200px, 20vw, 500px);
-                }
-            }
-            .doc-markdown{
-                .doc-heading{
-                    scroll-margin-top: 120px;
-                }
-                h2{
-                    font-size: max(18px, 0.24rem);
-                    color: #191919;
-                    padding-bottom: 0.3rem;
-                    margin: 0.4rem 0 0.3rem;
-                    border-bottom: 1px solid #222226;
-                }
-                h3{
-                    font-size: max(14px, 0.18rem);
-                    color: #191919;
-                    margin: 0.3rem 0 0.15rem;
-                }
-                h4,
-                h5{
-                    font-size: max(13px, 0.16rem);
-                    color: #191919;
-                    margin: 0.25rem 0 0.1rem;
-                }
-                p{
-                    margin-bottom: 0.15rem;
-                }
-                ul,
-                ol{
-                    padding-left: 0.3rem;
-                    margin-bottom: 0.15rem;
-                    list-style: disc;
-                }
-                li{
-                    list-style: disc;
-                }
-                ol{
-                    list-style: decimal;
-                }
-                a{
-                    color: #0b34fc;
-                    word-break: break-all;
-                }
-                img{
-                    max-width: 100%;
-                    height: auto;
-                    display: block;
-                    margin: 0.2rem 0;
-                    border-radius: 8px;
-                }
-                .doc-figure{
-                    text-align: center;
-                    margin: 0.2rem 0;
-                    img{
-                        display: inline-block;
-                        margin: 0;
-                    }
-                    figcaption{
-                        margin-top: 0.1rem;
-                        font-size: max(12px, 0.14rem);
-                        color: #191919;
-                        line-height: 1.6;
-                    }
-                }
-                code{
-                    background-color: #f3f3f4;
-                    padding: 0 0.05rem;
-                    border-radius: 4px;
-                }
-                pre{
-                    background-color: #f3f3f4;
-                    padding: 0.2rem 0.3rem;
-                    border-radius: 8px;
-                    overflow-x: auto;
-                    margin: 0.2rem 0;
-                    code{
-                        background: none;
-                        padding: 0;
-                    }
-                }
-                blockquote{
-                    border-left: 3px solid #333333;
-                    padding-left: 0.2rem;
-                    color: #191919;
-                    margin: 0.15rem 0;
-                }
-                table{
-                    margin: 0.2rem 0;
                 }
             }
         }
         .bot-box{
-            border-top: 1px solid #e8eaef;
+            border-top: 1px solid #222226;
             padding: 0.3rem 0.6rem;
             display: flex;
             flex-wrap: wrap;
@@ -4265,24 +4194,23 @@ img {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    background-color: #f8f8f8;
+                    background-color: #0e0e0e;
                     border-radius: 0.1rem;
                     padding: 0.2rem 0.4rem;
                     @media (any-hover: hover) {
                         &:hover{
-                            background-color: #f3f3f4;
+                            background-color: #191919;
                         }
                     }
                 }
                 i{
                     font-size: max(12px, 0.15rem);
-                    color: #090a10;
-                    opacity: 0.4;
+                    color: #cccccc;
                     font-style: normal;
                 }
                 span{
                     font-size: max(12px, 0.15rem);  
-                    color: #090a10;
+                    color: #fff;
                 }
                 &:nth-of-type(1){
                     i{
@@ -4305,7 +4233,7 @@ img {
     }
     .right-box{
         width: 3.8rem;
-        border-left: 1px solid #e8eaef;
+        border-left: 1px solid rgba(255,255,255,.1);
         .sticky{
             position: sticky;
             top: max(60px, 0.8rem);
@@ -4313,8 +4241,8 @@ img {
         }
         .label{
             font-size: max(12px, 0.15rem);
-            color: #191919;
-            font-weight: 600;
+            color: #fff;
+            font-weight: 500;
         }
         .content{
             margin-top: 0.2rem;
@@ -4331,7 +4259,7 @@ img {
                         bottom: 0;
                         left: 3px;
                         width: 1px;
-                        background-color: #e8eaef;
+                        background-color: #222226;
                     }
                     &:last-of-type{
                         padding: 0;
@@ -4351,16 +4279,15 @@ img {
                     width: 6px;
                     height: 6px;
                     border-radius: 50%;
-                    background-color: #191919;
+                    background-color: #6f6f70;
                 }
                 span{
                     font-size: max(12px, 0.15rem);
                     line-height: 22px;
-                    color: #191919;
-                    font-weight: 600;
+                    color: #a1a1a1;
                     @media (any-hover: hover){
                         &:hover{
-                            color: #0b34fc;
+                            color: #fff;
                         }
                     }
                 }
@@ -4369,7 +4296,7 @@ img {
                         background-color: #0b34fc;
                     }
                     span{
-                        color: #0b34fc;
+                        color: #fff;
                     }
                 }
             }
@@ -4386,16 +4313,16 @@ img {
                 display: block;
                 span{
                     font-size: max(12px, 0.15rem);
-                    color: #191919;
+                    color: #a1a1a1;
                     @media (any-hover: hover){
                         &:hover{
-                            color: #0b34fc;
+                            color: #fff;
                         }
                     }
                 }
                 &.active{
                     span{
-                        color: #0b34fc;
+                        color: #fff;
                     }
                 }
             }
@@ -4498,8 +4425,6 @@ img {
             gap: 0.24rem;
             padding: 0 0.2rem;
             height: max(40px, 0.46rem);
-            border-radius: 0.1rem;
-            transition: all .3s ease;
             span{
                 font-size: max(12px, 0.15rem);
                 color: #bbbbbb;
@@ -4533,7 +4458,6 @@ img {
             }
             &:before{
                 background-image: url('../public/kaihand/icon-1.png');
-                transition: opacity .3s ease;
             }
             &:after{
                 background-image: url('../public/kaihand/icon-2.png');
@@ -4541,8 +4465,7 @@ img {
             }
             @media (any-hover: hover){
                 &:hover{
-                    background-color: #0b34fe;
-                    &:before,&:after{
+                    &:after{
                         opacity: 0;
                     }
                 }
@@ -4623,7 +4546,7 @@ img {
             color: #fff;
         }
         &.active{
-            background-color: #0b34fe;
+            background-color: #0f3bac;
         }
     }
 }
@@ -4683,7 +4606,6 @@ img {
             display: flex;
             align-items: center;
             justify-content: center;
-            will-change: transform;
             img{
                 max-width: 100%;
                 max-height: 100%;
@@ -4695,14 +4617,12 @@ img {
         .label{
             font-size: max(12px, 0.15rem);
             color: #bbbbbb;
-            will-change: transform;
         }
         .title{
             font-size: max(18px, 0.26rem);
             color: #ffffff;
             font-weight: 500;
             margin-top: 0.1rem;
-            will-change: transform;
         }
         .data-box{
             margin-top: 0.3rem;
@@ -4711,7 +4631,6 @@ img {
             display: flex;
             align-items: center;
             gap: 0.3rem;
-            will-change: transform;
         }
         .data{
             span{
@@ -5092,7 +5011,6 @@ img {
         }
         &:before{
             background-image: url('../public/kaihand/img-9.png');
-            transition: opacity .3s ease;
         }
         &:after{
             background-image: url('../public/kaihand/img-10.png');
@@ -5103,10 +5021,8 @@ img {
             display: flex;
             align-items: center;
             padding: 0 0.2rem;
-            border-radius: 9000px;
             position: relative;
             z-index: 2;
-            transition: all .3s ease;
             &:after{
                 content: "";
                 width: 6px;
@@ -5122,7 +5038,7 @@ img {
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-color: rgba(0,0,0,.1);
+            background-color: #484848;
             border: 1px solid #5a5a5a;
             display: flex;
             align-items: center;
@@ -5137,18 +5053,11 @@ img {
             padding: 0 14px 0 8px;
             font-size: max(14px, 0.18rem);
             color: #bbbbbb;
-            transition: color .3s ease;
         }
         @media (any-hover: hover){
             &:hover{
-                &:before,&:after{
+                &:after{
                     opacity: 0;
-                }
-                .inner{
-                    background-color: #0b34fe;
-                }
-                span{
-                    color: #fff;
                 }
             }
         }
@@ -5234,6 +5143,8 @@ img {
         }
     }
 }
+
+
 
 
 
@@ -5652,6 +5563,7 @@ img {
         opacity: 1;
     }
 
+    // 文档模块响应式(平板 ≤1025px:三栏改上下布局,右栏大纲隐藏)
     .document-main .main-block{
         display: block;
     }
@@ -5677,9 +5589,6 @@ img {
     }
     .document-main .center-box{
         width: 100%;
-    }
-    .document-main .center-box .edit-box table img{
-        max-width: 100px;
     }
     .kaihand-s1 .wrapper{
         display: block;
@@ -5754,7 +5663,7 @@ img {
     }
     .kaihand-s6 .top-block .label{
         font-size: 0.6rem;
-    }    
+    }
 }
 @media screen and (max-width: 640px){
     .footer .top-block{
@@ -6065,6 +5974,7 @@ img {
     }
 
 
+    // 文档模块响应式(手机 ≤640px:内边距、面包屑、标题与下载按钮布局)
     .document-main .left-block .sticky{
         padding: 20px 7vw;
     }
@@ -6099,7 +6009,6 @@ img {
     .document-main .center-box .bot-box{
         padding: 30px 7vw;;
     }
-    
 
 
     .kaihand-main .wrapper{
@@ -6173,6 +6082,7 @@ img {
     }
     .kaihand-s6 .top-block .tips{
         font-size: 16px;
-    }    
+    }
+    
 
 }

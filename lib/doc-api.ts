@@ -26,15 +26,15 @@ export interface DocDetail {
     updated_at?: string;
 }
 
-/** 右侧大纲节点(嵌套) */
+/** 右侧大纲节点(嵌套)1 */
 export interface OutlineItem {
     id: string;
     title: string;
     children?: OutlineItem[];
 }
 
-const API_BASE = (process.env.DOC_API_BASE || 'http://cwdl.local.com').replace(/\/+$/, '');
-const API_KEY = process.env.DOC_API_KEY || '';
+const API_BASE = 'https://kaiapi.kinetixai.cn';
+const API_KEY = 'd7f68feb0c6f908ac347bfc34c5c09ec7876363e';
 
 async function apiFetch<T>(path: string): Promise<T | null> {
     const res = await fetch(`${API_BASE}${path}`, {

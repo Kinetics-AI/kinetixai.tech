@@ -61,7 +61,7 @@ export const kaihandSection4Data: LanguageData = {
         },
         {
             label: "操作速度",
-            para: "后期需补充数据"
+            para: "3Hz"
         },
     ],
     en: [
@@ -115,7 +115,7 @@ export const kaihandSection4Data: LanguageData = {
         },
         {
             label: "操作速度",
-            para: "后期需补充数据"
+            para: "3Hz"
         },
     ]
 };

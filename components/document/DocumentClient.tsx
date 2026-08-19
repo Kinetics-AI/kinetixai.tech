@@ -108,7 +108,7 @@ export default function DocumentClient({
                             <div className="top-box">
                                 <h1 className="label">{docTitle}</h1>
                                 <div className="info">
-                                    {updatedAt && <div className="date">{t('dateLabel')}{updatedAt}</div>}
+                                    {false && updatedAt && <div className="date">{t('dateLabel')}{updatedAt}</div>}
                                     {downloadHref && (
                                         <a href={downloadHref} download>
                                             <span>{t('downloadLabel')}</span>
