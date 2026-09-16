@@ -4,6 +4,7 @@ import { FadeInUp } from "@/components/animation/fade-in-up"
 import {useTranslations, useLocale} from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDocPublished } from '@/hooks/use-doc-published';
 
 
 
@@ -14,6 +15,8 @@ export const KaihandSection5 = () => {
     // 文档/合作入口走站内相对路由(带当前语言前缀)
     const docsUrl = `/${locale}/docs/kaihand`;
     const cooperationUrl = `/${locale}/cooperation`;
+    // KAI Hand 文档树在后台改为草稿时,隐藏文档入口(状态查询异常时保持显示)
+    const docPublished = useDocPublished(locale === 'en' ? 'en-kaihand' : 'kaihand');
     
     
     
@@ -29,6 +32,7 @@ export const KaihandSection5 = () => {
                         <p>{t('section5Txt3')}</p>
                     </FadeInUp>
                     <div className="items">
+                        {docPublished && (
                         <FadeInUp className="item" delay={0.2}>
                             <Link className="inner" href={docsUrl}>
                                 <div className="icon">
@@ -42,6 +46,7 @@ export const KaihandSection5 = () => {
                                 <span>{t('section5Txt4')}</span>
                             </Link>
                         </FadeInUp>
+                        )}
                         {/*
                         <FadeInUp className="item" delay={0.2}>
                             <Link className="inner" href="">

@@ -34,11 +34,11 @@ export const KaihandSection2 = () => {
             <div className="wrapper">
                 <div className="cont-block">
                     <FadeInUp className="top-block" delay={0.1}>
-                        <div className="s-tit">{t('section2Txt1')}</div>
+                        {/* <div className="s-tit">{t('section2Txt1')}</div> */}
                         <div className="tit">{t('section2Txt5')}</div>
                     </FadeInUp>
                     <div className="items">                        
-                        {items.map(({image, label, title, htmlContent}, idx) => (
+                        {items.map(({image, label, title, htmlContent, paraContent}, idx) => (
                             <FadeInUp
                                 key={idx}
                                 className='item'
@@ -59,9 +59,14 @@ export const KaihandSection2 = () => {
                                         <FadeInUpScale className="title" delay={0.2}>
                                             {title}
                                         </FadeInUpScale>
-                                        <FadeInUpScale delay={0.2}>                                            
+                                        <FadeInUpScale delay={0.2}>
                                         <div className="data-box" dangerouslySetInnerHTML={{ __html: htmlContent }} />
                                         </FadeInUpScale>
+                                        {paraContent && (
+                                        <FadeInUpScale delay={0.3}>
+                                        <div className="para-box" dangerouslySetInnerHTML={{ __html: paraContent }} />
+                                        </FadeInUpScale>
+                                        )}
                                     </div>
                                 </div>
                             </FadeInUp>

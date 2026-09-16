@@ -28,8 +28,7 @@ export function Header() {
     }[] = [
         { link: t("home"), url: "" },
         { link: t("product"), url: "/kaibot" },
-        // KaiHand 导航仅中文站显示
-        ...(locale === 'zh' ? [{ link: t("KaiHand"), url: "/kaihand" }] : []),
+        { link: t("KaiHand"), url: "/kaihand" },
         { link: t("KaiEgo"), url: "/KaiEgo" },
         { link: t("research"), url: "/research" },
         { link: t("about"), url: "/about" },

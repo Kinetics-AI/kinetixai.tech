@@ -2,6 +2,7 @@
     "Layout": {
         "home": "首页",
         "careers": "招聘",
+        "privacy": "隐私政策",
         "about": "关于",
         "product": "KaiBot",
         "KaiHand": "KaiHand",
@@ -197,6 +198,8 @@
     "Headband": {
         "section1Label": "Kai Ego Suite：从人类动作，到人形智能",
         "section1sLabel": "<p>全栈具身 AI 数据方案，</p><p>极速采集训练数据，落地真机实景部署</p>",
+        "section1BtnTxt": "开发文档",
+
         "section2Label": "高质量多模态具身数据，让机器人胜任现实场景任务",
         "section2Para": "基于专属数据集训练，机器人能够自主执行家务操作，包含衣物折叠、纸盒收纳、工具规整等任务。",
         "section2BtnTxt": "更多任务展示",
@@ -224,7 +227,7 @@
         "section11Label": "<p>Kai Ego Suite：穿戴采集全域数据，全链路赋能跨本体具身智能</p>"
     },
     "Document": {
-        "leftLabel": "产品手册与开源生态",
+        "leftLabel": "产品手册与资源",
         "downloadLabel": "下载PDF",
         "dateLabel": "更新时间：",
         "prevLabel": "上一篇",
@@ -237,6 +240,7 @@
         "section1Txt3": "开发文档",
         "section1Txt4": "咨询购买",
         "section1Txt5": "观看完整视频",
+        "section1Txt6": "",
         "section2Txt1": "亮点",
         "section2Txt2": "优势",
         "section2Txt3": "参数",
@@ -244,7 +248,7 @@
         "section2Txt5": "产品亮点",
         "section3Txt1": "工程化设计",
         "section3Txt2": "高度工程化，集成于手部",
-        "section4Txt1": "关键性能规格参数",
+        "section4Txt1": "关键性能参数",
         "section5Txt1": "资源入口",
         "section5Txt2": "开发友好 支持共创",
         "section5Txt3": "开箱即用 诚邀生态共建",
@@ -259,5 +263,10 @@
         "contactTxt5": "售后技术支持",
         "contactTxt6": "公司地址",
         "contactTxt7": "<p>广东省深圳市南山区粤海街道高新北社区</p><p>沙河西路1819号深圳湾科技生态园7栋B座西区801</p>"
+    },
+    "Single": {
+        "effectiveLabel": "生效日期",
+        "lastUpdated": "最后更新",
+        "tocLabel": "目 录"
     }
 }

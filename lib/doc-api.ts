@@ -7,6 +7,8 @@ export interface DocTreeNode {
     title: string;
     slug: string;
     sort: number;
+    /** 文档语言代码,旧后端不返回 */
+    lang?: string;
     children?: DocTreeNode[];
 }
 
@@ -19,6 +21,8 @@ export interface DocDetail {
     content: string;
     status: number;
     sort: number;
+    /** 文档语言代码,旧后端不返回 */
+    lang?: string;
     pdf_path?: string | null;
     pdf_url?: string | null;
     create_user?: string;
@@ -33,13 +37,15 @@ export interface OutlineItem {
     children?: OutlineItem[];
 }
 
-const API_BASE = 'https://kaiapi.kinetixai.cn';
-const API_KEY = 'd7f68feb0c6f908ac347bfc34c5c09ec7876363e';
+// 文档开放 API 域名与密钥:优先读环境变量(.env.local 的 DOC_API_BASE / DOC_API_KEY),
+// 未配置时回退线上地址;联调本地 CMS 时把 DOC_API_BASE 指到 http://cwdl.local.com
+const API_BASE = process.env.DOC_API_BASE || 'https://kaiapi.kinetixai.cn';
+const API_KEY = process.env.DOC_API_KEY || 'd7f68feb0c6f908ac347bfc34c5c09ec7876363e';
 
-async function apiFetch<T>(path: string): Promise<T | null> {
+async function apiFetch<T>(path: string, revalidate = 60): Promise<T | null> {
     const res = await fetch(`${API_BASE}${path}`, {
         headers: { 'X-Api-Key': API_KEY },
-        next: { revalidate: 60 },
+        next: { revalidate },
         signal: AbortSignal.timeout(5000),
     });
     if (!res.ok) return null;
@@ -56,6 +62,20 @@ export async function getDocTree(): Promise<DocTreeNode[]> {
 /** 获取文档详情(id 或 slug) */
 export async function getDocDetail(idOrSlug: string): Promise<DocDetail | null> {
     return apiFetch<DocDetail>(`/api/openapi/doc/detail/${encodeURIComponent(idOrSlug)}`);
+}
+
+/** 文档发布状态(/api/openapi/doc/status/{idOrSlug}) */
+export interface DocStatus {
+    id: number;
+    slug: string;
+    status: number;
+    published: boolean;
+}
+
+/** 查询文档发布状态(id 或 slug);接口异常或文档不存在时返回 null */
+export async function getDocStatus(idOrSlug: string): Promise<DocStatus | null> {
+    // 显隐状态希望尽快生效,缓存时间比内容接口短
+    return apiFetch<DocStatus>(`/api/openapi/doc/status/${encodeURIComponent(idOrSlug)}`, 10);
 }
 
 /** 按菜单顺序收集可导航的叶子文档(有子节点的展开取子节点) */

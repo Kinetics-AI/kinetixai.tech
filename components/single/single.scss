@@ -1,0 +1,167 @@
+// ============================================================
+// 单页面模块样式(路由 /[locale]/page/[key],暗色左目录 + 右内容版式)
+// 页面文件: app/[locale]/(innerpage)/page/[key]/page.tsx
+// 渲染组件: components/single/SingleClient.tsx
+// 正文 .single-body 由 marked 渲染 Markdown 生成(CMS 开放 API 优先,兜底 data/singlePages.ts)
+// 本文件由单页面路由单独引入,按路由代码分割加载,不进入 globals.scss
+// .single-main               外层容器(黑底)
+//   .hero                    顶部横幅:大标题 + 最后更新(纯黑背景)
+//   .layout                  两栏容器
+//     .side-block .sticky    左栏:目录(滚动高亮 .active)
+//     .content-block         右栏:标题 + 生效日期(可选) + 正文
+//       .single-body         正文排版(h2 编号章节 / h3 小节 / 列表 / 加粗引导词)
+// ============================================================
+.single-main{
+    background-color: #000000;
+    .hero{
+        padding: max(110px, 1.7rem) 0 0.6rem;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        .wrapper{
+            width: 93.75%;
+            max-width: 14rem;
+            margin: 0 auto;
+        }
+        .tit{
+            font-size: max(32px, 0.48rem);
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .update{
+            margin-top: 0.2rem;
+            font-size: max(12px, 0.15rem);
+            color: rgba(255,255,255,.5);
+        }
+    }
+    .layout{
+        width: 93.75%;
+        max-width: 14rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 0.8rem 0 1.2rem;
+    }
+    .side-block{
+        width: 2.6rem;
+        flex-shrink: 0;
+        .sticky{
+            position: sticky;
+            top: max(76px, 1.21rem);
+            padding-right: 0.5rem;
+            border-right: 1px solid rgba(255,255,255,.08);
+        }
+        .label{
+            font-size: max(12px, 0.15rem);
+            color: rgba(255,255,255,.5);
+            letter-spacing: 0.08rem;
+            margin-bottom: 0.3rem;
+        }
+        .single-toc{
+            li{
+                list-style: none;
+            }
+            a{
+                display: block;
+                padding: 0.09rem 0;
+                font-size: max(12px, 0.15rem);
+                color: rgba(255,255,255,.55);
+                line-height: 1.6;
+                @media (any-hover: hover) {
+                    &:hover{
+                        color: #ffffff;
+                    }
+                }
+                &.active{
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .content-block{
+        flex: 1;
+        min-width: 0;
+        .content-tit{
+            font-size: max(22px, 0.3rem);
+            color: #ffffff;
+            font-weight: bold;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.3rem;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+        .effective{
+            font-size: max(13px, 0.16rem);
+            color: rgba(255,255,255,.6);
+            margin-bottom: 0.4rem;
+        }
+        .single-body{
+            color: rgba(255,255,255,.75);
+            font-size: max(13px, 0.16rem);
+            line-height: 2;
+            h2{
+                color: #ffffff;
+                font-weight: bold;
+                font-size: max(17px, 0.22rem);
+                margin: 0.5rem 0 0.2rem;
+                scroll-margin-top: max(90px, 1.4rem);
+                &:first-of-type{
+                    margin-top: 0;
+                }
+            }
+            h3{
+                color: #ffffff;
+                font-weight: bold;
+                font-size: max(15px, 0.18rem);
+                margin: 0.3rem 0 0.15rem;
+                scroll-margin-top: max(90px, 1.4rem);
+            }
+            p{
+                margin-bottom: 0.15rem;
+            }
+            ul,
+            ol{
+                padding-left: 0.3rem;
+                margin-bottom: 0.15rem;
+            }
+            ul{
+                list-style: disc;
+                li{
+                    list-style: disc;
+                }
+            }
+            ol{
+                list-style: decimal;
+                li{
+                    list-style: decimal;
+                }
+            }
+            li{
+                margin-bottom: 0.08rem;
+            }
+            a{
+                color: #4d7cff;
+                word-break: break-all;
+            }
+            strong{
+                color: #ffffff;
+            }
+        }
+    }
+    // 平板:收窄左栏
+    @media screen and (max-width: 1025px){
+        .layout{
+            gap: 0.4rem;
+        }
+        .side-block{
+            width: 2.2rem;
+        }
+    }
+    // 手机:隐藏左栏目录
+    @media screen and (max-width: 640px){
+        .side-block{
+            display: none;
+        }
+        .hero .tit{
+            font-size: max(26px, 0.36rem);
+        }
+    }
+}

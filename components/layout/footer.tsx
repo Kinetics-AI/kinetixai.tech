@@ -1,6 +1,7 @@
 'use client';
 import {useTranslations} from "next-intl";
 import { useParams } from 'next/navigation';
+import { useDocPublished } from '@/hooks/use-doc-published';
 
 
 import Link from "next/link";
@@ -19,6 +20,9 @@ export function Footer() {
     const params = useParams();
     const locale = params.locale as string;
 
+    // 隐私政策文档在后台改为草稿时,隐藏底部入口(状态查询异常时保持显示)
+    const privacyPublished = useDocPublished(`${locale}-privacy`);
+
 
 
 
@@ -28,14 +32,17 @@ export function Footer() {
         isExternal?: boolean;
     }[] = [
         { link: t("product"), url: "/kaibot" },
-        // KaiHand 导航仅中文站显示
-        ...(locale === 'zh' ? [{ link: t("KaiHand"), url: "/kaihand" }] : []),
+        { link: t("KaiHand"), url: "/kaihand" },
         { link: t("KaiEgo"), url: "/KaiEgo" },
         { link: t("research"), url: "/research" },
         { link: t("about"), url: "/about" },
         { link: t("careers"), url: "https://careers.kinetixai.cn/careers", isExternal: true },
+        { link: t("privacy"), url: "/page/privacy" },
         // 文档导航中英文站暂不显示(路由已迁移至 /docs/kaihand,启用时 url 用 "/docs/kaihand")
     ];
+
+    // 隐私政策未发布时过滤掉底部链接
+    const visibleLinks = links.filter((item) => privacyPublished || item.url !== '/page/privacy');
 
 
     const media: {
@@ -135,7 +142,7 @@ export function Footer() {
                     </div>
                     <div className="right-box">
                         <div className="links">                      
-                                {links.map(({link, url, isExternal}, idx) => (
+                                {visibleLinks.map(({link, url, isExternal}, idx) => (
                                     isExternal ? (
                                         <Link href={url} key={idx} target="_blank">
                                             {link}

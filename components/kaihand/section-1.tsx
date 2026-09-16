@@ -4,6 +4,7 @@ import { FadeInUp } from "@/components/animation/fade-in-up"
 import {useTranslations, useLocale} from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDocPublished } from '@/hooks/use-doc-published';
 import { useState } from 'react';
 
 
@@ -15,6 +16,8 @@ export const KaihandSection1 = () => {
     // 文档/合作按钮走站内相对路由(带当前语言前缀)
     const docsUrl = `/${locale}/docs/kaihand`;
     const cooperationUrl = `/${locale}/cooperation`;
+    // KAI Hand 文档树在后台改为草稿时,隐藏文档入口(状态查询异常时保持显示)
+    const docPublished = useDocPublished(locale === 'en' ? 'en-kaihand' : 'kaihand');
     
     // 视频全屏播放
     const [fullscreenVideo, setFullscreenVideo] = useState<string | null>(null);
@@ -40,31 +43,38 @@ export const KaihandSection1 = () => {
             <div className="txt-box">
                 <div className="wrapper">
                     <FadeInUp className="left-box">
-                        <div className="img-box">
-                            <Image
-                                src="/kaihand/img-1.png"
-                                alt="KaiHand"
-                                width={746}
-                                height={428}
-                            />
-                        </div>
-                        <div className="tips-box">
-                            <div className="tips">
-                                <span>21+16</span>
-                                <p>{t.rich('section1Txt1')}</p>
+                        <div className="inner">
+                            <div className="img-box">
+                                <Image
+                                    src="/kaihand/img-1.png"
+                                    alt="KaiHand"
+                                    width={746}
+                                    height={428}
+                                />
                             </div>
-                            <div className="line"></div>
-                            <div className="tips">
-                                <span>1:1</span>
-                                <p>{t.rich('section1Txt2')}</p>
+                            <div className="tips-box">
+                                <div className="tips">
+                                    <span>20+1+16</span>
+                                    <p>{t.rich('section1Txt1')}</p>
+                                </div>
+                                <div className="line"></div>
+                                <div className="tips">
+                                    <span>1:1</span>
+                                    <p>{t.rich('section1Txt2')}</p>
+                                </div>
                             </div>
                         </div>
+                        {t.has('section1Txt6') && t('section1Txt6') !== '' && (
+                            <div className="tips">{t.rich('section1Txt6')}</div>
+                        )}
                     </FadeInUp>
                     <FadeInUp className="right-box" delay={0.1}>
-                        <Link href={docsUrl} className="btn">
-                            <span>{t.rich('section1Txt3')}</span>
-                            <i className="icon-1"></i>
-                        </Link>
+                        {docPublished && (
+                            <Link href={docsUrl} className="btn">
+                                <span>{t.rich('section1Txt3')}</span>
+                                <i className="icon-1"></i>
+                            </Link>
+                        )}
                         <Link href={cooperationUrl} className="btn">
                             <span>{t.rich('section1Txt4')}</span>
                             <i className="icon-1"></i>

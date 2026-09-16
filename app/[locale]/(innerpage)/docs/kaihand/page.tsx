@@ -12,6 +12,7 @@ import {
 import { navItemsData, docOutlineData, docContentData, DocContentItem } from '@/data/documentData';
 
 interface Props {
+    params: Promise<{ locale: 'en' | 'zh' }>;
     searchParams: Promise<{ doc?: string }>;
 }
 
@@ -29,7 +30,8 @@ function buildFallbackHtml(sections: DocContentItem[]): string {
     return parts.join('');
 }
 
-export default async function DocumentPage({ searchParams }: Props) {
+export default async function DocumentPage({ params, searchParams }: Props) {
+    const { locale } = await params;
     const { doc } = await searchParams;
 
     // ---- 从 CMS 开放 API 拉取数据 ----
@@ -40,7 +42,16 @@ export default async function DocumentPage({ searchParams }: Props) {
         tree = [];
     }
 
-    const leaves = flattenLeaves(tree);
+    // 按语言取对应文档树根节点:中文 kaihand,英文 en-kaihand
+    // 不传 lang 参数拉全量树再按 slug 精确命中,兼容尚未支持 lang 筛选的旧后端
+    // 英文树在 CMS 中尚未建立时回退中文树,避免英文站文档页空白
+    const rootSlug = locale === 'en' ? 'en-kaihand' : 'kaihand';
+    const kaihandRoot =
+        tree.find((n) => n.slug === rootSlug)
+        || (rootSlug !== 'kaihand' ? tree.find((n) => n.slug === 'kaihand') : undefined)
+        || tree[0];
+    // 仅取 kaihand 子树的叶子,避免单页面文档(如 zh-privacy)混入左栏导航
+    const leaves = flattenLeaves(kaihandRoot ? [kaihandRoot] : []);
     const current = leaves.find((l) => l.slug === doc) || leaves[0] || null;
 
     let detail = null;
@@ -67,7 +78,7 @@ export default async function DocumentPage({ searchParams }: Props) {
 
         return (
             <DocumentClient
-                groupTitle={tree[0]?.title || 'KAIHand'}
+                groupTitle={kaihandRoot?.title || 'KAIHand'}
                 navItems={navItems}
                 docTitle={detail.title}
                 updatedAt={(detail.updated_at || '').slice(0, 16)}
@@ -80,8 +91,8 @@ export default async function DocumentPage({ searchParams }: Props) {
         );
     }
 
-    // ---- 兜底:接口不可用,渲染本地静态数据 ----
-    const fallbackNav: DocNavItem[] = (navItemsData.zh || []).map((item, idx) => ({
+    // ---- 兜底:接口不可用,渲染本地静态数据(按语言取值) ----
+    const fallbackNav: DocNavItem[] = (navItemsData[locale] || []).map((item, idx) => ({
         title: item.title,
         href: '#',
         active: idx === 0,
@@ -94,8 +105,8 @@ export default async function DocumentPage({ searchParams }: Props) {
             docTitle="产品介绍"
             updatedAt=""
             downloadHref=""
-            html={buildFallbackHtml(docContentData.zh || [])}
-            outline={(docOutlineData.zh || []) as OutlineItem[]}
+            html={buildFallbackHtml(docContentData[locale] || [])}
+            outline={(docOutlineData[locale] || []) as OutlineItem[]}
             prev={null}
             next={null}
         />

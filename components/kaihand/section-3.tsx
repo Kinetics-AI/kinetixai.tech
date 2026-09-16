@@ -166,7 +166,7 @@ export const KaihandSection3 = () => {
                     <div className="wrapper">
                         <div className="cont-block">
                             <FadeInUp className="top-block" delay={0.1}>
-                                <div className="s-tit">{t('section2Txt2')}</div>
+                                {/* <div className="s-tit">{t('section2Txt2')}</div> */}
                                 <div className="tit">{t('section3Txt1')}</div>
                                 <p>{t('section3Txt2')}</p>
                             </FadeInUp>

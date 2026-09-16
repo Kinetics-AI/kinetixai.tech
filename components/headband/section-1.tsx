@@ -1,7 +1,9 @@
 'use client';
 
 import { FadeInUp } from "@/components/animation/fade-in-up"
-import {useTranslations} from 'next-intl';
+import Link from "next/link";
+import {useLocale, useTranslations} from 'next-intl';
+import { useDocPublished } from '@/hooks/use-doc-published';
 
 
 
@@ -12,6 +14,11 @@ import {useTranslations} from 'next-intl';
 
 export const HeadbandSection1 = () => {
     const t = useTranslations('Headband');
+    const locale = useLocale();
+    // 文档按钮跳当前语言的 KaiEgo 文档页(与 KaiHand 产品页跳 /docs/kaihand 一致)
+    const docsUrl = `/${locale}/docs/kaiego`;
+    // KaiEgo 文档树在后台改为草稿时,隐藏本页文档入口(状态查询异常时保持显示)
+    const docPublished = useDocPublished(`${locale}-kaiego`);
     
 
 
@@ -31,6 +38,15 @@ export const HeadbandSection1 = () => {
                         {t.rich('section1sLabel', {
                             p: (chunks) => <p>{chunks}</p>
                         })}
+                    </FadeInUp>
+                    <FadeInUp className="btns">
+                        {docPublished && (
+                            <Link
+                                href={docsUrl}
+                            >
+                                <span>{t('section1BtnTxt')}</span>
+                            </Link>
+                        )}
                     </FadeInUp>
                 </div>
             </div>

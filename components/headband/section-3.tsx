@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import {useTranslations} from 'next-intl';
+import Link from "next/link";
+import {useLocale, useTranslations} from 'next-intl';
+import { useDocPublished } from '@/hooks/use-doc-published';
 
 
 
@@ -11,6 +13,11 @@ import {useTranslations} from 'next-intl';
 export const HeadbandSection3 = () => {
   
   const t = useTranslations('Headband');
+  const locale = useLocale();
+  // 文档按钮跳当前语言的 KaiEgo 文档页(与首屏按钮一致)
+  const docsUrl = `/${locale}/docs/kaiego`;
+  // KaiEgo 文档树在后台改为草稿时,隐藏文档入口(状态查询异常时保持显示)
+  const docPublished = useDocPublished(`${locale}-kaiego`);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -165,7 +172,16 @@ export const HeadbandSection3 = () => {
       <div className="txt-block">
         <div className="para-1" style={{ opacity: visiblePara === 'para-1' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
           <div className="tit">{t('section3Label')}</div>
-          {t.rich('section3Para1')}
+          <p>{t.rich('section3Para1')}</p>
+          <div className="btns">
+              {docPublished && (
+                  <Link
+                      href={docsUrl}
+                  >
+                      <span>{t('section1BtnTxt')}</span>
+                  </Link>
+              )}
+          </div>
         </div>
         <div className="para-2" style={{ opacity: visiblePara === 'para-2' ? 1 : 0, transition: 'opacity 0.3s ease' }}>
           {t.rich('section3Para2')}

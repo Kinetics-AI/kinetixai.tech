@@ -32,7 +32,7 @@ export const KaihandSection4 = () => {
             <div className="wrapper">
                 <div className="cont-block">
                     <FadeInUp className="top-block" delay={0.1}>
-                        <div className="s-tit">{t('section2Txt3')}</div>
+                        {/* <div className="s-tit">{t('section2Txt3')}</div> */}
                         <div className="tit">{t('section4Txt1')}</div>
                     </FadeInUp>
                     <FadeInUp className="items" delay={0.2}>

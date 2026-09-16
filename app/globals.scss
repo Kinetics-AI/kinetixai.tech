@@ -339,6 +339,10 @@ img {
     font-family: 'Rajdhani-Bold';
     src: url('/fonts/Rajdhani-Bold-4.ttf');
 }
+@font-face {
+    font-family: 'BrunoAce-Regular';
+    src: url('/fonts/BrunoAce-Regular.ttf');
+}
 
 .wrap-s{
 	width: 86%;
@@ -2894,6 +2898,32 @@ img {
         color: rgba(255,255,255,.5);
         text-align: center;
     }
+    .btns{
+        margin-top: 0.3rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.2rem;
+        a{
+            padding: 0 0.36rem;
+            height: max(40px, 0.46rem);
+            background-color: rgba(255,255,255,.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.1rem;
+            transition: all .3s ease;
+            span{
+                font-size: max(12px, 0.14rem);
+                color: #fff;
+            }
+            @media (any-hover: hover){
+                &:hover{
+                    background-color: rgba(255,255,255,.2);
+                }
+            }
+        }
+    }
 }
 .headband-s2{
     padding: 0.7rem 0 0;
@@ -3103,6 +3133,32 @@ img {
             color: #fff;
             text-align: center;
             opacity: 0;
+        }
+        .btns{
+            margin-top: 0.3rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.2rem;
+            a{
+                padding: 0 0.36rem;
+                height: max(40px, 0.46rem);
+                background-color: rgba(255,255,255,.1);
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.1rem;
+                transition: all .3s ease;
+                span{
+                    font-size: max(12px, 0.14rem);
+                    color: #fff;
+                }
+                @media (any-hover: hover){
+                    &:hover{
+                        background-color: rgba(255,255,255,.2);
+                    }
+                }
+            }
         }
     }
 }
@@ -3918,6 +3974,7 @@ img {
         margin-top: 0.3rem;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 0.2rem;
         a{
             padding: 0 0.36rem;
@@ -3929,13 +3986,6 @@ img {
             justify-content: center;
             gap: 0.1rem;
             transition: all .3s ease;
-            &:before{
-                content: '';
-                width: 14px;
-                height: 12px;
-                @include backcontain;
-                background-image: url('https://assets.kinetixai.cn/shucai/s10-20260702-2/s11-2.svg');
-            }
             span{
                 font-size: max(12px, 0.14rem);
                 color: #fff;
@@ -4452,9 +4502,16 @@ img {
         justify-content: space-between;
     }
     .left-box{
-        display: flex;
-        align-items: flex-end;
-        gap: 0.8rem;
+        .inner{            
+            display: flex;
+            align-items: flex-end;
+            gap: 0.8rem;
+        }
+        .tips{
+            font-size: max(15px, 0.2rem);
+            color: #bbb;
+            margin-top: 0.3rem;
+        }
         .img-box{
             width: 3.6rem;
             img{
@@ -4498,8 +4555,6 @@ img {
             gap: 0.24rem;
             padding: 0 0.2rem;
             height: max(40px, 0.46rem);
-            border-radius: 0.1rem;
-            transition: all .3s ease;
             span{
                 font-size: max(12px, 0.15rem);
                 color: #bbbbbb;
@@ -4533,7 +4588,6 @@ img {
             }
             &:before{
                 background-image: url('../public/kaihand/icon-1.png');
-                transition: opacity .3s ease;
             }
             &:after{
                 background-image: url('../public/kaihand/icon-2.png');
@@ -4541,8 +4595,7 @@ img {
             }
             @media (any-hover: hover){
                 &:hover{
-                    background-color: #0b34fe;
-                    &:before,&:after{
+                    &:after{
                         opacity: 0;
                     }
                 }
@@ -4623,7 +4676,7 @@ img {
             color: #fff;
         }
         &.active{
-            background-color: #0b34fe;
+            background-color: #0f3bac;
         }
     }
 }
@@ -4683,7 +4736,6 @@ img {
             display: flex;
             align-items: center;
             justify-content: center;
-            will-change: transform;
             img{
                 max-width: 100%;
                 max-height: 100%;
@@ -4695,14 +4747,12 @@ img {
         .label{
             font-size: max(12px, 0.15rem);
             color: #bbbbbb;
-            will-change: transform;
         }
         .title{
             font-size: max(18px, 0.26rem);
             color: #ffffff;
             font-weight: 500;
             margin-top: 0.1rem;
-            will-change: transform;
         }
         .data-box{
             margin-top: 0.3rem;
@@ -4711,7 +4761,6 @@ img {
             display: flex;
             align-items: center;
             gap: 0.3rem;
-            will-change: transform;
         }
         .data{
             span{
@@ -4728,6 +4777,17 @@ img {
         .icon{
             font-size: 0.3rem;
             color: #bbbbbb;
+        }
+        .para-box{
+            margin-top: 0.3rem;
+            font-size: max(12px, 0.15rem);
+            color: #bbbbbb;
+            p{
+                margin-top: 0.1rem;
+                &:nth-of-type(1){
+                    margin-top: 0;
+                }
+            }
         }
         &:nth-of-type(1){
             margin-top: 0;
@@ -5092,7 +5152,6 @@ img {
         }
         &:before{
             background-image: url('../public/kaihand/img-9.png');
-            transition: opacity .3s ease;
         }
         &:after{
             background-image: url('../public/kaihand/img-10.png');
@@ -5103,10 +5162,8 @@ img {
             display: flex;
             align-items: center;
             padding: 0 0.2rem;
-            border-radius: 9000px;
             position: relative;
             z-index: 2;
-            transition: all .3s ease;
             &:after{
                 content: "";
                 width: 6px;
@@ -5122,7 +5179,7 @@ img {
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-color: rgba(0,0,0,.1);
+            background-color: #484848;
             border: 1px solid #5a5a5a;
             display: flex;
             align-items: center;
@@ -5137,18 +5194,11 @@ img {
             padding: 0 14px 0 8px;
             font-size: max(14px, 0.18rem);
             color: #bbbbbb;
-            transition: color .3s ease;
         }
         @media (any-hover: hover){
             &:hover{
-                &:before,&:after{
+                &:after{
                     opacity: 0;
-                }
-                .inner{
-                    background-color: #0b34fe;
-                }
-                span{
-                    color: #fff;
                 }
             }
         }
@@ -5234,6 +5284,8 @@ img {
         }
     }
 }
+
+
 
 
 
@@ -5678,9 +5730,6 @@ img {
     .document-main .center-box{
         width: 100%;
     }
-    .document-main .center-box .edit-box table img{
-        max-width: 100px;
-    }
     .kaihand-s1 .wrapper{
         display: block;
     }
@@ -5754,7 +5803,7 @@ img {
     }
     .kaihand-s6 .top-block .label{
         font-size: 0.6rem;
-    }    
+    }
 }
 @media screen and (max-width: 640px){
     .footer .top-block{
@@ -6099,13 +6148,12 @@ img {
     .document-main .center-box .bot-box{
         padding: 30px 7vw;;
     }
-    
 
 
     .kaihand-main .wrapper{
         width: 86%;
     }
-    .kaihand-s1 .left-box{
+    .kaihand-s1 .left-box .inner{
         display: block;
     }
     .kaihand-s1 .left-box .img-box{
@@ -6173,6 +6221,7 @@ img {
     }
     .kaihand-s6 .top-block .tips{
         font-size: 16px;
-    }    
+    }
+    
 
 }
