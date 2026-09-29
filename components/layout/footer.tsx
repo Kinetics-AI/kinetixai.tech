@@ -165,11 +165,16 @@ export function Footer() {
                 </div>
                 <div className="bot-block">
                     <div className="copyright">
-                        contact@kinetixai.tech
-                        <br></br>
-                        {t('footerAddress')}
-                        <br></br>
-                        {t('footerCopyright')}
+                        <p>contact@kinetixai.tech</p>
+                        <p>{t('footerAddress')}</p>
+                        <p>
+                            {t('footerCopyright')}
+                            {t('footerBeian') && (
+                                <Link href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer">
+                                    {t('footerBeian')}
+                                </Link>
+                            )}
+                        </p>
                     </div>
                     <div className="share">
                         {filteredMedia.map(({tit, url, icon, img, cn}, idx) => (

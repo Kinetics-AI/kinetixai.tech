@@ -696,6 +696,11 @@ img {
         .copyright{
             font-size: max(13px, 0.16rem);
             color: #fff;;
+            a{
+                display: inline-block;
+                margin: 0 0.1rem;
+                color: #fff;
+            }
         }
         .share{
             display: flex;
