@@ -169,6 +169,11 @@ export function Footer() {
                         <p>{t('footerAddress')}</p>
                         <p>
                             {t('footerCopyright')}
+                        </p>
+                        <p>
+                            {t('footerCompany') && (
+                                t('footerCompany')
+                            )}
                             {t('footerBeian') && (
                                 <Link href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer">
                                     {t('footerBeian')}
