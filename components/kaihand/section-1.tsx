@@ -46,7 +46,7 @@ export const KaihandSection1 = () => {
                         <div className="inner">
                             <div className="img-box">
                                 <Image
-                                    src="/kaihand/img-1.png"
+                                    src="https://assets.kinetixai.cn/kaihand/img-1.png"
                                     alt="KaiHand"
                                     width={746}
                                     height={428}

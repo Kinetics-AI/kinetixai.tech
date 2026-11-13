@@ -1,39 +1,26 @@
-'use client';
+import { getChannelConfig, getResearchItems } from '@/lib/content-api';
 
-import {useTranslations} from 'next-intl';
+import ResearchClient from './research-client';
 
-import Link from "next/link"
-import Image from 'next/image'
-import { FadeIn } from "@/components/animation/fade-in"
-import { FadeInUp } from "@/components/animation/fade-in-up"
+interface Props {
+    params: Promise<{ locale: string }>;
+}
 
-import { ResearchList } from '@/components/research/ResearchList'; 
+/** 「研究」栏目别名(后台「栏目管理 → 研究」) */
+const RESEARCH_CHANNEL = 'research';
 
+/**
+ * 研究
+ * 服务端从 CMS 拉取「研究」栏目的配置(标题、简介)与栏目下的研究内容,
+ * 再下发给客户端组件;接口异常时组件内部回落到多语言文案与静态兜底数据
+ */
+export default async function ResearchPage({ params }: Props) {
+    const { locale } = await params;
 
+    const [config, items] = await Promise.all([
+        getChannelConfig(RESEARCH_CHANNEL, locale),
+        getResearchItems(locale),
+    ]);
 
-
-
-export default function ResearchPage(){
-    
-    const t = useTranslations('Research');
-
-
-
-    return (
-        <div className="research-main">
-            <div className="inner-s6">
-                <div className="wrap-s">
-                    <FadeInUp className="label">
-                        {t('label')}
-                    </FadeInUp>
-                    <FadeInUp className="para" delay={0.1}>
-                        {t.rich('para', {
-                            p: (chunks) => <p>{chunks}</p>
-                        })}
-                    </FadeInUp>
-                    <ResearchList />
-                </div>
-            </div>
-        </div>
-    )
+    return <ResearchClient config={config} items={items} />;
 }

@@ -37,7 +37,7 @@ export const KaihandSection5 = () => {
                             <Link className="inner" href={docsUrl}>
                                 <div className="icon">
                                     <Image
-                                        src="/kaihand/icon-5-1.svg"
+                                        src="https://assets.kinetixai.cn/kaihand/icon-5-1.svg"
                                         alt="KaiHand"
                                         width={12}
                                         height={12}
@@ -52,7 +52,7 @@ export const KaihandSection5 = () => {
                             <Link className="inner" href="">
                                 <div className="icon">
                                     <Image
-                                        src="/kaihand/icon-5-2.svg"
+                                        src="https://assets.kinetixai.cn/kaihand/icon-5-2.svg"
                                         alt="KaiHand"
                                         width={12}
                                         height={12}
@@ -65,7 +65,7 @@ export const KaihandSection5 = () => {
                             <Link className="inner" href="">
                                 <div className="icon">
                                     <Image
-                                        src="/kaihand/icon-5-3.svg"
+                                        src="https://assets.kinetixai.cn/kaihand/icon-5-3.svg"
                                         alt="KaiHand"
                                         width={12}
                                         height={12}
@@ -78,7 +78,7 @@ export const KaihandSection5 = () => {
                             <Link className="inner" href={cooperationUrl}>
                                 <div className="icon">
                                     <Image
-                                        src="/kaihand/icon-5-4.svg"
+                                        src="https://assets.kinetixai.cn/kaihand/icon-5-4.svg"
                                         alt="KaiHand"
                                         width={12}
                                         height={12}

@@ -2,31 +2,26 @@
 
 import {useTranslations} from 'next-intl';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useParams } from 'next/navigation';
-import { companyListData, companyList } from "@/data/companyList";
 
+import type { StorySlide } from '@/lib/content-api';
 import { FadeIn } from "@/components/animation/fade-in"
 import { FadeInUp } from "@/components/animation/fade-in-up"
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const CompanyList = () => {
+interface Props {
+    /** 团队故事时间轴数据(服务端从 CMS「关于我们」栏目的「团队故事」模型拉取) */
+    items: StorySlide[];
+}
+
+export const CompanyList = ({ items }: Props) => {
     const t = useTranslations('Company');
-    const params = useParams();
-    
+
     // 元素
     const lineRef = useRef<HTMLDivElement>(null);
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [activeItemIndex, setActiveItemIndex] = useState<number>(-1);
 
-
-    // 获取当前语言的数据
-    const companyListItems = (): companyList[] => {  
-        const locale = typeof params.locale === 'string' ? params.locale : 'en';
-        return companyListData[locale] || companyListData.en;
-    };
-
-    const items = companyListItems();
     if (!items.length) return null;
 
 

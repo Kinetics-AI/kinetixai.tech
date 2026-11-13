@@ -1,233 +1,31 @@
-'use client';
+import { getIndexBannerSlides, getIndexCompanyIntro, getIndexTechSlides } from '@/lib/content-api';
 
-import {useTranslations} from 'next-intl';
-import { useState, useEffect, useRef } from 'react';
-import { useParams } from 'next/navigation';
+import HomeClient from './home-client';
 
-import Link from "next/link"
-import Image from 'next/image'
-import { FadeIn } from "@/components/animation/fade-in"
-import { FadeInUp } from "@/components/animation/fade-in-up"
+interface Props {
+    params: Promise<{ locale: string }>;
+}
 
-import {Pagination, Autoplay} from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperClass } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
+/**
+ * 首页
+ * 服务端从 CMS 拉取「首页banner管理」「首页核心技术」两个栏目的已发布内容,
+ * 以及「首页公司简介」栏目的栏目配置,作为首屏/核心技术轮播/公司简介区块的数据;
+ * 接口异常时 lib/content-api.ts 内置兜底数据,保证页面不白屏
+ */
+export default async function Page({ params }: Props) {
+    const { locale } = await params;
 
-
-import { IndexSceneItemList } from '@/components/index/IndexSceneItemList';
-import { IndexTechItemList } from '@/components/index/IndexTechItemList';
-import { IndexSceneItemListMobile } from '@/components/index/IndexSceneItemListMobile'; 
-import { IndexNewsItemList } from '@/components/index/IndexNewsItemList'; 
-
-
-
-
-export default function Page(){
-    
-    const t = useTranslations('Home');
-    const params = useParams();
-    const locale = params.locale as string;
-
-
-    // banner
-    const [isDesktop, setIsDesktop] = useState(false);
-
-    // 设置截止时间：4月25日 19:00
-    const targetDate = new Date('2026-04-25T19:00:00').getTime();
-
-    // 倒计时状态
-    const [countdown, setCountdown] = useState('');
-    const [showCountdown, setShowCountdown] = useState(true);
-    
-    // 倒计时逻辑
-    useEffect(() => {
-        const updateCountdown = () => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            
-            if (distance < 0) {
-                // 倒计时结束
-                setShowCountdown(false);
-                return;
-            }
-            
-            const hours = Math.floor(distance / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            setCountdown(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
-        };
-        
-        // 立即更新一次
-        updateCountdown();
-        
-        // 每秒更新一次
-        const timer = setInterval(updateCountdown, 1000);
-        
-        return () => clearInterval(timer);
-    }, [targetDate]);
-
-    useEffect(() => {
-        const checkScreenSize = () => {
-            setIsDesktop(window.innerWidth > 1024);
-        };
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
-
-
-    // company
-    const boxRef = useRef(null);
-    const sectionRef = useRef(null);
-    useEffect(() => {
-        if (!boxRef.current || !sectionRef.current) return;
-        const loadGSAP = async () => {
-            const { gsap } = await import("gsap");
-            const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-            
-            gsap.registerPlugin(ScrollTrigger);
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top bottom",
-                    end: "bottom center",
-                    scrub: true,
-                    markers: false,
-                }
-            });
-            tl.to(boxRef.current, { y: '-50%', duration: 1 });
-
-            return () => {
-                tl.kill();
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            };
-        };
-
-        loadGSAP();
-    }, []);
-
-
+    const [bannerSlides, techSlides, companyIntro] = await Promise.all([
+        getIndexBannerSlides(locale),
+        getIndexTechSlides(locale),
+        getIndexCompanyIntro(locale),
+    ]);
 
     return (
-        <div className="index-main">
-            <div className="index-s1">
-                <Swiper
-                    modules={[Pagination,Autoplay]}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                        waitForTransition: true,
-                    }}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    speed={800}
-                    pagination={{ clickable: true }}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide
-                        className='item'
-                    >
-                        <div className="video-box">
-                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20260421.jpg">
-                                <source src="https://assets.kinetixai.cn/202603262/2026421172756.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <div className="txt-box">
-                            <div className="wrap-s">
-                                <FadeInUp className="tit">
-                                    {t.rich('indexBannerTit', {
-                                        span: (chunks) => <span>{chunks}</span>,
-                                        p: (chunks) => <p>{chunks}</p>
-                                    })}
-                                </FadeInUp>
-                                {showCountdown && (
-                                    <FadeInUp className="countdown" delay={0.1}>
-                                        {countdown}
-                                    </FadeInUp>
-                                )}
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide
-                        className='item'
-                    >
-                        <div className="video-box">
-                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                                <source src="https://assets.kinetixai.cn/AMS/251212_raw.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide
-                        className='item'
-                    >
-                        <div className="video-box">
-                            <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/kinetixai/index/banner-20251212.jpg">
-                                <source src="https://assets.kinetixai.cn/20260119/20260203.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-            </div>
-            <div className="index-s2">
-                <div className="wrap-s">
-                    <div className="top-block">
-                        <FadeInUp className='label'>
-                            {t.rich('indexCompanyTit', {
-                                span: (chunks) => <span>{chunks}</span>,
-                            })}
-                        </FadeInUp>
-                        <div className="para-box">
-                            <FadeInUp className="para" delay={0.1}>
-                                {t.rich('indexCompanyPara', {
-                                    p: (chunks) => <p>{chunks}</p>
-                                })}
-                            </FadeInUp>
-                            <FadeInUp className="btns" delay={0.2}>
-                                <Link href={`/${locale}/about`}>
-                                    <span>{t("indexCompanyBtn")}</span>
-                                </Link>
-                            </FadeInUp>
-                        </div>
-                    </div>
-                    <div className="img-box" ref={sectionRef}>
-                        <Image
-                            ref={boxRef} 
-                            src="https://assets.kinetixai.cn/kinetixai/index/img-1.png"
-                            alt=""
-                            width={800}
-                            height={800}
-                        />
-                    </div>
-                </div>
-            </div>
-            <IndexTechItemList />
-            {isDesktop ? (
-                <IndexSceneItemList />
-                ) : (
-                <IndexSceneItemListMobile />
-            )}
-            {/* <div className="index-s4">
-                <div className="wrap-s">
-                    <FadeInUp className="label">
-                        {t.rich('indexNewsTit', {
-                            span: (chunks) => <span>{chunks}</span>,
-                        })}
-                    </FadeInUp>
-                    <IndexNewsItemList />
-                    <FadeInUp className="btns">
-                        <Link href="" target='_blank'>
-                            <span>{t("indexNewsBtn")}</span>
-                        </Link>
-                    </FadeInUp>
-                </div>
-            </div> */}
-
-        </div>
-    )
+        <HomeClient
+            bannerSlides={bannerSlides}
+            techSlides={techSlides}
+            companyIntro={companyIntro}
+        />
+    );
 }

@@ -42,7 +42,7 @@ export default function KaiHandContactPage(){
                         <FadeInUp className="item" delay={0.3}>
                             <div className="icon">
                                 <Image
-                                    src="/kaihand/icon-6-1.svg"
+                                    src="https://assets.kinetixai.cn/kaihand/icon-6-1.svg"
                                     alt="KaiHand"
                                     width={24}
                                     height={24}
@@ -56,7 +56,7 @@ export default function KaiHandContactPage(){
                         <FadeInUp className="item" delay={0.3}>
                             <div className="icon">
                                 <Image
-                                    src="/kaihand/icon-6-2.svg"
+                                    src="https://assets.kinetixai.cn/kaihand/icon-6-2.svg"
                                     alt="KaiHand"
                                     width={24}
                                     height={24}
@@ -70,7 +70,7 @@ export default function KaiHandContactPage(){
                         <FadeInUp className="item" delay={0.3}>
                             <div className="icon">
                                 <Image
-                                    src="/kaihand/icon-6-3.svg"
+                                    src="https://assets.kinetixai.cn/kaihand/icon-6-3.svg"
                                     alt="KaiHand"
                                     width={24}
                                     height={24}

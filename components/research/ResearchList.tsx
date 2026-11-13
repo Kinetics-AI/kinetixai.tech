@@ -2,34 +2,29 @@
 
 import Link from "next/link"
 import Image from 'next/image'
-import { useParams, usePathname  } from 'next/navigation';
-import { researchListData, researchList } from "@/data/researchList";
+import { useLocale } from 'next-intl';
 
-import { FadeIn } from "@/components/animation/fade-in"
+import type { ResearchItem } from '@/lib/content-api';
 import { FadeInUp } from "@/components/animation/fade-in-up"
 
-export const ResearchList = () => {
-    const params = useParams();
-    const pathname = usePathname();
-    const locale = params.locale as string;
+interface Props {
+    /** 研究列表数据(服务端从 CMS「研究」栏目拉取) */
+    items: ResearchItem[];
+}
 
-    // 获取当前语言的数据
-    const researchListItems = (): researchList[] => {  
-        const locale = typeof params.locale === 'string' ? params.locale : 'en';
-        return researchListData[locale] || researchListData.en;
-    };
+export const ResearchList = ({ items }: Props) => {
+    const locale = useLocale();
 
-    const items = researchListItems();
     if (!items.length) return null;
 
     return (
         <div className="items">
-            {items.map(({ tips, title, date, pic, url }, idx) => (
-                <FadeInUp key={idx} className='item' delay={0.1}>
-                    <Link 
-                    href={url.startsWith('https') ? url : `/${locale}/${url}`} 
-                    target='_blank' 
-                    rel="noopener noreferrer" 
+            {items.map(({ id, tips, title, date, pic, url }) => (
+                <FadeInUp key={id} className='item' delay={0.1}>
+                    <Link
+                    href={url.startsWith('https') ? url : `/${locale}/${url}`}
+                    target='_blank'
+                    rel="noopener noreferrer"
                     className='inner'>
                     <div className="tips">{tips}</div>
                         <div className="img-box">

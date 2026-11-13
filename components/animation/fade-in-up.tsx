@@ -8,9 +8,12 @@ function FadeInUp({
     className,
     ...props
 }: {
-    children: React.ReactNode
+    /** 可选：内容来自 CMS 富文本时改用 dangerouslySetInnerHTML 注入 */
+    children?: React.ReactNode
     delay?: number
     className?: string
+    /** 直接注入 HTML（如后台下发的富文本标题） */
+    dangerouslySetInnerHTML?: { __html: string }
 }) {
     return (
         <motion.div 

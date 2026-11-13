@@ -4583,13 +4583,13 @@ img {
                     width: 6px;
                     height: 8px;
                     @include backcontain;
-                    background-image: url('../public/kaihand/icon-3.svg');
+                    background-image: url('https://assets.kinetixai.cn/kaihand/icon-3.svg');
                 }
                 &.icon-2{
                     width: 0.16rem;
                     height: 0.16rem;
                     @include backcontain;
-                    background-image: url('../public/kaihand/icon-4.svg');
+                    background-image: url('https://assets.kinetixai.cn/kaihand/icon-4.svg');
                 }
             }
             &:before,&:after{
@@ -4604,10 +4604,10 @@ img {
                 z-index: 1;
             }
             &:before{
-                background-image: url('../public/kaihand/icon-1.png');
+                background-image: url('https://assets.kinetixai.cn/kaihand/icon-1.png');
             }
             &:after{
-                background-image: url('../public/kaihand/icon-2.png');
+                background-image: url('https://assets.kinetixai.cn/kaihand/icon-2.png');
                 transition: opacity .3s ease;
             }
             @media (any-hover: hover){
@@ -4810,9 +4810,9 @@ img {
             margin-top: 0;
         }
         &:nth-of-type(odd){
-            background-image: url('../public/kaihand/img-3-1.png');
+            background-image: url('https://assets.kinetixai.cn/kaihand/img-3-1.png');
             &:before{
-                background-image: url('../public/kaihand/img-4-1.png');
+                background-image: url('https://assets.kinetixai.cn/kaihand/img-4-1.png');
             }
             .img-box{
                 order: 1;
@@ -4823,9 +4823,9 @@ img {
             }
         }
         &:nth-of-type(even){
-            background-image: url('../public/kaihand/img-3-2.png');
+            background-image: url('https://assets.kinetixai.cn/kaihand/img-3-2.png');
             &:before{
-                background-image: url('../public/kaihand/img-4-2.png');
+                background-image: url('https://assets.kinetixai.cn/kaihand/img-4-2.png');
             }
             .img-box{
                 order: 2;
@@ -4854,7 +4854,7 @@ img {
             aspect-ratio: 1920 / 1852;
             @include backimg;
             background-size: 100% 100%;
-            background-image: url('../public/kaihand/img-7.png');
+            background-image: url('https://assets.kinetixai.cn/kaihand/img-7.png');
             position: absolute;
             left: 0;
             top: 50%;
@@ -4937,7 +4937,7 @@ img {
                     width: 100%;
                     height: 100%;
                     @include backimg;
-                    background-image: url('../public/kaihand/img-6.png');
+                    background-image: url('https://assets.kinetixai.cn/kaihand/img-6.png');
                     background-size: 100% 100%;
                     z-index: 1;
                 }
@@ -4949,7 +4949,7 @@ img {
                     width: 100%;
                     height: 100%;
                     @include backimg;
-                    background-image: url('../public/kaihand/img-5.png');
+                    background-image: url('https://assets.kinetixai.cn/kaihand/img-5.png');
                     background-size: 100% 100%;
                     z-index: 1;
                 }
@@ -5090,7 +5090,7 @@ img {
     }
     .item{
         width: 50%;
-        background: url('../public/kaihand/img-8.png') no-repeat center center;
+        background: url('https://assets.kinetixai.cn/kaihand/img-8.png') no-repeat center center;
         background-size: 100% 100%;
         padding: 0.2rem 0.3rem;
         @media screen and (min-width: 1025px){
@@ -5168,10 +5168,10 @@ img {
             z-index: 1;
         }
         &:before{
-            background-image: url('../public/kaihand/img-9.png');
+            background-image: url('https://assets.kinetixai.cn/kaihand/img-9.png');
         }
         &:after{
-            background-image: url('../public/kaihand/img-10.png');
+            background-image: url('https://assets.kinetixai.cn/kaihand/img-10.png');
             transition: opacity .3s ease;
         }
         .inner{
@@ -5186,7 +5186,7 @@ img {
                 width: 6px;
                 height: 8px;
                 @include backcontain;
-                background-image: url('../public/kaihand/icon-3.svg');
+                background-image: url('https://assets.kinetixai.cn/kaihand/icon-3.svg');
                 position: absolute;
                 top: calc(50% - 4px);
                 right: 0.2rem;
@@ -5232,7 +5232,7 @@ img {
     .top-block{
         padding: 2.2rem 0 1.4rem;
         @include backcover;
-        background-image: url('../public/kaihand/img-11.png');
+        background-image: url('https://assets.kinetixai.cn/kaihand/img-11.png');
         .label{
             font-size: 1rem;
             text-align: center;
@@ -5255,7 +5255,7 @@ img {
             font-size: max(18px, 0.26rem);
             color: #777777;
             padding-left: 0.2rem;
-            background: url('../public/kaihand/icon-7.png') no-repeat left center;
+            background: url('https://assets.kinetixai.cn/kaihand/icon-7.png') no-repeat left center;
             background-size: auto 0.23rem;
         }
     }

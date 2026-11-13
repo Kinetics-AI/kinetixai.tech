@@ -15,7 +15,7 @@ type LanguageData = {
 export const kaihandSection2Data: LanguageData = {
     zh: [
         {
-            image: "/kaihand/img-2-1.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-1.png",
             label: "无惧磕碰，灵活无上限",
             title: "超高自由度",
             htmlContent: `
@@ -37,7 +37,7 @@ export const kaihandSection2Data: LanguageData = {
             paraContent: ` `
         },
         {
-            image: "/kaihand/img-2-2.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-2.png",
             label: "人类手部数据的最佳载体",
             title: "高拟人度",
             htmlContent: `
@@ -49,7 +49,7 @@ export const kaihandSection2Data: LanguageData = {
             paraContent: ` `
         },
         {
-            image: "/kaihand/img-2-3.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-3.png",
             label: "提供接近人脑的决策空间",
             title: "多模态感知能力",
             htmlContent: `
@@ -66,7 +66,7 @@ export const kaihandSection2Data: LanguageData = {
     ],
     en: [
         {
-            image: "/kaihand/img-2-1.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-1.png",
             label: "Built for contact, engineered for dexterity",
             title: "High Degrees of Freedom",
             htmlContent: `
@@ -91,7 +91,7 @@ export const kaihandSection2Data: LanguageData = {
             `
         },
         {
-            image: "/kaihand/img-2-2.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-2.png",
             label: "Built to Embody Human-Hand Data",
             title: "Human-Scale Biomimetic Design",
             htmlContent: `
@@ -105,7 +105,7 @@ export const kaihandSection2Data: LanguageData = {
             `
         },
         {
-            image: "/kaihand/img-2-3.png",
+            image: "https://assets.kinetixai.cn/kaihand/img-2-3.png",
             label: "Richer observations for manipulation",
             title: "Multimodal Perception",
             htmlContent: `

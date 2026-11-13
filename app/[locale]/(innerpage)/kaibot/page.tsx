@@ -1,37 +1,20 @@
-'use client';
+import { getKaibotMedia } from '@/lib/content-api';
 
+import KaibotClient from './kaibot-client';
 
-import {useTranslations} from 'next-intl';
+interface Props {
+    params: Promise<{ locale: string }>;
+}
 
-import { FadeIn } from "@/components/animation/fade-in"
-import { FadeInUp } from "@/components/animation/fade-in-up"
+/**
+ * KaiBot 页面
+ * 服务端从 CMS「KaiBot」栏目的栏目配置拉取视频与封面,
+ * 接口异常或后台未填时 lib/content-api.ts 内置兜底资源,保证页面不白屏
+ */
+export default async function Page({ params }: Props) {
+    const { locale } = await params;
 
+    const media = await getKaibotMedia(locale);
 
-
-
-
-export default function ProductPage(){
-    const t = useTranslations('Product');
-
-
-
-    return (
-        <div className="product-main">
-            <div className="inner-s5">
-                <div className="video-box">
-                    <video autoPlay muted loop playsInline poster="https://assets.kinetixai.cn/20251211/2026051801.jpg">
-                        <source src="https://assets.kinetixai.cn/20251211/2026051801.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                {/* <div className="txt-box">
-                    <FadeInUp className="num">
-                        2026
-                    </FadeInUp>
-                    <FadeInUp className="tips" delay={0.1}>
-                        {t('txt')}
-                    </FadeInUp>
-                </div> */}
-            </div>
-        </div>
-    )
+    return <KaibotClient media={media} />;
 }

@@ -1,12 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
-import { indexTechData, indexTech } from "@/data/indexTech";
+import { useRef, useState } from 'react';
 
-import { FadeIn } from "@/components/animation/fade-in"
 import { FadeInUp } from "@/components/animation/fade-in-up"
 
 import {Pagination} from 'swiper/modules';
@@ -15,20 +11,19 @@ import { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-export const IndexTechItemList = () => {
+import type { TechSlide } from '@/lib/content-api';
+
+interface Props {
+    /** 核心技术轮播数据(服务端从 CMS「首页核心技术」栏目拉取) */
+    slides: TechSlide[];
+}
+
+export const IndexTechItemList = ({ slides }: Props) => {
     const t = useTranslations('Home');
-    const params = useParams();
     const [activeIndex, setActiveIndex] = useState(0);
     const swiperRef = useRef<SwiperClass | null>(null);
 
-    // 获取当前语言的数据
-    const indexTechItems = (): indexTech[] => {
-        const locale = typeof params.locale === 'string' ? params.locale : 'en';
-        return indexTechData[locale] || indexTechData.en;
-    };
-
-    const items = indexTechItems();
-    if (!items.length) return null;
+    if (!slides.length) return null;
 
     // Swiper变化
     const handleSlideChange = (swiper: SwiperClass) => {
@@ -74,12 +69,10 @@ export const IndexTechItemList = () => {
                         const realIndex = swiper.realIndex !== undefined ? swiper.realIndex : swiper.activeIndex;
                         setActiveIndex(realIndex);
                     }}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
                 >
-                    {items.map(({ title, pic }, idx) => (
+                    {slides.map(({ id, title, video, poster }) => (
                         <SwiperSlide
-                            key={idx}
+                            key={id}
                             className='item'
                         >
                             <div className="inner">
@@ -89,8 +82,9 @@ export const IndexTechItemList = () => {
                                         muted
                                         loop
                                         playsInline
+                                        poster={poster || undefined}
                                     >
-                                        <source src={pic} type="video/mp4" />
+                                        <source src={video} type="video/mp4" />
                                     </video>
                                 </div>
                                 <div className="txt-box">
@@ -103,9 +97,9 @@ export const IndexTechItemList = () => {
             </FadeInUp>
             <FadeInUp className="bot-block" delay={0.1}>
                 <div className="items">                    
-                    {items.map(({ title }, idx) => (
+                    {slides.map(({ id, title }, idx) => (
                         <div
-                            key={idx}
+                            key={id}
                             className={`item ${idx === activeIndex ? 'active' : ''}`}
                             onClick={() => handleItemClick(idx)}
                         >
